@@ -1,0 +1,55 @@
+ng new darcy-lee --no-create-application --experimental-zoneless=true --inline-style=true --inline-template=true --minimal=true --new-project-root=websites --skip-test=true --ssr=true --standalone=false --style=css --dry-run
+
+ng generate application enzo-concrete --experimental-zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css --dry-run
+
+ng generate library component --entry-file=components --project-root=component
+
+	ng generate component header --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component footer --export=true --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component --dry-run
+	ng generate component hero --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component cta --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component faq --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component testimonial --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component map --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component gallery --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component cta-button --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component cta-button-alt --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component form --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component preloader --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component navigation-links --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	
+	
+
+
+ng generate library page --entry-file=pages --project-root=page
+
+	ng generate component home --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
+	ng generate component about --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
+	ng generate component blog --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
+	ng generate component contact --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
+	ng generate component not-found --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
+	ng generate component privacy-policy --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
+	ng generate component services --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
+
+ng generate library icon --entry-file=icons --project-root=icon
+
+	ng generate component facebook --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
+	ng generate component instagram --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
+	ng generate component youtube --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
+	ng generate component x --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
+	ng generate component linked-in --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
+
+ng generate interface model/brand-data --type=model --project=enzo-concrete 
+ng generate interface model/home-data --type=model --project=enzo-concrete 
+ng generate interface model/blog-data --type=model --project=enzo-concrete 
+ng generate interface model/services-data --type=model --project=enzo-concrete
+
+ng generate class store/brand-data --project=enzo-concrete --skip-tests=true --type=store
+ng generate class store/home-data --project=enzo-concrete --skip-tests=true --type=store
+ng generate class store/blog-data --project=enzo-concrete --skip-tests=true --type=store
+ng generate class store/services-data --project=enzo-concrete --skip-tests=true --type=store
+
+ng generate class factory/brand-data --project=enzo-concrete --skip-tests=true --type=factory
+ng generate class factory/home-data --project=enzo-concrete --skip-tests=true --type=factory
+ng generate class factory/blog-data --project=enzo-concrete --skip-tests=true --type=factory
+ng generate class factory/services-data --project=enzo-concrete --skip-tests=true --type=factory

@@ -1,15 +1,15 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
 
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   template: `
-    <h1>Welcome to {{title}}!</h1>
-
+    <component-header></component-header>
     <router-outlet />
+    <component-footer></component-footer>
   `,
   standalone: false,
-  styles: []
+  styles: [],
 })
 export class AppComponent {
-  title = 'enzo-concrete';
+  title = "enzo-concrete";
 }

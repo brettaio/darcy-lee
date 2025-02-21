@@ -1,15 +1,10 @@
-import { Component } from '@angular/core';
+import { Component } from "@angular/core";
+import { HeroComponent } from "../../../../component/src/components";
 
 @Component({
-  selector: 'page-services',
-  imports: [],
-  template: `
-    <p>
-      services works!
-    </p>
-  `,
-  styles: ``
+  selector: "page-services",
+  imports: [HeroComponent],
+  template: ` <component-hero /> `,
+  styles: ``,
 })
-export class ServicesPage {
-
-}
+export class ServicesPage {}

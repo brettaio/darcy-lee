@@ -1,6 +1,7 @@
 /*
  * Public API Surface of page
  */
+export * from "./lib/about/about.page";
 export * from "./lib/blog/blog.page";
 export * from "./lib/contact/contact.page";
 export * from "./lib/home/home.page";
