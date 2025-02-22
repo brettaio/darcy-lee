@@ -1,0 +1,18 @@
+{
+  "printWidth": 80,
+  "singleQuote": true,
+  "trailingComma": "all",
+  "bracketSpacing": true,
+  "arrowParens": "always",
+  "semi": true,
+  "proseWrap": "always",
+  "htmlWhitespaceSensitivity": "ignore",
+  "overrides": [
+    {
+      "files": "*.ts",
+      "options": {
+        "embeddedLanguageFormatting": "auto"
+      }
+    }
+  ]
+}
