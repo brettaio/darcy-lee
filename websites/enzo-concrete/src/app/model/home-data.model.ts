@@ -6,8 +6,13 @@ export interface HomeData {
   heroH1: string;
   heroH2: string;
   heroParagraph: string;
-  heroButton1Text: string;
-  heroButton2Text: string;
-  heroButton1Link: string;
-  heroButton2Link: string;
+  heroImageLink: string;
+  problemH2: string;
+  problem1H3: string;
+  problem1Paragraph: string;
+  problem2H3: string;
+  problem2Paragraph: string;
+  problem3H3: string;
+  problem3Paragraph: string;
+  solutionHeading: string;
 }

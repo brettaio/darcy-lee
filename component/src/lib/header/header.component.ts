@@ -66,7 +66,7 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
             <div class="sm:flex sm:gap-4">
               <component-cta-button />
             </div>
-
+            <!-- 
             <div class="block md:hidden">
               <button
                 class="rounded-sm bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
@@ -86,7 +86,7 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
                   />
                 </svg>
               </button>
-            </div>
+            </div> -->
           </div>
         </div>
       </div>

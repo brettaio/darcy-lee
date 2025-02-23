@@ -12,7 +12,7 @@ export function createBrandData(): BrandData {
   const ctaText = `Call Now`;
   const ctaAltText = `Request A Quote`;
 
-  const smsMessage = `Hi Enzo Concrete, I'd Love To Get A Quote, Please Call Back To This Number, Thanks!`;
+  const smsMessage = `Hi Enzo Concrete, I'd Love To Get In Touch & Request A Quote, Please Call Back, Thank You`;
 
   const headerLogoSize = 128;
   const headerLogoPadding = 10;
