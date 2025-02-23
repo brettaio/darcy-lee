@@ -37,7 +37,7 @@ export function createBrandData(): BrandData {
     ctaText,
     ctaLink: `tel:${phoneNumber}`,
     ctaAltText,
-    ctaAltLink: `sms:${phoneNumber}?${encodeURIComponent(smsMessage)}`,
+    ctaAltLink: `sms:${phoneNumber}?body=${encodeURIComponent(smsMessage)}`,
     headerLogoSize,
     headerLogoPadding,
     headerLogoRounding,
