@@ -3,11 +3,13 @@ workspace:
 
 websites/applications: 
 	ng generate application enzo-concrete --experimental-zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css 
+	ng generate application brettaio --experimental-zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css 
 
 libs:	
 	ng generate library component --entry-file=components --project-root=component
 	ng generate library page --entry-file=pages --project-root=page
 	ng generate library icon --entry-file=icons --project-root=icon
+	ng generate library logo --entry-file=logo --project-root=logo
 
 component library:
 	ng generate component header --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
@@ -23,6 +25,11 @@ component library:
 	ng generate component form --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component preloader --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component navigation-links --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component problem-proposition --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component solution-intro --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component value-proposition-one --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component value-proposition-two --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component value-proposition-three --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	
 	
 page library:
@@ -41,6 +48,9 @@ icon library:
 	ng generate component x --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
 	ng generate component linked-in --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
 	
+logo library
+	ng generate component enzo-concrete --inline-style=true --inline-template=true --prefix=logo --project=logo --skip-tests=true --standalone=true --style=css --type=logo
+		
 data model:
 	ng generate interface model/brand-data --type=model --project=enzo-concrete 
 	ng generate interface model/home-data --type=model --project=enzo-concrete 
@@ -52,12 +62,22 @@ data store:
 	ng generate class store/home-data --project=enzo-concrete --skip-tests=true --type=store
 	ng generate class store/blog-data --project=enzo-concrete --skip-tests=true --type=store
 	ng generate class store/services-data --project=enzo-concrete --skip-tests=true --type=store
+	ng generate class store/app-data --project=enzo-concrete --skip-tests=true --type=store
 
 data factory
 	ng generate class factory/brand-data --project=enzo-concrete --skip-tests=true --type=factory
 	ng generate class factory/home-data --project=enzo-concrete --skip-tests=true --type=factory
 	ng generate class factory/blog-data --project=enzo-concrete --skip-tests=true --type=factory
 	ng generate class factory/services-data --project=enzo-concrete --skip-tests=true --type=factory
+	ng generate class factory/app-data --project=enzo-concrete --skip-tests=true --type=factory
 	
 	
 	DEATH TO LOREM IPSUM
+	
+	
+	
+Enzo Structure - 
+Header 
+Hero
+Problem Section
+

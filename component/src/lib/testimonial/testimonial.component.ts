@@ -1,13 +1,11 @@
-import { Component } from "@angular/core";
+import { Component } from '@angular/core';
 
 @Component({
-  selector: "component-testimonial",
+  selector: 'component-testimonial',
   imports: [],
   template: `
-    <section class="bg-white">
-      <div
-        class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16"
-      >
+    <section class="bg-white w-4/5 mx-auto">
+      <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <h2
           class="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl"
         >
@@ -18,9 +16,7 @@ import { Component } from "@angular/core";
           class="mt-8 [column-fill:_balance] sm:columns-2 sm:gap-6 lg:columns-3 lg:gap-8"
         >
           <div class="mb-8 sm:break-inside-avoid">
-            <blockquote
-              class="rounded-lg bg-gray-50 p-6 shadow-xs sm:p-8"
-            >
+            <blockquote class="rounded-lg bg-gray-50 p-6 shadow-xs sm:p-8">
               <div class="flex items-center gap-4">
                 <img
                   alt=""
@@ -29,9 +25,7 @@ import { Component } from "@angular/core";
                 />
 
                 <div>
-                  <div
-                    class="flex justify-center gap-0.5 text-green-500"
-                  >
+                  <div class="flex justify-center gap-0.5 text-green-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="size-5"
@@ -84,29 +78,23 @@ import { Component } from "@angular/core";
                     </svg>
                   </div>
 
-                  <p
-                    class="mt-0.5 text-lg font-medium text-gray-900"
-                  >
+                  <p class="mt-0.5 text-lg font-medium text-gray-900">
                     Paul Starr
                   </p>
                 </div>
               </div>
 
               <p class="mt-4 text-gray-700">
-                Lorem ipsum dolor sit, amet consectetur
-                adipisicing elit. Culpa sit rerum incidunt,
-                a consequuntur recusandae ab saepe illo est
-                quia obcaecati neque quibusdam eius
-                accusamus error officiis atque voluptates
-                magnam!
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa
+                sit rerum incidunt, a consequuntur recusandae ab saepe illo est
+                quia obcaecati neque quibusdam eius accusamus error officiis
+                atque voluptates magnam!
               </p>
             </blockquote>
           </div>
 
           <div class="mb-8 sm:break-inside-avoid">
-            <blockquote
-              class="rounded-lg bg-gray-50 p-6 shadow-xs sm:p-8"
-            >
+            <blockquote class="rounded-lg bg-gray-50 p-6 shadow-xs sm:p-8">
               <div class="flex items-center gap-4">
                 <img
                   alt=""
@@ -115,9 +103,7 @@ import { Component } from "@angular/core";
                 />
 
                 <div>
-                  <div
-                    class="flex justify-center gap-0.5 text-green-500"
-                  >
+                  <div class="flex justify-center gap-0.5 text-green-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="size-5"
@@ -170,27 +156,22 @@ import { Component } from "@angular/core";
                     </svg>
                   </div>
 
-                  <p
-                    class="mt-0.5 text-lg font-medium text-gray-900"
-                  >
+                  <p class="mt-0.5 text-lg font-medium text-gray-900">
                     Paul Starr
                   </p>
                 </div>
               </div>
 
               <p class="mt-4 text-gray-700">
-                Lorem ipsum dolor sit, amet consectetur
-                adipisicing elit. Ad mollitia rerum quo unde
-                neque atque molestias quas pariatur! Sint,
-                maxime?
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ad
+                mollitia rerum quo unde neque atque molestias quas pariatur!
+                Sint, maxime?
               </p>
             </blockquote>
           </div>
 
           <div class="mb-8 sm:break-inside-avoid">
-            <blockquote
-              class="rounded-lg bg-gray-50 p-6 shadow-xs sm:p-8"
-            >
+            <blockquote class="rounded-lg bg-gray-50 p-6 shadow-xs sm:p-8">
               <div class="flex items-center gap-4">
                 <img
                   alt=""
@@ -199,9 +180,7 @@ import { Component } from "@angular/core";
                 />
 
                 <div>
-                  <div
-                    class="flex justify-center gap-0.5 text-green-500"
-                  >
+                  <div class="flex justify-center gap-0.5 text-green-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="size-5"
@@ -254,29 +233,23 @@ import { Component } from "@angular/core";
                     </svg>
                   </div>
 
-                  <p
-                    class="mt-0.5 text-lg font-medium text-gray-900"
-                  >
+                  <p class="mt-0.5 text-lg font-medium text-gray-900">
                     Paul Starr
                   </p>
                 </div>
               </div>
 
               <p class="mt-4 text-gray-700">
-                Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Reprehenderit esse
-                delectus, maiores fugit, reiciendis culpa
-                inventore sint accusantium libero dolore eos
-                quasi a ex aliquam molestiae. Tenetur hic
-                delectus maxime.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Reprehenderit esse delectus, maiores fugit, reiciendis culpa
+                inventore sint accusantium libero dolore eos quasi a ex aliquam
+                molestiae. Tenetur hic delectus maxime.
               </p>
             </blockquote>
           </div>
 
           <div class="mb-8 sm:break-inside-avoid">
-            <blockquote
-              class="rounded-lg bg-gray-50 p-6 shadow-xs sm:p-8"
-            >
+            <blockquote class="rounded-lg bg-gray-50 p-6 shadow-xs sm:p-8">
               <div class="flex items-center gap-4">
                 <img
                   alt=""
@@ -285,9 +258,7 @@ import { Component } from "@angular/core";
                 />
 
                 <div>
-                  <div
-                    class="flex justify-center gap-0.5 text-green-500"
-                  >
+                  <div class="flex justify-center gap-0.5 text-green-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="size-5"
@@ -340,25 +311,21 @@ import { Component } from "@angular/core";
                     </svg>
                   </div>
 
-                  <p
-                    class="mt-0.5 text-lg font-medium text-gray-900"
-                  >
+                  <p class="mt-0.5 text-lg font-medium text-gray-900">
                     Paul Starr
                   </p>
                 </div>
               </div>
 
               <p class="mt-4 text-gray-700">
-                Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Fugit, fuga?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit,
+                fuga?
               </p>
             </blockquote>
           </div>
 
           <div class="mb-8 sm:break-inside-avoid">
-            <blockquote
-              class="rounded-lg bg-gray-50 p-6 shadow-xs sm:p-8"
-            >
+            <blockquote class="rounded-lg bg-gray-50 p-6 shadow-xs sm:p-8">
               <div class="flex items-center gap-4">
                 <img
                   alt=""
@@ -367,9 +334,7 @@ import { Component } from "@angular/core";
                 />
 
                 <div>
-                  <div
-                    class="flex justify-center gap-0.5 text-green-500"
-                  >
+                  <div class="flex justify-center gap-0.5 text-green-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="size-5"
@@ -422,33 +387,26 @@ import { Component } from "@angular/core";
                     </svg>
                   </div>
 
-                  <p
-                    class="mt-0.5 text-lg font-medium text-gray-900"
-                  >
+                  <p class="mt-0.5 text-lg font-medium text-gray-900">
                     Paul Starr
                   </p>
                 </div>
               </div>
 
               <p class="mt-4 text-gray-700">
-                Lorem ipsum dolor sit amet consectetur,
-                adipisicing elit. Cupiditate officia natus
-                blanditiis rerum incidunt ex autem
-                repudiandae doloribus eveniet quia? Culpa
-                commodi quae atque perspiciatis? Provident,
-                magni beatae saepe porro aspernatur facere
-                neque sunt possimus assumenda perspiciatis
-                aperiam quisquam animi libero voluptatem
-                fuga. Repudiandae, facere? Nemo
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Cupiditate officia natus blanditiis rerum incidunt ex autem
+                repudiandae doloribus eveniet quia? Culpa commodi quae atque
+                perspiciatis? Provident, magni beatae saepe porro aspernatur
+                facere neque sunt possimus assumenda perspiciatis aperiam
+                quisquam animi libero voluptatem fuga. Repudiandae, facere? Nemo
                 reprehenderit quas ratione quis.
               </p>
             </blockquote>
           </div>
 
           <div class="mb-8 sm:break-inside-avoid">
-            <blockquote
-              class="rounded-lg bg-gray-50 p-6 shadow-xs sm:p-8"
-            >
+            <blockquote class="rounded-lg bg-gray-50 p-6 shadow-xs sm:p-8">
               <div class="flex items-center gap-4">
                 <img
                   alt=""
@@ -457,9 +415,7 @@ import { Component } from "@angular/core";
                 />
 
                 <div>
-                  <div
-                    class="flex justify-center gap-0.5 text-green-500"
-                  >
+                  <div class="flex justify-center gap-0.5 text-green-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="size-5"
@@ -512,26 +468,21 @@ import { Component } from "@angular/core";
                     </svg>
                   </div>
 
-                  <p
-                    class="mt-0.5 text-lg font-medium text-gray-900"
-                  >
+                  <p class="mt-0.5 text-lg font-medium text-gray-900">
                     Paul Starr
                   </p>
                 </div>
               </div>
 
               <p class="mt-4 text-gray-700">
-                Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Non, rerum. Nobis laborum
-                praesentium necessitatibus vero.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Non,
+                rerum. Nobis laborum praesentium necessitatibus vero.
               </p>
             </blockquote>
           </div>
 
           <div class="mb-8 sm:break-inside-avoid">
-            <blockquote
-              class="rounded-lg bg-gray-50 p-6 shadow-xs sm:p-8"
-            >
+            <blockquote class="rounded-lg bg-gray-50 p-6 shadow-xs sm:p-8">
               <div class="flex items-center gap-4">
                 <img
                   alt=""
@@ -540,9 +491,7 @@ import { Component } from "@angular/core";
                 />
 
                 <div>
-                  <div
-                    class="flex justify-center gap-0.5 text-green-500"
-                  >
+                  <div class="flex justify-center gap-0.5 text-green-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="size-5"
@@ -595,28 +544,23 @@ import { Component } from "@angular/core";
                     </svg>
                   </div>
 
-                  <p
-                    class="mt-0.5 text-lg font-medium text-gray-900"
-                  >
+                  <p class="mt-0.5 text-lg font-medium text-gray-900">
                     Paul Starr
                   </p>
                 </div>
               </div>
 
               <p class="mt-4 text-gray-700">
-                Lorem ipsum, dolor sit amet consectetur
-                adipisicing elit. Maiores quaerat quasi ipsa
-                repellendus quam! Beatae pariatur quia
-                distinctio fugit repellendus repudiandae
-                nostrum consectetur quibusdam quo.
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Maiores quaerat quasi ipsa repellendus quam! Beatae pariatur
+                quia distinctio fugit repellendus repudiandae nostrum
+                consectetur quibusdam quo.
               </p>
             </blockquote>
           </div>
 
           <div class="mb-8 sm:break-inside-avoid">
-            <blockquote
-              class="rounded-lg bg-gray-50 p-6 shadow-xs sm:p-8"
-            >
+            <blockquote class="rounded-lg bg-gray-50 p-6 shadow-xs sm:p-8">
               <div class="flex items-center gap-4">
                 <img
                   alt=""
@@ -625,9 +569,7 @@ import { Component } from "@angular/core";
                 />
 
                 <div>
-                  <div
-                    class="flex justify-center gap-0.5 text-green-500"
-                  >
+                  <div class="flex justify-center gap-0.5 text-green-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="size-5"
@@ -680,25 +622,21 @@ import { Component } from "@angular/core";
                     </svg>
                   </div>
 
-                  <p
-                    class="mt-0.5 text-lg font-medium text-gray-900"
-                  >
+                  <p class="mt-0.5 text-lg font-medium text-gray-900">
                     Paul Starr
                   </p>
                 </div>
               </div>
 
               <p class="mt-4 text-gray-700">
-                Lorem ipsum dolor sit, amet consectetur
-                adipisicing elit. Sit, modi!
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sit,
+                modi!
               </p>
             </blockquote>
           </div>
 
           <div class="mb-8 sm:break-inside-avoid">
-            <blockquote
-              class="rounded-lg bg-gray-50 p-6 shadow-xs sm:p-8"
-            >
+            <blockquote class="rounded-lg bg-gray-50 p-6 shadow-xs sm:p-8">
               <div class="flex items-center gap-4">
                 <img
                   alt=""
@@ -707,9 +645,7 @@ import { Component } from "@angular/core";
                 />
 
                 <div>
-                  <div
-                    class="flex justify-center gap-0.5 text-green-500"
-                  >
+                  <div class="flex justify-center gap-0.5 text-green-500">
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       class="size-5"
@@ -762,18 +698,15 @@ import { Component } from "@angular/core";
                     </svg>
                   </div>
 
-                  <p
-                    class="mt-0.5 text-lg font-medium text-gray-900"
-                  >
+                  <p class="mt-0.5 text-lg font-medium text-gray-900">
                     Paul Starr
                   </p>
                 </div>
               </div>
 
               <p class="mt-4 text-gray-700">
-                Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Ullam numquam, unde
-                molestiae commodi temporibus dicta.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
+                numquam, unde molestiae commodi temporibus dicta.
               </p>
             </blockquote>
           </div>

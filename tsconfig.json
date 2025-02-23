@@ -10,6 +10,9 @@
       "icon": [
         "./dist/icon"
       ],
+      "logo": [
+        "./dist/logo"
+      ],
       "page": [
         "./dist/page"
       ]

@@ -1,6 +1,7 @@
 import { appDataStore } from '../store/app-data.store';
 
 export class AppFactory {
-  // Expose service data
+  static getBrandData = () => appDataStore.brandData();
   static getServicesData = () => appDataStore.servicesData();
+  static getHomeData = () => appDataStore.homeData();
 }
