@@ -6,7 +6,7 @@ import { SqaureLogo } from '../../../../logo/src/logo';
   selector: 'component-footer',
   imports: [SqaureLogo],
   template: `
-    <footer class="bg-gray-100 w-4/5 mx-auto">
+    <footer class="bg-gray-100">
       <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
         <div class="flex justify-center text-teal-600">
           <logo-square
