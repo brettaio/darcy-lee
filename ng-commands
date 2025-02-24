@@ -10,6 +10,7 @@ libs:
 	ng generate library page --entry-file=pages --project-root=page
 	ng generate library icon --entry-file=icons --project-root=icon
 	ng generate library logo --entry-file=logo --project-root=logo
+	ng generate library animation --entry-file=animation --project-root=animation
 
 component library:
 	ng generate component header --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
@@ -50,6 +51,10 @@ icon library:
 	
 logo library
 	ng generate component enzo-concrete --inline-style=true --inline-template=true --prefix=logo --project=logo --skip-tests=true --standalone=true --style=css --type=logo
+	
+animation library
+	ng generate component slide-in --inline-style=true --inline-template=true --prefix=animation --project=animation --skip-tests=true --standalone=true --style=css --type=animation
+	ng generate component slide-out --inline-style=true --inline-template=true --prefix=animation --project=animation --skip-tests=true --standalone=true --style=css --type=animation
 		
 data model:
 	ng generate interface model/brand-data --type=model --project=enzo-concrete 

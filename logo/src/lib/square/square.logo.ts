@@ -8,7 +8,7 @@ import { Component, Input } from '@angular/core';
       <img
         [src]="src"
         [alt]="alt"
-        class="object-cover"
+        class="object-cover hover:shadow-lg hover:shadow-[#CDCAC4] hover:ring-2 hover:ring-white"
         [style.width.px]="size"
         [style.height.px]="size"
         [style.borderRadius.px]="rounding"

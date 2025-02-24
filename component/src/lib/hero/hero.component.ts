@@ -7,9 +7,9 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
   imports: [CtaButtonAltComponent],
   template: `
     <section
-      class="overflow-hidden bg-gray-50 md:grid md:grid-cols-2 md:items-center md:h-[50vh] lg:h-full"
+      class="overflow-hidden bg-gray-200 md:grid md:grid-cols-2 md:items-center md:h-[90vh] lg:h-screen"
     >
-      <div class="p-8 md:p-12 lg:px-16 lg:py-24">
+      <div class="p-8 md:p-12 lg:px-16 lg:py-">
         <div class="mx-auto max-w-xl text-center sm:text-left">
           <span
             class="sr-only"
@@ -25,7 +25,7 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
             [innerHTML]="appDataStore.homeData().heroParagraph"
           ></div>
 
-          <div class="mt-12 inline-block xs:hidden">
+          <div class="m-12 inline-block xs:hidden">
             <component-cta-button-alt />
           </div>
         </div>

@@ -1,19 +1,23 @@
 import { Component } from '@angular/core';
 import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/app-data.store';
+import { SlideInAnimationComponent } from '../../../../animation/src/animation';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'component-problem-proposition',
-  imports: [],
+  imports: [SlideInAnimationComponent],
   template: `
     <section class="bg-gray-white">
       <div class="p-8 md:p-12 lg:px-16 lg:py-24">
         <!-- Heading -->
-        <div class="mx-auto max-w-3xl text-center">
-          <div
-            class="text-2xl font-bold text-gray-900 md:text-3xl"
-            [innerHTML]="appDataStore.homeData().problemH2"
-          ></div>
-        </div>
+        <animation-slide-in>
+          <div class="mx-auto max-w-3xl text-center">
+            <div
+              class="text-2xl font-bold text-gray-900 md:text-3xl"
+              [innerHTML]="getSafeHTML(appDataStore.homeData().problemH2)"
+            ></div>
+          </div>
+        </animation-slide-in>
 
         <div
           class="mx-auto mt-8 max-w-4xl grid grid-cols-1 gap-6 text-left md:grid-cols-3 items-start"
@@ -68,4 +72,10 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
 })
 export class ProblemPropositionComponent {
   appDataStore = appDataStore;
+
+  constructor(private sanitizer: DomSanitizer) {}
+
+  getSafeHTML(content: string): SafeHtml {
+    return this.sanitizer.bypassSecurityTrustHtml(content);
+  }
 }

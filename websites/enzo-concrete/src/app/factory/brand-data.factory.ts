@@ -14,7 +14,7 @@ export function createBrandData(): BrandData {
 
   const smsMessage = `Hi Enzo Concrete, I'd Love To Get In Touch & Request A Quote, Please Call Back, Thank You`;
 
-  const headerLogoSize = 128;
+  const headerLogoSize = 64;
   const headerLogoPadding = 10;
   const headerLogoRounding = 999;
 

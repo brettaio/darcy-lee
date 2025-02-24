@@ -4,6 +4,9 @@
   "compileOnSave": false,
   "compilerOptions": {
     "paths": {
+      "animation": [
+        "./dist/animation"
+      ],
       "component": [
         "./dist/component"
       ],

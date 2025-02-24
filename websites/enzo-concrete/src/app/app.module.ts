@@ -1,19 +1,20 @@
 import {
   NgModule,
   provideExperimentalZonelessChangeDetection,
-} from "@angular/core";
+} from '@angular/core';
 import {
   BrowserModule,
   provideClientHydration,
   withEventReplay,
-} from "@angular/platform-browser";
+} from '@angular/platform-browser';
 
-import { AppRoutingModule } from "./app-routing.module";
-import { AppComponent } from "./app.component";
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
 import {
   HeaderComponent,
   FooterComponent,
-} from "../../../../component/src/components";
+} from '../../../../component/src/components';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +23,7 @@ import {
     AppRoutingModule,
     HeaderComponent,
     FooterComponent,
+    BrowserAnimationsModule,
   ],
   providers: [
     provideExperimentalZonelessChangeDetection(),

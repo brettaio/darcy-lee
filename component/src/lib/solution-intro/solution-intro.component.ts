@@ -5,8 +5,14 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
   selector: 'component-solution-intro',
   imports: [],
   template: `
-    <section class="bg-gray-50">
-      <div class="p-8 md:p-12 lg:px-16 lg:py-24">
+    <section class="relative bg-gray-50">
+      <!-- Concrete Overlay -->
+      <div
+        class="absolute inset-0 bg-cover bg-center opacity-30 pointer-events-none"
+        style="background-image: url('/concrete-overlay.webp');"
+      ></div>
+
+      <div class="p-8 md:p-12 lg:px-16 lg:py-24 relative">
         <!-- Heading -->
         <div class="mx-auto max-w-3xl text-center">
           <div

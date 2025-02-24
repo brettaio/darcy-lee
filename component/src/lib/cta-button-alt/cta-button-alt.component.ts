@@ -6,7 +6,7 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
   imports: [],
   template: `
     <a
-      class="rounded-sm bg-black px-12 py-3 text-xl font-bold text-white transition hover:bg-red-700 hover:drop-shadow-lg"
+      class="block rounded-[999px] bg-white ring-2 ring-gray-600 px-5 py-2.5 text-2xl hover:shadow-lg hover:shadow-gray-600 hover:inset-shadow-2xl font-bold text-gray-600 transition hover:bg-gray-600 hover:text-gray-100 hover:ring-2 hover:ring-white"
       [href]="appDataStore.brandData().ctaAltLink"
       [innerHTML]="appDataStore.brandData().ctaAltText"
     ></a>
