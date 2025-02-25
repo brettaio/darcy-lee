@@ -18,6 +18,9 @@
       ],
       "page": [
         "./dist/page"
+      ],
+      "service": [
+        "./dist/service"
       ]
     },
     "outDir": "./dist/out-tsc",

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {
   HeroComponent,
   CtaComponent,
@@ -11,6 +11,7 @@ import { ValuePropositionOneComponent } from '../../../../component/src/lib/valu
 import { ValuePropositionTwoComponent } from '../../../../component/src/lib/value-proposition-two/value-proposition-two.component';
 import { ValuePropositionThreeComponent } from '../../../../component/src/lib/value-proposition-three/value-proposition-three.component';
 import { SolutionIntroComponent } from '../../../../component/src/lib/solution-intro/solution-intro.component';
+import { AnalyticsService } from '../../../../service/src/services';
 
 @Component({
   selector: 'page-home',
@@ -38,4 +39,15 @@ import { SolutionIntroComponent } from '../../../../component/src/lib/solution-i
   `,
   styles: ``,
 })
-export class HomePage {}
+export class HomePage implements OnInit {
+  constructor(private analytics: AnalyticsService) {}
+
+  ngOnInit(): void {
+    // Optionally track the initial page view
+    this.analytics.trackPageView('/home');
+  }
+
+  // handleClick(): void {
+  //   this.analytics.trackEvent('button_click', { label: 'Click Me Button' });
+  // }
+}

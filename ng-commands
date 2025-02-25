@@ -9,8 +9,9 @@ libs:
 	ng generate library component --entry-file=components --project-root=component
 	ng generate library page --entry-file=pages --project-root=page
 	ng generate library icon --entry-file=icons --project-root=icon
-	ng generate library logo --entry-file=logo --project-root=logo
-	ng generate library animation --entry-file=animation --project-root=animation
+	ng generate library logo --entry-file=logos --project-root=logo
+	ng generate library animation --entry-file=animations --project-root=animation
+	ng generate library service --entry-file=services --project-root=service
 
 component library:
 	ng generate component header --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
@@ -80,6 +81,9 @@ data factory
 	ng generate class factory/review-data --project=enzo-concrete --skip-tests=true --type=factory
 	ng generate class factory/app-data --project=enzo-concrete --skip-tests=true --type=factory
 	
+service library
+	ng generate service analytics --project=service --skip-tests=true
+
 	
 	DEATH TO LOREM IPSUM
 	
