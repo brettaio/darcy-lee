@@ -1,7 +1,8 @@
-import { Component } from "@angular/core";
+import { Component, OnInit } from '@angular/core';
+import { AnalyticsService } from '../../../../service/src/services';
 
 @Component({
-  selector: "app-root",
+  selector: 'app-root',
   template: `
     <component-header></component-header>
     <router-outlet />
@@ -10,6 +11,15 @@ import { Component } from "@angular/core";
   standalone: false,
   styles: [],
 })
-export class AppComponent {
-  title = "enzo-concrete";
+export class AppComponent implements OnInit {
+  constructor(private analytics: AnalyticsService) {}
+
+  ngOnInit(): void {
+    // Optionally track the initial page view
+    this.analytics.trackPageView('/home');
+  }
+
+  // handleClick(): void {
+  //   this.analytics.trackEvent('button_click', { label: 'Click Me Button' });
+  // }
 }

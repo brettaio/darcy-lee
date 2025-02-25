@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {
   HeroComponent,
-  CtaComponent,
   TestimonialComponent,
   FaqComponent,
 } from '../../../../component/src/components';
@@ -39,15 +38,4 @@ import { AnalyticsService } from '../../../../service/src/services';
   `,
   styles: ``,
 })
-export class HomePage implements OnInit {
-  constructor(private analytics: AnalyticsService) {}
-
-  ngOnInit(): void {
-    // Optionally track the initial page view
-    this.analytics.trackPageView('/home');
-  }
-
-  // handleClick(): void {
-  //   this.analytics.trackEvent('button_click', { label: 'Click Me Button' });
-  // }
-}
+export class HomePage {}
