@@ -7,7 +7,7 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
   imports: [CtaButtonAltComponent],
   template: `
     <section
-      class="overflow-hidden bg-gray-200 md:grid md:grid-cols-2 md:items-center md:h-[90vh] lg:h-screen"
+      class="overflow-hidden bg-slate-200 md:grid md:grid-cols-2 md:items-center md:h-[90vh] lg:h-screen"
     >
       <div class="p-8 md:p-12 lg:px-16 lg:py-">
         <div class="mx-auto max-w-xl text-center sm:text-left">

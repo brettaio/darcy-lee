@@ -1,6 +1,8 @@
 import { BrandData } from '../model/brand-data.model';
 
 export function createBrandData(): BrandData {
+  const currentYear = new Date().getFullYear();
+
   const companyName = 'Enzo Concrete';
   const address = '243 Ferndale Avenue';
   const city = 'London';
@@ -9,8 +11,20 @@ export function createBrandData(): BrandData {
   const email = 'info@enzoconcrete.com';
   const phoneNumber = '+1(519)630-1975';
 
-  const ctaText = `Call Now`;
-  const ctaAltText = `Request A Quote`;
+  const facebookDesktopLink = `https://facebook.com`;
+  const instagramDesktopLink = `https://instagram.com`;
+  const xDesktopLink = `https://x.com`;
+  const linkedInDesktopLink = `https://linkedin.com`;
+  const youtubeDesktopLink = `https://youtube.com`;
+
+  const facebookMobileLink = `facebook:something`;
+  const instagramMobileLink = `instagram:somthing`;
+  const xMobileLink = `x:somthing`;
+  const linkedInMobileLink = `linkedin:something`;
+  const youtubeMobileLink = `x:somthing`;
+
+  const ctaText = `<p>Call Now</p>`;
+  const ctaAltText = `<p>Request A Quote</p>`;
 
   const smsMessage = `Hi Enzo Concrete, I'd Love To Get In Touch & Request A Quote, Please Call Back, Thank You`;
 
@@ -22,6 +36,10 @@ export function createBrandData(): BrandData {
   const footerLogoPadding = 0;
   const footerLogoRounding = 999;
 
+  //tailwind class icon sizes
+  const testimonialStarSize = `size-8`;
+  const footerIconSize = `size-12`;
+
   const logoSrc = '/enzo-logo-square-200.webp';
 
   return {
@@ -32,8 +50,20 @@ export function createBrandData(): BrandData {
     postcode,
     email,
     phoneNumber,
+    facebookDesktopLink,
+    facebookMobileLink,
+    instagramDesktopLink,
+    instagramMobileLink,
+    xDesktopLink,
+    xMobileLink,
+    linkedInDesktopLink,
+    linkedInMobileLink,
+    youtubeDesktopLink,
+    youtubeMobileLink,
+    testimonialStarSize,
+    footerIconSize,
     postalAddress: `${address}, ${city}, ${province}, ${postcode}`,
-    shortDescription: `At ${companyName}, we specialize in delivering exceptional concrete solutions throughout ${city}, ${province}.`,
+    shortDescription: `<h3>At ${companyName}, we specialize in delivering exceptional concrete solutions throughout ${city}, ${province} and surrounding areas with decades of time honoured tradition.</h3>`,
     ctaText,
     ctaLink: `tel:${phoneNumber}`,
     ctaAltText,
@@ -44,6 +74,8 @@ export function createBrandData(): BrandData {
     footerLogoSize,
     footerLogoPadding,
     footerLogoRounding,
+    footerCopyright: `<h2>&copy; ${currentYear} ${companyName}</h2>`,
+    footerTag: `<h4><a href="https://bretta.io" target="_blank" rel="noopener noreferrer">Give It Up For Bretta Etc</a></h4>`,
     logoSrc,
     logoAlt: `${companyName} Logo`,
   };

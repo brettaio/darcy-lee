@@ -7,6 +7,24 @@ export interface BrandData {
   postalAddress: string;
   email: string;
   phoneNumber: string;
+
+  facebookDesktopLink: string;
+  facebookMobileLink: string;
+  instagramDesktopLink: string;
+  instagramMobileLink: string;
+  xDesktopLink: string;
+  xMobileLink: string;
+  linkedInDesktopLink: string;
+  linkedInMobileLink: string;
+  youtubeDesktopLink: string;
+  youtubeMobileLink: string;
+
+  testimonialStarSize: string;
+
+  footerIconSize: string;
+  footerCopyright: string;
+  footerTag: string;
+
   shortDescription: string;
 
   ctaText: string;

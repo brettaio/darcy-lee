@@ -15,4 +15,25 @@ export interface HomeData {
   problem3H3: string;
   problem3Paragraph: string;
   solutionHeading: string;
+
+  testimonialHeading: string;
+
+  formParagraph: string;
+  formHeading: string;
+  faqQuestionOne: string;
+  faqAnswerOne: string;
+  faqQuestionTwo: string;
+  faqAnswerTwo: string;
+  faqQuestionThree: string;
+  faqAnswerThree: string;
+  faqQuestionFour: string;
+  faqAnswerFour: string;
+  faqQuestionFive: string;
+  faqAnswerFive: string;
+  faqQuestionSix: string;
+  faqAnswerSix: string;
+  faqQuestionSeven: string;
+  faqAnswerSeven: string;
+  faqQuestionEight: string;
+  faqAnswerEight: string;
 }

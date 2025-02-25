@@ -1,27 +1,40 @@
 import { Component } from '@angular/core';
+import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/app-data.store';
+import { CtaButtonComponent } from '../cta-button/cta-button.component';
+import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.component';
 
 @Component({
   selector: 'component-form',
-  imports: [],
+  imports: [CtaButtonComponent, CtaButtonAltComponent],
   template: `
-    <section class="bg-gray-100">
-      <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+    <section class="bg-slate-100">
+      <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 ">
         <div class="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
           <div class="lg:col-span-2 lg:py-12">
-            <p class="max-w-xl text-lg">
-              At the same time, the fact that we are wholly owned and totally
-              independent from manufacturer and other group control gives you
-              confidence that we will only recommend what is right for you.
-            </p>
+            <div
+              class="max-w-xl text-2xl text-center text-gray-800"
+              [innerHTML]="appDataStore.homeData().formHeading"
+            ></div>
+            <div
+              class="max-w-xl text-lg text-justify text-gray-800 mt-6"
+              [innerHTML]="appDataStore.homeData().formParagraph"
+            ></div>
 
             <div class="mt-8">
-              <a href="#" class="text-2xl font-bold text-pink-600">
-                0151 475 4450
-              </a>
+              <div class="flex items-center justify-evenly gap-8">
+                <div class="sm:flex sm:gap-4">
+                  <component-cta-button />
+                </div>
+                <div class="sm:flex sm:gap-4">
+                  <component-cta-button-alt />
+                </div>
+              </div>
 
-              <address class="mt-2 not-italic">
-                282 Kevin Brook, Imogeneborough, CA 58517
-              </address>
+              <div class="mt-6 text-gray-800 text-center">
+                <address
+                  [innerHTML]="appDataStore.brandData().postalAddress"
+                ></address>
+              </div>
             </div>
           </div>
 
@@ -142,4 +155,6 @@ import { Component } from '@angular/core';
   `,
   styles: ``,
 })
-export class FormComponent {}
+export class FormComponent {
+  appDataStore = appDataStore;
+}
