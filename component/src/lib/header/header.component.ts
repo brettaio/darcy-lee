@@ -72,7 +72,9 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
 
           <div class="flex items-center gap-4">
             <div class="sm:flex sm:gap-4">
-              <component-cta-button />
+              <component-cta-button
+                customClasses=" text-lg text-slate-100 font-semibold"
+              />
             </div>
           </div>
         </div>

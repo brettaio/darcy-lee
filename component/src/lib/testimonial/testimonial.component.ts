@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal, computed } from '@angular/core';
 import { StarIcon } from '../../../../icon/src/lib/star/star.icon';
 import { CommonModule } from '@angular/common';
 import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/app-data.store';
@@ -19,7 +19,7 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
         >
           <div
             class="mb-8 sm:break-inside-avoid"
-            *ngFor="let review of appDataStore.reviewData()"
+            *ngFor="let review of visibleReviews()"
           >
             <blockquote class="rounded-lg bg-gray-50 p-6 shadow-xs sm:p-8">
               <div class="flex items-center gap-4">
@@ -52,6 +52,16 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
             </blockquote>
           </div>
         </div>
+
+        <!-- Toggle View More / Show Less Button -->
+        <div class="text-center mt-6">
+          <button
+            class="rounded-lg bg-gray-600 px-5 py-2.5 text-lg text-white hover:bg-gray-700"
+            (click)="toggleReviews()"
+          >
+            {{ showAllReviews() ? 'Show Less' : 'View More' }}
+          </button>
+        </div>
       </div>
     </section>
   `,
@@ -59,4 +69,18 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
 })
 export class TestimonialComponent {
   appDataStore = appDataStore;
+
+  // Signal to track if all reviews are visible
+  showAllReviews = signal<boolean>(false);
+
+  // Compute visible reviews based on showAllReviews state
+  visibleReviews = computed(() => {
+    const allReviews = this.appDataStore.reviewData();
+    return this.showAllReviews() ? allReviews : allReviews.slice(0, 3);
+  });
+
+  // Toggle between showing all reviews and limiting to 3
+  toggleReviews() {
+    this.showAllReviews.set(!this.showAllReviews());
+  }
 }

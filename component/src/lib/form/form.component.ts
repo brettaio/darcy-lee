@@ -22,11 +22,15 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
 
             <div class="mt-8">
               <div class="flex items-center justify-evenly gap-8">
-                <div class="sm:flex sm:gap-4">
-                  <component-cta-button />
+                <div class="flex sm:gap-4">
+                  <component-cta-button
+                    customClasses=" text-lg text-slate-100 font-semibold"
+                  />
                 </div>
-                <div class="sm:flex sm:gap-4">
-                  <component-cta-button-alt />
+                <div class=" xs:hidden sm:gap-4">
+                  <component-cta-button-alt
+                    customClasses="text-lg font-bold text-slate-600"
+                  />
                 </div>
               </div>
 
@@ -43,7 +47,7 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
               <div>
                 <label class="sr-only" for="name">Name</label>
                 <input
-                  class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                  class="w-full rounded-lg border border-slate-200 p-3 text-sm focus:border-slate-900 focus:ring-0 focus:outline-none"
                   placeholder="Name"
                   type="text"
                   id="name"
@@ -54,7 +58,7 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
                 <div>
                   <label class="sr-only" for="email">Email</label>
                   <input
-                    class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                    class="w-full rounded-lg border border-slate-200 p-3 text-sm focus:border-slate-900 focus:ring-0 focus:outline-none"
                     placeholder="Email address"
                     type="email"
                     id="email"
@@ -64,7 +68,7 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
                 <div>
                   <label class="sr-only" for="phone">Phone</label>
                   <input
-                    class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                    class="w-full rounded-lg border border-slate-200 p-3 text-sm focus:border-slate-900 focus:ring-0 focus:outline-none"
                     placeholder="Phone Number"
                     type="tel"
                     id="phone"
@@ -72,7 +76,7 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
                 </div>
               </div>
 
-              <div class="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
+              <!-- <div class="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
                 <div>
                   <label
                     for="Option1"
@@ -126,13 +130,13 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
                     <span class="text-sm">Option 3</span>
                   </label>
                 </div>
-              </div>
+              </div> -->
 
               <div>
                 <label class="sr-only" for="message">Message</label>
 
                 <textarea
-                  class="w-full rounded-lg border-gray-200 p-3 text-sm"
+                  class="w-full rounded-lg border border-slate-200 p-3 text-sm focus:border-slate-900 focus:ring-0 focus:outline-none"
                   placeholder="Message"
                   rows="8"
                   id="message"
@@ -142,7 +146,8 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
               <div class="mt-4">
                 <button
                   type="submit"
-                  class="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto"
+                  class="block rounded-[999px] ring-2 text-lg text-slate-100 font-semibold ring-white bg-gray-600 px-5 py-2.5 mx-auto hover:shadow-lg hover:shadow-gray-600 hover:inset-shadow-2xl transition hover:bg-white hover:text-gray-600 hover:ring-2 
+            hover:ring-gray-600"
                 >
                   Send Enquiry
                 </button>
