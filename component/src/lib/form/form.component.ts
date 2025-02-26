@@ -44,16 +44,19 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
 
           <div class="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
             <form
+              [attr.data-netlify]="'true'"
+              [attr.netlify-honeypot]="'bot-field'"
               name="contact"
               method="POST"
-              data-netlify="true"
               action="/thank-you"
+              target="_self"
               class="space-y-4"
             >
+              >
               <!-- Hidden input for Netlify -->
               <input type="hidden" name="form-name" value="contact" />
 
-              <!-- Optional honeypot field for spam prevention -->
+              <!-- Optional honeypot field -->
               <p class="hidden">
                 <label>
                   Don’t fill this out if you're human:
