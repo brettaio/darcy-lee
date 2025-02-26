@@ -25,13 +25,6 @@ import {
       transition('out => void', [animate('0.5s ease-out')]),
     ]),
   ],
-  styles: [
-    `
-      :host {
-        display: block;
-      }
-    `,
-  ],
   standalone: true,
 })
 export class SlideOutAnimationComponent {

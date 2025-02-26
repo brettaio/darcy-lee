@@ -3,15 +3,13 @@ import {
   HeroComponent,
   TestimonialComponent,
   FaqComponent,
+  FormComponent,
+  ProblemPropositionComponent,
+  ValuePropositionOneComponent,
+  ValuePropositionThreeComponent,
+  ValuePropositionTwoComponent,
+  SolutionIntroComponent,
 } from '../../../../component/src/components';
-import { FormComponent } from '../../../../component/src/lib/form/form.component';
-import { ProblemPropositionComponent } from '../../../../component/src/lib/problem-proposition/problem-proposition.component';
-import { ValuePropositionOneComponent } from '../../../../component/src/lib/value-proposition-one/value-proposition-one.component';
-import { ValuePropositionTwoComponent } from '../../../../component/src/lib/value-proposition-two/value-proposition-two.component';
-import { ValuePropositionThreeComponent } from '../../../../component/src/lib/value-proposition-three/value-proposition-three.component';
-import { SolutionIntroComponent } from '../../../../component/src/lib/solution-intro/solution-intro.component';
-import { AnalyticsService } from '../../../../service/src/services';
-
 @Component({
   selector: 'page-home',
   imports: [

@@ -8,7 +8,7 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
   imports: [CtaButtonComponent, CtaButtonAltComponent],
   template: `
     <section class="bg-slate-100">
-      <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8 ">
+      <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
           <div class="lg:col-span-2 lg:py-12">
             <div
@@ -27,7 +27,7 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
                     customClasses=" text-lg text-slate-100 font-semibold"
                   />
                 </div>
-                <div class=" xs:hidden sm:gap-4">
+                <div class="xs:hidden sm:gap-4">
                   <component-cta-button-alt
                     customClasses="text-lg font-bold text-slate-600"
                   />
@@ -43,10 +43,28 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
           </div>
 
           <div class="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
-            <form action="#" class="space-y-4">
+            <form
+              name="contact"
+              method="POST"
+              data-netlify="true"
+              action="/thank-you"
+              class="space-y-4"
+            >
+              <!-- Hidden input for Netlify -->
+              <input type="hidden" name="form-name" value="contact" />
+
+              <!-- Optional honeypot field for spam prevention -->
+              <p class="hidden">
+                <label>
+                  Don’t fill this out if you're human:
+                  <input name="bot-field" />
+                </label>
+              </p>
+
               <div>
                 <label class="sr-only" for="name">Name</label>
                 <input
+                  name="name"
                   class="w-full rounded-lg border border-slate-200 p-3 text-sm focus:border-slate-900 focus:ring-0 focus:outline-none"
                   placeholder="Name"
                   type="text"
@@ -58,6 +76,7 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
                 <div>
                   <label class="sr-only" for="email">Email</label>
                   <input
+                    name="email"
                     class="w-full rounded-lg border border-slate-200 p-3 text-sm focus:border-slate-900 focus:ring-0 focus:outline-none"
                     placeholder="Email address"
                     type="email"
@@ -68,6 +87,7 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
                 <div>
                   <label class="sr-only" for="phone">Phone</label>
                   <input
+                    name="phone"
                     class="w-full rounded-lg border border-slate-200 p-3 text-sm focus:border-slate-900 focus:ring-0 focus:outline-none"
                     placeholder="Phone Number"
                     type="tel"
@@ -76,66 +96,10 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
                 </div>
               </div>
 
-              <!-- <div class="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
-                <div>
-                  <label
-                    for="Option1"
-                    class="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white"
-                    tabindex="0"
-                  >
-                    <input
-                      class="sr-only"
-                      id="Option1"
-                      type="radio"
-                      tabindex="-1"
-                      name="option"
-                    />
-
-                    <span class="text-sm">Option 1</span>
-                  </label>
-                </div>
-
-                <div>
-                  <label
-                    for="Option2"
-                    class="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white"
-                    tabindex="0"
-                  >
-                    <input
-                      class="sr-only"
-                      id="Option2"
-                      type="radio"
-                      tabindex="-1"
-                      name="option"
-                    />
-
-                    <span class="text-sm">Option 2</span>
-                  </label>
-                </div>
-
-                <div>
-                  <label
-                    for="Option3"
-                    class="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white"
-                    tabindex="0"
-                  >
-                    <input
-                      class="sr-only"
-                      id="Option3"
-                      type="radio"
-                      tabindex="-1"
-                      name="option"
-                    />
-
-                    <span class="text-sm">Option 3</span>
-                  </label>
-                </div>
-              </div> -->
-
               <div>
                 <label class="sr-only" for="message">Message</label>
-
                 <textarea
+                  name="message"
                   class="w-full rounded-lg border border-slate-200 p-3 text-sm focus:border-slate-900 focus:ring-0 focus:outline-none"
                   placeholder="Message"
                   rows="8"
@@ -146,8 +110,7 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
               <div class="mt-4">
                 <button
                   type="submit"
-                  class="block rounded-[999px] ring-2 text-lg text-slate-100 font-semibold ring-white bg-gray-600 px-5 py-2.5 mx-auto hover:shadow-lg hover:shadow-gray-600 hover:inset-shadow-2xl transition hover:bg-white hover:text-gray-600 hover:ring-2 
-            hover:ring-gray-600"
+                  class="block rounded-[999px] ring-2 text-lg text-slate-100 font-semibold ring-white bg-gray-600 px-5 py-2.5 mx-auto hover:shadow-lg hover:shadow-gray-600 hover:inset-shadow-2xl transition hover:bg-white hover:text-gray-600 hover:ring-2 hover:ring-gray-600"
                 >
                   Send Enquiry
                 </button>

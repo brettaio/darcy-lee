@@ -10,13 +10,13 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
       class="overflow-hidden bg-slate-200 md:grid md:grid-cols-2 md:items-center md:h-[90vh] lg:h-screen"
     >
       <div class="p-8 md:p-12 lg:px-16 lg:py-">
-        <div class="mx-auto max-w-xl text-center sm:text-left">
+        <div class="mx-auto max-w-xl text-center sm:text-left text-slate-900">
           <span
             class="sr-only"
             [innerHTML]="appDataStore.homeData().heroH1"
           ></span>
           <div
-            class="text-3xl font-bold text-gray-900"
+            class="text-3xl font-bold text-slate-900"
             [innerHTML]="appDataStore.homeData().heroH2"
           ></div>
 
@@ -26,7 +26,10 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
           ></div>
 
           <div class="m-12 inline-block xs:hidden">
-            <component-cta-button-alt />
+            <component-cta-button-alt
+              customClasses="text-lg font-bold
+            text-slate-600"
+            />
           </div>
         </div>
       </div>

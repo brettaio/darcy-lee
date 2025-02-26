@@ -5,6 +5,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'component-problem-proposition',
+  standalone: true,
   imports: [SlideInAnimationComponent],
   template: `
     <section class="bg-gray-white">
@@ -27,7 +28,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
             <!-- Enforce the same heading space for each column -->
             <div class="min-h-[60px]">
               <div
-                class="text-lg font-semibold text-gray-900 mb-2"
+                class="text-lg font-semibold text-gray-900 mb-2 text-center"
                 [innerHTML]="appDataStore.homeData().problem1H3"
               ></div>
             </div>
@@ -41,7 +42,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
           <div>
             <div class="min-h-[60px]">
               <div
-                class="text-lg font-semibold text-gray-900 mb-2"
+                class="text-lg font-semibold text-gray-900 mb-2 text-center"
                 [innerHTML]="appDataStore.homeData().problem2H3"
               ></div>
             </div>
@@ -55,7 +56,7 @@ import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
           <div>
             <div class="min-h-[60px]">
               <div
-                class="text-lg font-semibold text-gray-900 mb-2"
+                class="text-lg font-semibold text-gray-900 mb-2 text-center"
                 [innerHTML]="appDataStore.homeData().problem3H3"
               ></div>
             </div>

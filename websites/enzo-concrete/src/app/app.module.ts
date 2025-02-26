@@ -15,14 +15,6 @@ import {
   FooterComponent,
 } from '../../../../component/src/components';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {
-  ANALYTICS_CONFIG,
-  AnalyticsConfig,
-} from '../../../../service/src/services';
-
-const analyticsConfig: AnalyticsConfig = {
-  gaId: 'G-6KR52LVJM0',
-};
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -35,7 +27,6 @@ const analyticsConfig: AnalyticsConfig = {
   providers: [
     provideExperimentalZonelessChangeDetection(),
     provideClientHydration(withEventReplay()),
-    { provide: ANALYTICS_CONFIG, useValue: analyticsConfig },
   ],
   bootstrap: [AppComponent],
 })
