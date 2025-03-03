@@ -3,6 +3,8 @@ export interface HomeData {
   navigationLink2: string;
   navigationLink3: string;
   navigationLink4: string;
+  announcementBarColour: string;
+  announcementBarHook: string;
   heroH1: string;
   heroH2: string;
   heroParagraph: string;

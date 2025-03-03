@@ -52,7 +52,6 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
               target="_self"
               class="space-y-4"
             >
-              >
               <!-- Hidden input for Netlify -->
               <input type="hidden" name="form-name" value="contact" />
 

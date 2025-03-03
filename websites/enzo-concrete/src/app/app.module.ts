@@ -15,6 +15,7 @@ import {
   FooterComponent,
 } from '../../../../component/src/components';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AnnouncementBarComponent } from '../../../../component/src/lib/announcement-bar/announcement-bar.component';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -23,6 +24,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HeaderComponent,
     FooterComponent,
     BrowserAnimationsModule,
+    AnnouncementBarComponent,
   ],
   providers: [
     provideExperimentalZonelessChangeDetection(),

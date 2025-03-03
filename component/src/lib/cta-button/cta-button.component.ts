@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
     <a
       [ngClass]="combinedClasses()"
       [href]="appDataStore.brandData().ctaLink"
-      [innerHTML]="appDataStore.brandData().ctaText"
+      [innerHTML]="ctaText || appDataStore.brandData().ctaText"
     ></a>
   `,
   styles: ``,
@@ -23,8 +23,9 @@ export class CtaButtonComponent {
     this.customClassesSignal.set(classes);
   }
 
+  @Input() ctaText?: string;
+
   combinedClasses = computed(() => {
-    return `block rounded-[999px] ring-2 ring-white bg-gray-600 px-5 py-2.5 hover:shadow-lg hover:shadow-gray-600 hover:inset-shadow-2xl transition hover:bg-white hover:text-gray-600 hover:ring-2 
-            hover:ring-gray-600 ${this.customClassesSignal()}`;
+    return `inline-block text-center rounded-[999px] ring-2 ring-white bg-gray-600 px-5 py-2.5 hover:shadow-lg hover:shadow-gray-600 hover:inset-shadow-2xl transition hover:bg-white hover:text-gray-600 hover:ring-2 hover:ring-gray-600 ${this.customClassesSignal()}`;
   });
 }

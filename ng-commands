@@ -57,6 +57,7 @@ logo library
 animation library
 	ng generate component slide-in --inline-style=true --inline-template=true --prefix=animation --project=animation --skip-tests=true --standalone=true --style=css --type=animation
 	ng generate component slide-out --inline-style=true --inline-template=true --prefix=animation --project=animation --skip-tests=true --standalone=true --style=css --type=animation
+	ng generate component animate-on-scroll --inline-style=true --inline-template=true --prefix=animation --project=animation --skip-tests=true --standalone=true --style=css --type=animation
 		
 data model:
 	ng generate interface model/brand-data --type=model --project=enzo-concrete 
