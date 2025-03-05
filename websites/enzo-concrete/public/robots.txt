@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /wp-login.php
+Disallow: /private/
+Disallow: /cgi-bin/
+Disallow: /search/
+Disallow: /cart/
+Disallow: /checkout/
+Allow: /
+
+Sitemap: https://www.enzoconcrete.com/sitemap.xml
