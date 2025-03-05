@@ -37,6 +37,8 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
       <img
         alt=""
         [src]="appDataStore.homeData().heroImageLink"
+        [style.width.px]="appDataStore.homeData().heroImageSize"
+        [style.height.px]="appDataStore.homeData().heroImageSize"
         class="h-full w-full object-cover sm:h-[calc(100%_-_2rem)] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%_-_4rem)] md:rounded-ss-[60px]"
       />
     </section>
