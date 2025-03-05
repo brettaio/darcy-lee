@@ -12,7 +12,7 @@ export function createHomeData(brandData: BrandData): HomeData {
     heroH1: `<h1>${brandData.companyName}</h1>`,
     heroH2: `<h2> We Are ${brandData.city}'s Finest Concrete Contractors</h2>`,
     heroParagraph: `<p>${brandData.shortDescription}</p><br><p>Whether you need a stamped, brushed, broomed, or exposed aggregate finish, we have the expertise and craftsmanship to bring your vision to life. Fully insured and backed by over 25 years of experience, we provide durable, eco-friendly, and aesthetically appealing concrete services for driveways, patios, porches, pool decks, and more.</p>`,
-    heroImageLink: `/brushed-concrete02.webp`,
+    heroImageLink: `/brushed-concrete-hero.webp`,
     heroImageWidth: 1200,
     heroImageHeight: 900,
 
