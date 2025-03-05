@@ -1,11 +1,22 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  AfterViewInit,
+  ElementRef,
+  Renderer2,
+  Inject,
+} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID } from '@angular/core';
 import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/app-data.store';
 
 @Component({
   selector: 'component-faq',
   imports: [],
   template: `
-    <section class="w-4/5 mx-auto py-12">
+    <section
+      class="w-4/5 mx-auto py-12"
+      [id]="appDataStore.homeData().navigationLink3"
+    >
       <div class="space-y-4">
         <details
           class="group border-s-4 border-slate-900 bg-slate-200 p-6 [&_summary::-webkit-details-marker]:hidden"
@@ -284,6 +295,36 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
   `,
   styles: ``,
 })
-export class FaqComponent {
+export class FaqComponent implements AfterViewInit {
   appDataStore = appDataStore;
+
+  constructor(
+    private renderer: Renderer2,
+    private el: ElementRef,
+    @Inject(PLATFORM_ID) private platformId: any,
+  ) {}
+
+  ngAfterViewInit(): void {
+    // Run only in the browser
+    if (isPlatformBrowser(this.platformId)) {
+      // Query the header element (update the selector if needed)
+      const header = document.querySelector('header');
+      if (header) {
+        const headerHeight = header.getBoundingClientRect().height;
+        // Use the dynamic navigation link value as the target element's id
+        const targetId = this.appDataStore.homeData().navigationLink3;
+        const targetElement = this.el.nativeElement.querySelector(
+          `#${targetId}`,
+        );
+        if (targetElement) {
+          // Set the computed header height as the scroll offset
+          this.renderer.setStyle(
+            targetElement,
+            'scroll-margin-top',
+            `${headerHeight}px`,
+          );
+        }
+      }
+    }
+  }
 }

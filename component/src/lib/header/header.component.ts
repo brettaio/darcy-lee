@@ -11,6 +11,7 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
   imports: [RouterModule, CommonModule, CtaButtonComponent, SqaureLogo],
   template: `
     <header
+      id="header"
       class="relative bg-white shadow-[0_30px_20px_rgba(0,0,0,0.20)] sticky top-0 z-10"
     >
       <!-- Concrete Overlay -->
@@ -41,28 +42,28 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
                 <li>
                   <a
                     class="text-gray-900 transition hover:text-gray-900/50"
-                    [href]="appDataStore.homeData().navigationLink1"
+                    [href]="'#' + appDataStore.homeData().navigationLink1"
                     [innerHTML]="appDataStore.homeData().navigationLink1"
                   ></a>
                 </li>
                 <li>
                   <a
                     class="text-gray-900 transition hover:text-gray-900/50"
-                    [href]="appDataStore.homeData().navigationLink2"
+                    [href]="'#' + appDataStore.homeData().navigationLink2"
                     [innerHTML]="appDataStore.homeData().navigationLink2"
                   ></a>
                 </li>
                 <li>
                   <a
                     class="text-gray-900 transition hover:text-gray-900/50"
-                    [href]="appDataStore.homeData().navigationLink3"
+                    [href]="'#' + appDataStore.homeData().navigationLink3"
                     [innerHTML]="appDataStore.homeData().navigationLink3"
                   ></a>
                 </li>
                 <li>
                   <a
                     class="text-gray-900 transition hover:text-gray-900/50"
-                    [href]="appDataStore.homeData().navigationLink4"
+                    [href]="'#' + appDataStore.homeData().navigationLink4"
                     [innerHTML]="appDataStore.homeData().navigationLink4"
                   ></a>
                 </li>

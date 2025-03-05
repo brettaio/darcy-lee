@@ -1,4 +1,12 @@
-import { Component } from '@angular/core';
+import {
+  Component,
+  AfterViewInit,
+  ElementRef,
+  Renderer2,
+  Inject,
+} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { PLATFORM_ID } from '@angular/core';
 import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/app-data.store';
 import { CtaButtonComponent } from '../cta-button/cta-button.component';
 import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.component';
@@ -7,7 +15,10 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
   selector: 'component-form',
   imports: [CtaButtonComponent, CtaButtonAltComponent],
   template: `
-    <section class="bg-slate-100">
+    <section
+      class="bg-slate-100"
+      [id]="appDataStore.homeData().navigationLink4"
+    >
       <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
         <div class="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
           <div class="lg:col-span-2 lg:py-12">
@@ -125,6 +136,35 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
   `,
   styles: ``,
 })
-export class FormComponent {
+export class FormComponent implements AfterViewInit {
   appDataStore = appDataStore;
+
+  constructor(
+    private renderer: Renderer2,
+    private el: ElementRef,
+    @Inject(PLATFORM_ID) private platformId: any,
+  ) {}
+
+  ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      // Query your header element (update the selector if your header uses a different tag or ID)
+      const header = document.querySelector('header');
+      if (header) {
+        const headerHeight = header.getBoundingClientRect().height;
+        // Use the navigation link value to identify the target element
+        const targetId = this.appDataStore.homeData().navigationLink4;
+        const targetElement = this.el.nativeElement.querySelector(
+          `#${targetId}`,
+        );
+        if (targetElement) {
+          // Apply the dynamic scroll offset so that the section is fully visible when scrolled into view
+          this.renderer.setStyle(
+            targetElement,
+            'scroll-margin-top',
+            `${headerHeight}px`,
+          );
+        }
+      }
+    }
+  }
 }

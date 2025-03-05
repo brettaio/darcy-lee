@@ -1,39 +1,104 @@
-import { Component } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Inject,
+  Renderer2,
+  PLATFORM_ID,
+} from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/app-data.store';
 
 @Component({
   selector: 'component-value-proposition-one',
-  imports: [],
+  imports: [CommonModule],
   template: `
     <section>
-      <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
+      <div
+        [id]="appDataStore.homeData().navigationLink1"
+        class="mx-auto max-w-screen-xl py-4 px-4 sm:px-6 lg:px-8"
+      >
         <div
+          *ngFor="let service of servicesData; let i = index"
+          [id]="service.slug"
           class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8"
         >
-          <div>
+          <!-- Even Index: Text Left, Image Right -->
+          <div *ngIf="i % 2 === 0" class="order-1 md:order-none">
             <div class="max-w-lg md:max-w-none">
-              <h2 class="text-2xl font-semibold text-gray-900 sm:text-3xl">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              </h2>
-
-              <p class="mt-4 text-gray-700">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur
-                doloremque saepe architecto maiores repudiandae amet perferendis
-                repellendus, reprehenderit voluptas sequi.
-              </p>
+              <h2
+                class="text-2xl font-semibold text-gray-900 sm:text-3xl text-center mt-10"
+                [innerHTML]="service.name"
+              ></h2>
+              <p
+                class="mt-4 text-gray-700"
+                [innerHTML]="service.shortDescription"
+              ></p>
+              <div class="mt-4" [innerHTML]="service.content"></div>
             </div>
           </div>
-
-          <div>
+          <div *ngIf="i % 2 === 0" class="order-2 md:order-none">
             <img
-              src="https://images.unsplash.com/photo-1731690415686-e68f78e2b5bd?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-              class="rounded"
-              alt=""
+              [src]="service.featuredImage"
+              class="rounded-xl w-full h-auto object-cover"
+              alt="{{ service.name }}"
             />
+          </div>
+
+          <!-- Odd Index: Image Left, Text Right -->
+          <div *ngIf="i % 2 !== 0" class="order-2 md:order-1">
+            <img
+              [src]="service.featuredImage"
+              class="rounded-xl w-full h-auto object-cover"
+              alt="{{ service.name }}"
+            />
+          </div>
+          <div *ngIf="i % 2 !== 0" class="order-1 md:order-2">
+            <div class="max-w-lg md:max-w-none">
+              <h2
+                class="text-2xl font-semibold text-gray-900 sm:text-3xl mt-10 text-center"
+                [innerHTML]="service.name"
+              ></h2>
+              <p
+                class="mt-4 text-gray-700"
+                [innerHTML]="service.shortDescription"
+              ></p>
+              <div class="mt-4" [innerHTML]="service.content"></div>
+            </div>
           </div>
         </div>
       </div>
     </section>
   `,
-  styles: ``,
+  styles: [],
 })
-export class ValuePropositionOneComponent {}
+export class ValuePropositionOneComponent implements AfterViewInit {
+  appDataStore = appDataStore;
+  servicesData = appDataStore.servicesData(); // Load services dynamically
+
+  constructor(
+    private renderer: Renderer2,
+    private el: ElementRef,
+    @Inject(PLATFORM_ID) private platformId: any,
+  ) {}
+
+  ngAfterViewInit(): void {
+    if (isPlatformBrowser(this.platformId)) {
+      const header = document.querySelector('header');
+      if (header) {
+        const headerHeight = header.getBoundingClientRect().height;
+        const targetId = this.appDataStore.homeData().navigationLink1;
+        const targetElement = this.el.nativeElement.querySelector(
+          `#${targetId}`,
+        );
+        if (targetElement) {
+          this.renderer.setStyle(
+            targetElement,
+            'scroll-margin-top',
+            `${headerHeight}px`,
+          );
+        }
+      }
+    }
+  }
+}

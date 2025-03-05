@@ -1,4 +1,13 @@
-import { Component, signal, computed } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  Inject,
+  Renderer2,
+  PLATFORM_ID,
+} from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { signal, computed } from '@angular/core';
 import { StarIcon } from '../../../../icon/src/lib/star/star.icon';
 import { CommonModule } from '@angular/common';
 import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/app-data.store';
@@ -7,7 +16,10 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
   selector: 'component-testimonial',
   imports: [StarIcon, CommonModule],
   template: `
-    <section class="bg-white w-4/5 mx-auto">
+    <section
+      class="bg-white w-4/5 mx-auto"
+      [id]="appDataStore.homeData().navigationLink2"
+    >
       <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
         <div
           class="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl"
@@ -65,9 +77,9 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
       </div>
     </section>
   `,
-  styles: ``,
+  styles: [],
 })
-export class TestimonialComponent {
+export class TestimonialComponent implements AfterViewInit {
   appDataStore = appDataStore;
 
   // Signal to track if all reviews are visible
@@ -82,5 +94,35 @@ export class TestimonialComponent {
   // Toggle between showing all reviews and limiting to 3
   toggleReviews() {
     this.showAllReviews.set(!this.showAllReviews());
+  }
+
+  constructor(
+    private renderer: Renderer2,
+    private el: ElementRef,
+    @Inject(PLATFORM_ID) private platformId: any,
+  ) {}
+
+  ngAfterViewInit(): void {
+    // Only run in browser
+    if (isPlatformBrowser(this.platformId)) {
+      // Query the header element—adjust the selector as needed
+      const header = document.querySelector('header');
+      if (header) {
+        const headerHeight = header.getBoundingClientRect().height;
+        // Get the target element by the dynamic id
+        const targetId = this.appDataStore.homeData().navigationLink2;
+        const targetElement = this.el.nativeElement.querySelector(
+          `#${targetId}`,
+        );
+        if (targetElement) {
+          // Set dynamic scroll-margin-top so that scrolling accounts for header height
+          this.renderer.setStyle(
+            targetElement,
+            'scroll-margin-top',
+            `${headerHeight}px`,
+          );
+        }
+      }
+    }
   }
 }

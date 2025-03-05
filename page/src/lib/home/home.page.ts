@@ -6,8 +6,6 @@ import {
   FormComponent,
   ProblemPropositionComponent,
   ValuePropositionOneComponent,
-  ValuePropositionThreeComponent,
-  ValuePropositionTwoComponent,
   SolutionIntroComponent,
 } from '../../../../component/src/components';
 @Component({
@@ -19,8 +17,6 @@ import {
     FormComponent,
     ProblemPropositionComponent,
     ValuePropositionOneComponent,
-    ValuePropositionTwoComponent,
-    ValuePropositionThreeComponent,
     SolutionIntroComponent,
   ],
   template: `
@@ -28,8 +24,6 @@ import {
     <component-problem-proposition />
     <component-solution-intro />
     <component-value-proposition-one />
-    <component-value-proposition-two />
-    <component-value-proposition-three />
     <component-testimonial />
     <component-faq />
     <component-form />
