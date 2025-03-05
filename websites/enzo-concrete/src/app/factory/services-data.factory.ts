@@ -6,6 +6,7 @@ export function createServicesData(): ServicesData[] {
       name: '<h2>Stamped Concrete</h2>',
       slug: 'stamped-concrete',
       featuredImage: '/stamped-concrete03.webp',
+      featuredImageSize: 512,
       shortDescription:
         'Elegant and durable decorative concrete that mimics stone, brick, or wood.',
       metaDescription:
@@ -52,6 +53,7 @@ export function createServicesData(): ServicesData[] {
       name: '<h2>Brushed Concrete</h2>',
       slug: 'brushed-concrete',
       featuredImage: '/brushed-concrete02.webp',
+      featuredImageSize: 512,
       shortDescription:
         'A clean, slip-resistant finish perfect for high-traffic outdoor areas.',
       metaDescription:
@@ -104,6 +106,7 @@ export function createServicesData(): ServicesData[] {
       name: '<h2>Exposed Aggregate</h2>',
       slug: 'exposed-aggregate',
       featuredImage: '/stamped-concrete01.webp',
+      featuredImageSize: 512,
       shortDescription:
         'A decorative, slip-resistant concrete finish revealing natural stone textures.',
       metaDescription:

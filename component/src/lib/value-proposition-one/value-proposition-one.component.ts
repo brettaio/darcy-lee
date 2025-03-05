@@ -26,31 +26,41 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
           <!-- Even Index: Text Left, Image Right -->
           <div *ngIf="i % 2 === 0" class="order-1 md:order-none">
             <div class="max-w-lg md:max-w-none">
-              <h2
+              <div
                 class="text-2xl font-semibold text-gray-900 sm:text-3xl text-center mt-10"
                 [innerHTML]="service.name"
-              ></h2>
-              <p
+              ></div>
+              <div
                 class="mt-4 text-gray-700"
                 [innerHTML]="service.shortDescription"
-              ></p>
+              ></div>
               <div class="mt-4" [innerHTML]="service.content"></div>
             </div>
           </div>
-          <div *ngIf="i % 2 === 0" class="order-2 md:order-none">
+          <div
+            *ngIf="i % 2 === 0"
+            class="order-2 md:order-none flex justify-center"
+          >
             <img
               [src]="service.featuredImage"
+              [style.width.px]="service.featuredImageSize"
+              [style.height.px]="service.featuredImageSize"
               class="rounded-xl w-full h-auto object-cover"
               alt="{{ service.name }}"
             />
           </div>
 
           <!-- Odd Index: Image Left, Text Right -->
-          <div *ngIf="i % 2 !== 0" class="order-2 md:order-1">
+          <div
+            *ngIf="i % 2 !== 0"
+            class="order-2 md:order-1 flex justify-center"
+          >
             <img
               [src]="service.featuredImage"
+              [style.width.px]="service.featuredImageSize"
+              [style.height.px]="service.featuredImageSize"
               class="rounded-xl w-full h-auto object-cover"
-              alt="{{ service.name }}"
+              alt="{{ service.slug }}"
             />
           </div>
           <div *ngIf="i % 2 !== 0" class="order-1 md:order-2">
