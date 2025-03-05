@@ -59,7 +59,7 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
               [attr.netlify-honeypot]="'bot-field'"
               name="contact"
               method="POST"
-              action="/thank-you"
+              action="/"
               target="_self"
               class="space-y-4"
             >
