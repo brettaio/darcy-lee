@@ -9,7 +9,8 @@ export interface HomeData {
   heroH2: string;
   heroParagraph: string;
   heroImageLink: string;
-  heroImageSize: number;
+  heroImageHeight: number;
+  heroImageWidth: number;
   problemH2: string;
   problem1H3: string;
   problem1Paragraph: string;

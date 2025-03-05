@@ -11,6 +11,8 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
       [style.backgroundImage]="
         'url(' + appDataStore.homeData().heroImageLink + ')'
       "
+      [style.width.px]="appDataStore.homeData().heroImageWidth"
+      [style.height.px]="appDataStore.homeData().heroImageHeight"
     >
       <div
         class="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"
