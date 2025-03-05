@@ -32,6 +32,7 @@ component library:
 	ng generate component value-proposition-one --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component value-proposition-two --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component value-proposition-three --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component announcement-bar --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	
 	
 page library:

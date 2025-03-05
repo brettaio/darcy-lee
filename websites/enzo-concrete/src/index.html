@@ -9,15 +9,19 @@
   </head>
   <body>
     <app-root></app-root>
+    <!-- Hidden form for Netlify detection -->
     <form
       name="contact"
       data-netlify="true"
       netlify-honeypot="bot-field"
-      style="display: none"
+      hidden
     >
+      <input type="hidden" name="form-name" value="contact" />
       <input type="text" name="name" />
       <input type="email" name="email" />
+      <input type="tel" name="phone" />
       <textarea name="message"></textarea>
+      <div data-netlify-recaptcha="true"></div>
     </form>
   </body>
 </html>
