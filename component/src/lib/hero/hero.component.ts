@@ -7,21 +7,26 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
   imports: [CtaButtonAltComponent],
   template: `
     <section
-      class="overflow-hidden bg-slate-200 md:grid md:grid-cols-2 md:items-center md:h-[90vh] lg:h-screen"
+      class="relative bg-cover bg-center bg-no-repeat"
+      [style.backgroundImage]="
+        'url(' + appDataStore.homeData().heroImageLink + ')'
+      "
     >
-      <div class="p-8 md:p-12 lg:px-16 lg:py-">
-        <div class="mx-auto max-w-xl text-center sm:text-left text-slate-900">
-          <span
-            class="sr-only"
-            [innerHTML]="appDataStore.homeData().heroH1"
-          ></span>
+      <div
+        class="absolute inset-0 bg-white/75 sm:bg-transparent sm:from-white/95 sm:to-white/25 ltr:sm:bg-gradient-to-r rtl:sm:bg-gradient-to-l"
+      ></div>
+
+      <div
+        class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8"
+      >
+        <div class="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
           <div
-            class="text-3xl font-bold text-slate-900"
+            class="text-3xl font-extrabold sm:text-5xl"
             [innerHTML]="appDataStore.homeData().heroH2"
           ></div>
 
           <div
-            class="text-gray-500 mt-12 text-justify leading-8"
+            class="mt-4 max-w-lg sm:text-xl/relaxed"
             [innerHTML]="appDataStore.homeData().heroParagraph"
           ></div>
 
@@ -33,14 +38,6 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
           </div>
         </div>
       </div>
-
-      <img
-        alt=""
-        [src]="appDataStore.homeData().heroImageLink"
-        [style.width.px]="appDataStore.homeData().heroImageSize"
-        [style.height.px]="appDataStore.homeData().heroImageSize"
-        class="h-full w-full object-cover sm:h-[calc(100%_-_2rem)] sm:self-end sm:rounded-ss-[30px] md:h-[calc(100%_-_4rem)] md:rounded-ss-[60px]"
-      />
     </section>
   `,
   styles: ``,
