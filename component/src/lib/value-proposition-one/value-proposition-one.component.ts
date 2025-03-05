@@ -13,11 +13,8 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
   selector: 'component-value-proposition-one',
   imports: [CommonModule],
   template: `
-    <section>
-      <div
-        [id]="appDataStore.homeData().navigationLink1"
-        class="mx-auto max-w-screen-xl py-4 px-4 sm:px-6 lg:px-8"
-      >
+    <section [id]="appDataStore.homeData().navigationLink1">
+      <div class="mx-auto max-w-screen-xl py-4 px-4 sm:px-6 lg:px-8">
         <div
           *ngFor="let service of servicesData; let i = index"
           [id]="service.slug"
@@ -65,14 +62,14 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
           </div>
           <div *ngIf="i % 2 !== 0" class="order-1 md:order-2">
             <div class="max-w-lg md:max-w-none">
-              <h2
+              <div
                 class="text-2xl font-semibold text-gray-900 sm:text-3xl mt-10 text-center"
                 [innerHTML]="service.name"
-              ></h2>
-              <p
+              ></div>
+              <div
                 class="mt-4 text-gray-700"
                 [innerHTML]="service.shortDescription"
-              ></p>
+              ></div>
               <div class="mt-4" [innerHTML]="service.content"></div>
             </div>
           </div>
