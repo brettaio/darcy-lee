@@ -41,16 +41,16 @@ import { YoutubeIcon } from '../../../../icon/src/lib/youtube/youtube.icon';
           <li>
             <a
               class="text-gray-800 transition hover:text-gray-800/50"
-              [href]="appDataStore.homeData().navigationLink1"
-              [innerHTML]="'#' + appDataStore.homeData().navigationLink1"
+              [href]="'#' + appDataStore.homeData().navigationLink1"
+              [innerHTML]="appDataStore.homeData().navigationLink1"
             ></a>
           </li>
 
           <li>
             <a
               class="text-gray-800 transition hover:text-gray-800/50"
-              [href]="appDataStore.homeData().navigationLink2"
-              [innerHTML]="'#' + appDataStore.homeData().navigationLink2"
+              [href]="'#' + appDataStore.homeData().navigationLink2"
+              [innerHTML]="appDataStore.homeData().navigationLink2"
             >
               Careers
             </a>
@@ -59,8 +59,8 @@ import { YoutubeIcon } from '../../../../icon/src/lib/youtube/youtube.icon';
           <li>
             <a
               class="text-gray-800 transition hover:text-gray-800/50"
-              [href]="appDataStore.homeData().navigationLink3"
-              [innerHTML]="'#' + appDataStore.homeData().navigationLink3"
+              [href]="'#' + appDataStore.homeData().navigationLink3"
+              [innerHTML]="appDataStore.homeData().navigationLink3"
             >
               History
             </a>
@@ -69,8 +69,8 @@ import { YoutubeIcon } from '../../../../icon/src/lib/youtube/youtube.icon';
           <li>
             <a
               class="text-gray-800 transition hover:text-gray-800/50"
-              [href]="appDataStore.homeData().navigationLink4"
-              [innerHTML]="'#' + appDataStore.homeData().navigationLink4"
+              [href]="'#' + appDataStore.homeData().navigationLink4"
+              [innerHTML]="appDataStore.homeData().navigationLink4"
             >
               Services
             </a>
@@ -182,18 +182,18 @@ import { YoutubeIcon } from '../../../../icon/src/lib/youtube/youtube.icon';
               target="_blank"
               class="xs:block md:hidden text-gray-700 transition hover:text-gray-700/75"
             >
-              <span class="sr-only">Linked In Mobile Icon</span>
+              <span class="sr-only">Youtube Mobile Icon</span>
               <icon-youtube />
             </a>
 
             <!-- Desktop Link -->
             <a
-              [href]="appDataStore.brandData().linkedInDesktopLink"
+              [href]="appDataStore.brandData().youtubeDesktopLink"
               rel="noreferrer"
               target="_blank"
               class="hidden md:block text-gray-700 transition hover:text-gray-700/75"
             >
-              <span class="sr-only">Linked In Desktop Icon</span>
+              <span class="sr-only">Youtube Desktop Icon</span>
               <icon-youtube />
             </a>
           </li>

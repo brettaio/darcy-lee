@@ -19,7 +19,7 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
       <div
         class="relative mx-auto max-w-screen-xl px-4 py-32 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8"
       >
-        <div class="max-w-xl text-center ltr:sm:text-left rtl:sm:text-right">
+        <div class="max-w-xl text-justify ltr:sm:text-left rtl:sm:text-right">
           <div
             class="text-3xl font-extrabold sm:text-5xl"
             [innerHTML]="appDataStore.homeData().heroH2"

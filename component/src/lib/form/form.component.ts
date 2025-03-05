@@ -61,7 +61,6 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
               method="POST"
               action="/"
               target="_self"
-              class="space-y-4"
             >
               <!-- Hidden input for Netlify -->
               <input type="hidden" name="form-name" value="contact" />
@@ -74,7 +73,8 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
                 </label>
               </p>
 
-              <div>
+              <!-- Name Field -->
+              <div class="mb-4">
                 <label class="sr-only" for="name">Name</label>
                 <input
                   name="name"
@@ -85,7 +85,8 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
                 />
               </div>
 
-              <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
+              <!-- Email and Phone Fields (2-Column on Desktop, 1-Column on Mobile) -->
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
                   <label class="sr-only" for="email">Email</label>
                   <input
@@ -109,7 +110,8 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
                 </div>
               </div>
 
-              <div>
+              <!-- Message Field -->
+              <div class="mt-4">
                 <label class="sr-only" for="message">Message</label>
                 <textarea
                   name="message"
@@ -120,7 +122,8 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
                 ></textarea>
               </div>
 
-              <div class="mt-4">
+              <!-- Submit Button -->
+              <div class="mt-6">
                 <button
                   type="submit"
                   class="block rounded-[999px] ring-2 text-lg text-slate-100 font-semibold ring-white bg-gray-600 px-5 py-2.5 mx-auto hover:shadow-lg hover:shadow-gray-600 hover:inset-shadow-2xl transition hover:bg-white hover:text-gray-600 hover:ring-2 hover:ring-gray-600"
