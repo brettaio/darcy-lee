@@ -10,6 +10,7 @@ export * from './lib/form/form.component';
 export * from './lib/gallery/gallery.component';
 export * from './lib/header/header.component';
 export * from './lib/hero/hero.component';
+export * from './lib/hero-enzo/hero-enzo.component';
 export * from './lib/map/map.component';
 export * from './lib/navigation-links/navigation-links.component';
 export * from './lib/preloader/preloader.component';

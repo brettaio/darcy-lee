@@ -7,23 +7,14 @@ export function createHomeData(brandData: BrandData): HomeData {
     navigationLink2: `Reviews`,
     navigationLink3: `FAQ`,
     navigationLink4: `Contact`,
+
     announcementBarColour: `bg-slate-800 bg-gradient-to-b from-white-900/20 to-slate-700/100`,
     announcementBarHook: `<h2><i>First Bookings For 2025 Open Now!</i></h2>`,
+
     heroH1: `<h1>${brandData.companyName}</h1>`,
-    heroH2: `<h2> We Are ${brandData.city}'s Finest Concrete Contractors</h2>`,
+    heroH2: `<h2> ${brandData.companyName} Are ${brandData.city}'s Finest In Concrete</h2>`,
     heroParagraph: `<p>${brandData.shortDescription}</p><br><p>Whether you need a stamped, brushed, broomed, or exposed aggregate finish, we have the expertise and craftsmanship to bring your vision to life. Fully insured and backed by over 25 years of experience, we provide durable, eco-friendly, and aesthetically appealing concrete services for driveways, patios, porches, pool decks, and more.</p>`,
-    heroImageLink: `/brushed-concrete-hero.webp`,
-    heroImageWidth: 1200,
-    heroImageHeight: 900,
 
-    problemH2: `<h2>The Common Mistakes That Ruin Concrete Projects</h2>`,
-
-    problem1H3: `<h3>Cracking and Uneven Surfaces</h3>`,
-    problem1Paragraph: `<p>A poorly prepared base or rushed finishing can leave you with cracks, dips, and an unlevel stamped concrete driveway that ages prematurely—lowering curb appeal and forcing costly repairs.</p>`,
-    problem2H3: `<h3>Subpar Sealing / No Sealing at All</h3>`,
-    problem2Paragraph: `<p>nexperienced contractors often skimp on or misuse sealing methods. Without proper sealing, your stamped concrete is prone to discoloration, staining, and moisture damage. A single bad sealing job can ruin the look of your driveway just days after it’s poured.</p>`,
-    problem3H3: `<h3>Mismanaged Projects plus Hidden Costs</h3>`,
-    problem3Paragraph: `<p>Lack of clear communication and poor planning can lead to missed deadlines, sudden price hikes, or unexpected site work. You risk stretching your budget—and your patience—when your concrete contractor isn’t transparent or skilled in project coordination.</p>`,
     solutionHeading: `<h2>Elevate Your Property with 30 Years of Stamped Concrete Mastery in ${brandData.city}, ${brandData.province}</h2>`,
 
     testimonialHeading: `<h2>Look don't take our word for it, here's what some of our previous projects have to say`,

@@ -23,14 +23,14 @@ export function createBrandData(): BrandData {
   const linkedInMobileLink = `linkedin:something`;
   const youtubeMobileLink = `x:somthing`;
 
-  const ctaText = `<p>Call Now</p>`;
-  const ctaAltText = `<p>Request A Quote</p>`;
+  const ctaText = `Call Now`;
+  const ctaAltText = `Request A Quote`;
 
   const smsMessage = `Hi Enzo Concrete, I'd Love To Get In Touch & Request A Quote, Please Call Back, Thank You`;
 
   const headerLogoSize = 64;
   const headerLogoPadding = 10;
-  const headerLogoRounding = 999;
+  const headerLogoRounding = 25;
 
   const footerLogoSize = 128;
   const footerLogoPadding = 0;
@@ -39,6 +39,11 @@ export function createBrandData(): BrandData {
   //tailwind class icon sizes
   const testimonialStarSize = `size-8`;
   const footerIconSize = `size-12`;
+
+  const ctaButtonIconSize = `size-8`;
+  const ctaButtonIconAltSize = `size-8`;
+
+  const problemPropIconSize = `size-8`;
 
   const logoSrc = '/enzo-logo-square-200.webp';
 
@@ -78,5 +83,8 @@ export function createBrandData(): BrandData {
     footerTag: `<h4><a href="https://bretta.io" target="_blank" rel="noopener noreferrer">Give It Up For Bretta Etc</a></h4>`,
     logoSrc,
     logoAlt: `${companyName} Logo`,
+    ctaButtonIconSize,
+    ctaButtonIconAltSize,
+    problemPropIconSize,
   };
 }

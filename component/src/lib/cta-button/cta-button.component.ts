@@ -1,16 +1,20 @@
 import { Component, computed, Input, signal } from '@angular/core';
 import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/app-data.store';
 import { CommonModule } from '@angular/common';
+import { PhoneCallIcon } from '../../../../icon/src/lib/phone-call/phone-call.icon';
 
 @Component({
   selector: 'component-cta-button',
-  imports: [CommonModule],
+  imports: [CommonModule, PhoneCallIcon],
   template: `
-    <a
+    <button
+      type="button"
       [ngClass]="combinedClasses()"
-      [href]="appDataStore.brandData().ctaLink"
-      [innerHTML]="ctaText || appDataStore.brandData().ctaText"
-    ></a>
+      (click)="navigateToLink(appDataStore.brandData().ctaLink)"
+    >
+      <span>{{ ctaText || appDataStore.brandData().ctaText }}</span>
+      <icon-phone-call></icon-phone-call>
+    </button>
   `,
   styles: ``,
 })
@@ -26,6 +30,10 @@ export class CtaButtonComponent {
   @Input() ctaText?: string;
 
   combinedClasses = computed(() => {
-    return `inline-block text-center rounded-[999px] ring-2 ring-white bg-gray-600 px-5 py-2.5 hover:shadow-lg hover:shadow-gray-600 hover:inset-shadow-2xl transition hover:bg-white hover:text-gray-600 hover:ring-2 hover:ring-gray-600 ${this.customClassesSignal()}`;
+    return `inline-flex items-center gap-x-2 rounded-md bg-slate-600 px-3.5 py-2.5 text-md font-semibold text-white shadow-xs hover:bg-slate-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 
+        `;
   });
+  navigateToLink(url: string) {
+    window.location.href = url; // Directly navigating to the link
+  }
 }

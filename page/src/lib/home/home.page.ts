@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {
-  HeroComponent,
+  HeroEnzoComponent,
   TestimonialComponent,
   FaqComponent,
   FormComponent,
@@ -11,7 +11,7 @@ import {
 @Component({
   selector: 'page-home',
   imports: [
-    HeroComponent,
+    HeroEnzoComponent,
     TestimonialComponent,
     FaqComponent,
     FormComponent,
@@ -20,7 +20,7 @@ import {
     SolutionIntroComponent,
   ],
   template: `
-    <component-hero />
+    <component-hero-enzo />
     <component-problem-proposition />
     <component-solution-intro />
     <component-value-proposition-one />

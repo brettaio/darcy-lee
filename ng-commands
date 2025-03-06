@@ -17,6 +17,7 @@ component library:
 	ng generate component header --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component footer --export=true --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component hero --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component hero-enzo --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component	
 	ng generate component cta --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component faq --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component testimonial --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
@@ -51,6 +52,11 @@ icon library:
 	ng generate component x --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
 	ng generate component linked-in --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
 	ng generate component star --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
+	ng generate component phone-call --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
+	ng generate component message --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
+	ng generate component house-crack --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
+	ng generate component trowel --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
+	ng generate component helmet-safety --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
 	
 logo library
 	ng generate component enzo-concrete --inline-style=true --inline-template=true --prefix=logo --project=logo --skip-tests=true --standalone=true --style=css --type=logo
@@ -63,13 +69,16 @@ animation library
 data model:
 	ng generate interface model/brand-data --type=model --project=enzo-concrete 
 	ng generate interface model/home-data --type=model --project=enzo-concrete 
+	ng generate interface model/hero-data --type=model --project=enzo-concrete 
 	ng generate interface model/blog-data --type=model --project=enzo-concrete 
 	ng generate interface model/services-data --type=model --project=enzo-concrete
 	ng generate interface model/review-data --type=model --project=enzo-concrete
+	ng generate interface model/problem-prop-data --type=model --project=enzo-concrete
 	
 data store:
 	ng generate class store/brand-data --project=enzo-concrete --skip-tests=true --type=store
 	ng generate class store/home-data --project=enzo-concrete --skip-tests=true --type=store
+	ng generate class store/hero-data --project=enzo-concrete --skip-tests=true --type=store
 	ng generate class store/blog-data --project=enzo-concrete --skip-tests=true --type=store
 	ng generate class store/services-data --project=enzo-concrete --skip-tests=true --type=store
 	ng generate class store/review-data --project=enzo-concrete --skip-tests=true --type=store
@@ -78,6 +87,7 @@ data store:
 data factory
 	ng generate class factory/brand-data --project=enzo-concrete --skip-tests=true --type=factory
 	ng generate class factory/home-data --project=enzo-concrete --skip-tests=true --type=factory
+	ng generate class factory/hero-data --project=enzo-concrete --skip-tests=true --type=factory
 	ng generate class factory/blog-data --project=enzo-concrete --skip-tests=true --type=factory
 	ng generate class factory/services-data --project=enzo-concrete --skip-tests=true --type=factory
 	ng generate class factory/review-data --project=enzo-concrete --skip-tests=true --type=factory

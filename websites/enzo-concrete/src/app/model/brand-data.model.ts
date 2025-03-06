@@ -41,4 +41,7 @@ export interface BrandData {
 
   logoSrc: string;
   logoAlt: string;
+  ctaButtonIconSize: string;
+  ctaButtonIconAltSize: string;
+  problemPropIconSize: string;
 }
