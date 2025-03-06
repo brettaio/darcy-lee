@@ -8,71 +8,127 @@ import {
 } from '@angular/core';
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/app-data.store';
+import { CheckIcon } from '../../../../icon/src/lib/check/check.icon';
 
 @Component({
   selector: 'component-value-proposition-one',
-  imports: [CommonModule],
+  imports: [CommonModule, CheckIcon],
   template: `
     <section [id]="appDataStore.homeData().navigationLink1">
-      <div class="mx-auto max-w-screen-xl py-4 px-4 sm:px-6 lg:px-8">
-        <div
-          *ngFor="let service of servicesData; let i = index"
-          [id]="service.slug"
-          class="grid grid-cols-1 gap-4 md:grid-cols-2 md:items-center md:gap-8"
-        >
-          <!-- Even Index: Text Left, Image Right -->
-          <div *ngIf="i % 2 === 0" class="order-1 md:order-none">
-            <div class="max-w-lg md:max-w-none">
-              <div
-                class="text-2xl font-semibold text-gray-900 sm:text-3xl text-center mt-10"
-                [innerHTML]="service.name"
-              ></div>
-              <div
-                class="mt-4 text-gray-700"
-                [innerHTML]="service.shortDescription"
-              ></div>
-              <div class="mt-4" [innerHTML]="service.content"></div>
-            </div>
-          </div>
-          <div
-            *ngIf="i % 2 === 0"
-            class="order-2 md:order-none flex justify-center"
-          >
-            <img
-              [src]="service.featuredImage"
-              [style.width.px]="service.featuredImageSize"
-              [style.height.px]="service.featuredImageSize"
-              class="rounded-xl w-full h-auto object-cover"
-              alt="{{ service.name }}"
-            />
-          </div>
+      <div class="overflow-hidden bg-white sm:py-12">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+          <ng-container *ngFor="let service of servicesData; let i = index">
+            <div
+              [id]="service.slug"
+              class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 my-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2"
+            >
+              <!-- EVEN INDEX: Text left on desktop, image right on desktop -->
+              <ng-container *ngIf="i % 2 === 0; else oddLayout">
+                <!-- TEXT BLOCK: on mobile, text is order-1; on desktop, still order-1 -->
+                <div class="order-1 lg:order-1 lg:pt-4 lg:pr-8">
+                  <div class="lg:max-w-lg">
+                    <div
+                      class="mt-2 text-4xl text-center font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
+                      [innerHTML]="service.name"
+                    ></div>
+                    <div
+                      class="mt-6 text-lg/8 text-gray-600"
+                      [innerHTML]="service.shortDescription"
+                    ></div>
+                    <div
+                      class="mt-4"
+                      [innerHTML]="service.introductionParagraph"
+                    ></div>
 
-          <!-- Odd Index: Image Left, Text Right -->
-          <div
-            *ngIf="i % 2 !== 0"
-            class="order-2 md:order-1 flex justify-center"
-          >
-            <img
-              [src]="service.featuredImage"
-              [style.width.px]="service.featuredImageSize"
-              [style.height.px]="service.featuredImageSize"
-              class="rounded-xl w-full h-auto object-cover"
-              alt="{{ service.slug }}"
-            />
-          </div>
-          <div *ngIf="i % 2 !== 0" class="order-1 md:order-2">
-            <div class="max-w-lg md:max-w-none">
-              <div
-                class="text-2xl font-semibold text-gray-900 sm:text-3xl mt-10 text-center"
-                [innerHTML]="service.name"
-              ></div>
-              <div
-                class="mt-4 text-gray-700"
-                [innerHTML]="service.shortDescription"
-              ></div>
-              <div class="mt-4" [innerHTML]="service.content"></div>
+                    <!-- House Applications, if any -->
+                    <div *ngIf="service.houseApplications?.length" class="mt-4">
+                      <div
+                        class="text-lg font-semibold text-gray-900 mb-2"
+                        [innerHTML]="service.applicationsHeading"
+                      ></div>
+                      <ul class="space-y-2">
+                        <li
+                          *ngFor="let app of service.houseApplications"
+                          class="relative pl-9"
+                        >
+                          <icon-check
+                            class="absolute top-1 left-1 size-5 text-indigo-600"
+                          ></icon-check>
+                          <span [innerHTML]="app"></span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- IMAGE BLOCK: on mobile, image is order-2; on desktop, still order-2 -->
+                <!-- "flex items-center" vertically centers the image if the row is taller than the image. -->
+                <div
+                  class="order-2 lg:order-2 flex items-center justify-center"
+                >
+                  <img
+                    [src]="service.featuredImage"
+                    [alt]="service.slug"
+                    class="w-full aspect-3/2 object-cover rounded-xl ring-1 shadow-xl ring-gray-400/10 mt-6"
+                    width="512"
+                    height="512"
+                  />
+                </div>
+              </ng-container>
+
+              <!-- ODD INDEX: Text right on desktop, image left on desktop -->
+              <ng-template #oddLayout>
+                <!-- TEXT BLOCK: on mobile, text is order-1; on desktop, text is order-2 -->
+                <div class="order-1 lg:order-2 lg:pt-4 lg:pl-4">
+                  <div class="lg:max-w-lg">
+                    <div
+                      class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
+                      [innerHTML]="service.name"
+                    ></div>
+                    <div
+                      class="mt-6 text-lg/8 text-gray-600"
+                      [innerHTML]="service.shortDescription"
+                    ></div>
+                    <div
+                      class="mt-4"
+                      [innerHTML]="service.introductionParagraph"
+                    ></div>
+
+                    <div *ngIf="service.houseApplications?.length" class="mt-4">
+                      <div
+                        class="text-lg font-semibold text-gray-900 mb-2"
+                        [innerHTML]="service.applicationsHeading"
+                      ></div>
+                      <ul class="space-y-2">
+                        <li
+                          *ngFor="let app of service.houseApplications"
+                          class="relative pl-9"
+                        >
+                          <icon-check
+                            class="absolute top-1 left-1 size-5 text-indigo-600"
+                          ></icon-check>
+                          <span [innerHTML]="app"></span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- IMAGE BLOCK: on mobile, image is order-2; on desktop, image is order-1 -->
+                <div
+                  class="order-2 lg:order-1 flex items-center justify-center"
+                >
+                  <img
+                    [src]="service.featuredImage"
+                    [alt]="service.slug"
+                    class="w-full aspect-3/2 object-cover rounded-xl ring-1 shadow-xl ring-gray-400/10 mt-6"
+                    width="512"
+                    height="512"
+                  />
+                </div>
+              </ng-template>
             </div>
-          </div>
+          </ng-container>
         </div>
       </div>
     </section>

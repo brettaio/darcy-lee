@@ -11,30 +11,17 @@ export function createServicesData(): ServicesData[] {
         'Elegant and durable decorative concrete that mimics stone, brick, or wood.',
       metaDescription:
         'Enhance your outdoor spaces with premium stamped concrete—perfect for patios, walkways, and driveways.',
-      content: `
+      introductionParagraph: `
         <p>Stamped concrete offers the perfect blend of <strong>durability</strong> and <strong>aesthetic appeal</strong>, making it an ideal choice for patios, driveways, and walkways. Our specialized stamping techniques allow us to replicate the appearance of natural stone, brick, or even wood—at a fraction of the cost.</p>
-        <br>
-
-        <h3>What Are The Benefits of Stamped Concrete?</h3>
+        <br>`,
+      serviceProposition: ` <h3>What Are The Benefits of Stamped Concrete?</h3>
         <br>
         <ul>
           <li><strong>Versatility:</strong> Wide range of patterns and colors.</li>
           <li><strong>Low Maintenance:</strong> Resists stains, cracks, and fading.</li>
           <li><strong>Cost-Effective:</strong> Achieve a high-end look affordably.</li>
-        </ul>
-<br>
-        <h3>Ideal Applications Around the Home: </h3>
-        <br>
-        <ul>
-          <li><strong>Driveways</strong></li>
-          <li><strong>Patios</strong></li>
-          <li><strong>Pool Decks</strong></li>
-          <li><strong>Walkways</strong></li>
-          <li><strong>Porches</strong></li>
-          <li><strong>Garden Paths</strong></li>
-        </ul>
-  
-      `,
+        </ul>`,
+      applicationsHeading: `<h3>Ideal Applications Around the Home: </h3>`,
       houseApplications: [
         'Driveways',
         'Patios',
@@ -58,30 +45,17 @@ export function createServicesData(): ServicesData[] {
         'A clean, slip-resistant finish perfect for high-traffic outdoor areas.',
       metaDescription:
         'Brushed concrete offers durability and grip, making it ideal for driveways, walkways, and porches.',
-      content: `
+      introductionParagraph: `
         <p>Brushed concrete is known for its classic, slip-resistant finish, achieved by brushing the surface before it fully sets. It's a versatile and cost-effective option, widely used in residential and commercial applications. Brushed concrete combines functionality and durability.</p>
-        <br>
-
-        <h3>What Are The Benefits of Brushed Concrete?</h3>
+        <br>`,
+      serviceProposition: `<h3>What Are The Benefits of Brushed Concrete?</h3>
         <br>
         <ul>
           <li><strong>Slip-Resistant:</strong> Ideal for areas prone to moisture.</li>
           <li><strong>Cost-Effective:</strong> A budget-friendly option without sacrificing durability.</li>
           <li><strong>Low Maintenance:</strong> Minimal upkeep required.</li>
-        </ul>
-        <br>
-
-        <h3>Ideal Applications Around the Home:</h3>
-        <br>
-        <ul>
-          <li><strong>Driveways</strong></li>
-          <li><strong>Sidewalks</strong></li>
-          <li><strong>Patios</strong></li>
-          <li><strong>Garage Floors</strong></li>
-          <li><strong>Porches</strong></li>
-          <li><strong>Basement Floors</strong></li>
-        </ul>
-      `,
+        </ul>`,
+      applicationsHeading: `<h3>Ideal Applications Around the Home:</h3>`,
       houseApplications: [
         'Driveways',
         'Sidewalks',
@@ -111,29 +85,17 @@ export function createServicesData(): ServicesData[] {
         'A decorative, slip-resistant concrete finish revealing natural stone textures.',
       metaDescription:
         'Exposed aggregate concrete combines aesthetics with functionality, ideal for driveways, pool decks, and patios.',
-      content: `
-        <p>Exposed aggregate is a durable and decorative concrete finish that reveals the natural beauty of stones and pebbles. It's a popular choice for homeowners seeking a unique texture and enhanced slip resistance for outdoor spaces. Perfect if you're looking to add style and durability to your property?</p><br>
-
+      introductionParagraph: `
+        <p>Exposed aggregate is a durable and decorative concrete finish that reveals the natural beauty of stones and pebbles. It's a popular choice for homeowners seeking a unique texture and enhanced slip resistance for outdoor spaces. Perfect if you're looking to add style and durability to your property?</p><br>`,
+      serviceProposition: `
         <h3>What Are The Benefits of Exposed Aggregate?</h3>
         <br>
         <ul>
           <li><strong>Textured Surface:</strong> Excellent slip resistance for wet areas.</li>
           <li><strong>Durability:</strong> Withstands heavy traffic and weather conditions.</li>
           <li><strong>Low Maintenance:</strong> Easy to clean and long-lasting.</li>
-        </ul>
-        <br>
-
-        <h3>Ideal Applications Around the Home:</h3>
-        <br>
-        <ul>
-          <li><strong>Driveways</strong></li>
-          <li><strong>Pool Decks</strong></li>
-          <li><strong>Patios</strong></li>
-          <li><strong>Walkways</strong></li>
-          <li><strong>Outdoor Stairs</strong></li>
-          <li><strong>Porches</strong></li>
-        </ul>
-      `,
+        </ul>`,
+      applicationsHeading: ` <h3>Ideal Applications Around the Home:</h3>`,
       houseApplications: [
         'Driveways',
         'Pool Decks',

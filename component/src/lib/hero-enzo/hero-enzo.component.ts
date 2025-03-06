@@ -50,7 +50,7 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
           </div>
           <div class="overflow-hidden">
             <div
-              class="mx-auto max-w-7xl px-6 pt-36 pb-32 sm:pt-60 lg:px-8 lg:pt-32"
+              class="mx-auto max-w-7xl px-6 pt-18 pb-16 sm:pt-60 lg:px-8 lg:pt-12"
             >
               <div
                 class="mx-auto max-w-2xl gap-x-14 lg:mx-0 lg:flex lg:max-w-none lg:items-center"

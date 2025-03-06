@@ -41,7 +41,10 @@ import { NgForOf, NgIf, NgClass } from '@angular/common';
 
             <p class="mt-4 text-gray-700">{{ service.shortDescription }}</p>
 
-            <div [innerHTML]="service.content" class="mt-4 text-gray-700"></div>
+            <div
+              [innerHTML]="service.introductionParagraph"
+              class="mt-4 text-gray-700"
+            ></div>
 
             <div *ngIf="service.houseApplications?.length" class="mt-6">
               <h3 class="text-lg font-medium text-gray-900">

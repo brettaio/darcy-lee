@@ -20,7 +20,7 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
       class="bg-white w-4/5 mx-auto"
       [id]="appDataStore.homeData().navigationLink2"
     >
-      <div class="mx-auto max-w-screen-xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
+      <div class="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8 lg:py-16">
         <div
           class="text-center text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl"
           [innerHTML]="appDataStore.homeData().testimonialHeading"

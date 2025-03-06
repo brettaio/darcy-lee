@@ -16,7 +16,7 @@ export function createHomeData(brandData: BrandData): HomeData {
     heroParagraph: `<p>${brandData.shortDescription}</p><br><p>Whether you need a stamped, brushed, broomed, or exposed aggregate finish, we have the expertise and craftsmanship to bring your vision to life. Fully insured and backed by over 25 years of experience, we provide durable, eco-friendly, and aesthetically appealing concrete services for driveways, patios, porches, pool decks, and more.</p>`,
 
     solutionHeading: `<h2>Elevate Your Property with ${brandData.companyName}<h2>`,
-    solutionSubHeading: `<h3>With Over 25 Years of Stamped Concrete Mastery in ${brandData.city}, ${brandData.province}</h3>`,
+    solutionSubHeading: `<h3>Trust Over 25 Years of Stamped Concrete Mastery in ${brandData.city}, ${brandData.province}</h3>`,
     solutionImage: '/concrete-overlay.webp',
 
     testimonialHeading: `<h2>Look don't take our word for it, here's what some of our previous projects have to say`,
