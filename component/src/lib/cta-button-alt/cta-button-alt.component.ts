@@ -28,7 +28,7 @@ export class CtaButtonAltComponent {
   }
 
   combinedClasses = computed(() => {
-    return `inline-flex items-center gap-x-2 rounded-md bg-slate-600 px-3.5 py-2.5 text-md font-semibold text-white shadow-xs hover:bg-slate-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 `;
+    return `inline-flex items-center gap-x-2 rounded-md bg-slate-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-slate-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 `;
   });
   navigateToLink(url: string) {
     window.location.href = url; // Directly navigating to the link

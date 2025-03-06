@@ -83,6 +83,7 @@ data store:
 	ng generate class store/services-data --project=enzo-concrete --skip-tests=true --type=store
 	ng generate class store/review-data --project=enzo-concrete --skip-tests=true --type=store
 	ng generate class store/app-data --project=enzo-concrete --skip-tests=true --type=store
+	ng generate class store/problem-prop-data --project=enzo-concrete --skip-tests=true --type=store
 
 data factory
 	ng generate class factory/brand-data --project=enzo-concrete --skip-tests=true --type=factory
@@ -92,6 +93,7 @@ data factory
 	ng generate class factory/services-data --project=enzo-concrete --skip-tests=true --type=factory
 	ng generate class factory/review-data --project=enzo-concrete --skip-tests=true --type=factory
 	ng generate class factory/app-data --project=enzo-concrete --skip-tests=true --type=factory
+	ng generate class factory/problem-prop-data --project=enzo-concrete --skip-tests=true --type=factory
 	
 service library
 	ng generate service analytics --project=service --skip-tests=true
