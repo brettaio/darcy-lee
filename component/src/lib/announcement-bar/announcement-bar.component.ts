@@ -54,16 +54,6 @@ import { CommonModule } from '@angular/common';
             [innerHTML]="appDataStore.homeData().announcementBarHook"
           ></span>
         </div>
-        <a
-          [href]="appDataStore.brandData().ctaLink"
-          class="flex-none rounded-full bg-slate-600 px-3.5 py-1 text-sm font-semibold text-white shadow-xs hover:bg-slate-200 hover:text-slate-900 hover:outlite-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900"
-        >
-          <span
-            class="inline-block"
-            [innerHTML]="appDataStore.brandData().ctaText"
-          ></span>
-          <span aria-hidden="true">&rarr;</span>
-        </a>
       </div>
       <div class="flex flex-1 justify-end">
         <button
