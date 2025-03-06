@@ -57,6 +57,7 @@ icon library:
 	ng generate component house-crack --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
 	ng generate component trowel --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
 	ng generate component helmet-safety --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
+	ng generate component check --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
 	
 logo library
 	ng generate component enzo-concrete --inline-style=true --inline-template=true --prefix=logo --project=logo --skip-tests=true --standalone=true --style=css --type=logo
