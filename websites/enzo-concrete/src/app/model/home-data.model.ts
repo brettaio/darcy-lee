@@ -11,6 +11,8 @@ export interface HomeData {
   heroParagraph: string;
 
   solutionHeading: string;
+  solutionSubHeading: string;
+  solutionImage: string;
 
   testimonialHeading: string;
 

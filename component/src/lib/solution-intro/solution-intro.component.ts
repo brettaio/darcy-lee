@@ -5,21 +5,25 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
   selector: 'component-solution-intro',
   imports: [],
   template: `
-    <section class="relative bg-gray-50">
-      <!-- Concrete Overlay -->
-      <div
-        class="absolute inset-0 bg-cover bg-center opacity-30 pointer-events-none"
-        style="background-image: url('/concrete-overlay.webp');"
-      ></div>
+    <section
+      class="relative isolate overflow-hidden bg-gray-900 px-6 py-24 sm:py-32 lg:px-8"
+      [style.backgroundImage]="
+        'url(' + appDataStore.homeData().solutionImage + ')'
+      "
+      style="background-size: cover; background-position: center;"
+    >
+      <div class="absolute inset-0 -z-10 bg-black/50"></div>
+      <!-- Dark overlay -->
 
-      <div class="p-8 md:p-12 lg:px-16 lg:py-24 relative">
-        <!-- Heading -->
-        <div class="mx-auto max-w-3xl text-center">
-          <div
-            class="text-2xl font-bold text-gray-900 md:text-3xl"
-            [innerHTML]="appDataStore.homeData().solutionHeading"
-          ></div>
-        </div>
+      <div class="mx-auto max-w-2xl text-left">
+        <div
+          class="text-5xl font-semibold tracking-tight text-white sm:text-7xl"
+          [innerHTML]="appDataStore.homeData().solutionHeading"
+        ></div>
+        <div
+          class="mt-8 text-2xl font-medium text-white"
+          [innerHTML]="appDataStore.homeData().solutionSubHeading"
+        ></div>
       </div>
     </section>
   `,
