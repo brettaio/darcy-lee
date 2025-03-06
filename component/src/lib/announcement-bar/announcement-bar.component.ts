@@ -1,11 +1,17 @@
-import { Component, computed, Input, signal } from '@angular/core';
+import {
+  Component,
+  computed,
+  EventEmitter,
+  Input,
+  Output,
+  signal,
+} from '@angular/core';
 import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/app-data.store';
 import { CommonModule } from '@angular/common';
-import { CtaButtonComponent } from '../cta-button/cta-button.component';
 
 @Component({
   selector: 'component-announcement-bar',
-  imports: [CommonModule, CtaButtonComponent],
+  imports: [CommonModule],
   template: `
     <div
       class="relative isolate flex items-center gap-x-6 overflow-hidden bg-gray-50 px-6 py-2.5 sm:px-3.5 sm:before:flex-1"
@@ -15,7 +21,7 @@ import { CtaButtonComponent } from '../cta-button/cta-button.component';
         aria-hidden="true"
       >
         <div
-          class="aspect-577/310 w-[36.0625rem] bg-linear-to-r from-[#ff80b5] to-[#9089fc] opacity-30"
+          class="aspect-577/310 w-[36.0625rem] bg-linear-to-r from-slate-600 to-slate-900 opacity-30"
           style="clip-path: polygon(74.8% 41.9%, 97.2% 73.2%, 100% 34.9%, 92.5% 0.4%, 87.5% 0%, 75% 28.6%, 58.5% 54.6%, 50.1% 56.8%, 46.9% 44%, 48.3% 17.4%, 24.7% 53.9%, 0% 27.9%, 11.9% 74.2%, 24.9% 54.1%, 68.6% 100%, 74.8% 41.9%)"
         ></div>
       </div>
@@ -24,13 +30,18 @@ import { CtaButtonComponent } from '../cta-button/cta-button.component';
         aria-hidden="true"
       >
         <div
-          class="aspect-577/310 w-[36.0625rem] bg-linear-to-r from-[#ff80b5] to-[#9089fc] opacity-30"
+          class="aspect-577/310 w-[36.0625rem] bg-linear-to-r from-slate-600 to-slate-900 opacity-30"
           style="clip-path: polygon(74.8% 41.9%, 97.2% 73.2%, 100% 34.9%, 92.5% 0.4%, 87.5% 0%, 75% 28.6%, 58.5% 54.6%, 50.1% 56.8%, 46.9% 44%, 48.3% 17.4%, 24.7% 53.9%, 0% 27.9%, 11.9% 74.2%, 24.9% 54.1%, 68.6% 100%, 74.8% 41.9%)"
         ></div>
       </div>
-      <div class="flex flex-wrap items-center gap-x-4 gap-y-2">
-        <p class="text-sm/6 text-gray-900">
-          <strong class="font-semibold">GeneriCon 2023</strong>
+      <div class="flex items-center gap-x-4 gap-y-2">
+        <div class="text-sm/6 text-gray-900">
+          <strong class="font-semibold">
+            <span
+              class="inline-block"
+              [innerHTML]="appDataStore.homeData().announcementBarTitle"
+            ></span>
+          </strong>
           <svg
             viewBox="0 0 2 2"
             class="mx-2 inline size-0.5 fill-current"
@@ -38,13 +49,19 @@ import { CtaButtonComponent } from '../cta-button/cta-button.component';
           >
             <circle cx="1" cy="1" r="1" />
           </svg>
-          Join us in Denver from June 7 – 9 to see what’s coming next.
-        </p>
+          <span
+            class="inline-block"
+            [innerHTML]="appDataStore.homeData().announcementBarHook"
+          ></span>
+        </div>
         <a
-          href="#"
-          class="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-xs hover:bg-gray-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
+          [href]="appDataStore.brandData().ctaLink"
+          class="flex-none rounded-full bg-slate-600 px-3.5 py-1 text-sm font-semibold text-white shadow-xs hover:bg-slate-200 hover:text-slate-900 hover:outlite-slate-900 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-slate-900"
         >
-          Register now
+          <span
+            class="inline-block"
+            [innerHTML]="appDataStore.brandData().ctaText"
+          ></span>
           <span aria-hidden="true">&rarr;</span>
         </a>
       </div>
@@ -52,6 +69,7 @@ import { CtaButtonComponent } from '../cta-button/cta-button.component';
         <button
           type="button"
           class="-m-3 p-3 focus-visible:outline-offset-[-4px]"
+          (click)="dismissBanner()"
         >
           <span class="sr-only">Dismiss</span>
           <svg
@@ -68,22 +86,17 @@ import { CtaButtonComponent } from '../cta-button/cta-button.component';
         </button>
       </div>
     </div>
-    <div [ngClass]="combinedClasses()">
-      <div
-        class="text-center font-medium sm:text-left"
-        [innerHTML]="appDataStore.homeData().announcementBarHook"
-      ></div>
-
-      <component-cta-button
-        [ctaText]="'Book Project Now'"
-        customClasses="text-lg font-bold text-white mt-2 alighn-center"
-      />
-    </div>
   `,
   styles: ``,
 })
 export class AnnouncementBarComponent {
   appDataStore = appDataStore;
+  // Signal to track visibility
+  @Output() dismiss = new EventEmitter<void>();
+
+  dismissBanner() {
+    this.dismiss.emit(); // Notify parent
+  }
 
   private customClassesSignal = signal<string>('');
 

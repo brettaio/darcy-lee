@@ -23,7 +23,7 @@ export function createBrandData(): BrandData {
   const linkedInMobileLink = `linkedin:something`;
   const youtubeMobileLink = `x:somthing`;
 
-  const ctaText = `Call Now`;
+  const ctaText = `Find Out More`;
   const ctaAltText = `Request A Quote`;
 
   const smsMessage = `Hi Enzo Concrete, I'd Love To Get In Touch & Request A Quote, Please Call Back, Thank You`;

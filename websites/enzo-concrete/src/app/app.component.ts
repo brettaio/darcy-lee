@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { appDataStore } from './store/app-data.store';
 
 @Component({
@@ -6,7 +6,8 @@ import { appDataStore } from './store/app-data.store';
   template: `
     <component-header />
     <component-announcement-bar
-      [customClasses]="appDataStore.homeData().announcementBarColour"
+      *ngIf="showBanner()"
+      (dismiss)="handleDismiss()"
     ></component-announcement-bar>
 
     <router-outlet />
@@ -17,4 +18,10 @@ import { appDataStore } from './store/app-data.store';
 })
 export class AppComponent {
   public appDataStore = appDataStore;
+  showBanner = signal(true);
+
+  handleDismiss() {
+    console.log('🛑 handleDismiss() called in AppComponent');
+    this.showBanner.set(false);
+  }
 }

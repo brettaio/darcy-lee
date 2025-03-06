@@ -8,8 +8,8 @@ export function createHomeData(brandData: BrandData): HomeData {
     navigationLink3: `FAQ`,
     navigationLink4: `Contact`,
 
-    announcementBarColour: `bg-slate-800 bg-gradient-to-b from-white-900/20 to-slate-700/100`,
-    announcementBarHook: `<h2><i>First Bookings For 2025 Open Now!</i></h2>`,
+    announcementBarTitle: `<h2>Welcome To ${brandData.companyName}</h2>`,
+    announcementBarHook: `<h2><i>Spring Bookings Open Now For 2025!</i></h2>`,
 
     heroH1: `<h1>${brandData.companyName}</h1>`,
     heroH2: `<h2> ${brandData.companyName} Are ${brandData.city}'s Finest In Concrete</h2>`,
