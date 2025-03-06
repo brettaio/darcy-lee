@@ -7,7 +7,7 @@ import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.componen
   selector: 'component-hero-enzo',
   imports: [CtaButtonComponent, CtaButtonAltComponent],
   template: `
-    <div class="bg-white h-screen">
+    <div class="bg-white">
       <main>
         <div class="relative isolate">
           <svg
