@@ -21,7 +21,7 @@ export function createServicesData(): ServicesData[] {
           <li><strong>Low Maintenance:</strong> Resists stains, cracks, and fading.</li>
           <li><strong>Cost-Effective:</strong> Achieve a high-end look affordably.</li>
         </ul>`,
-      applicationsHeading: `<h3>Ideal Applications Around the Home: </h3>`,
+      applicationsHeading: `<h3>Ideal Applications:</h3>`,
       houseApplications: [
         'Driveways',
         'Patios',
@@ -55,7 +55,7 @@ export function createServicesData(): ServicesData[] {
           <li><strong>Cost-Effective:</strong> A budget-friendly option without sacrificing durability.</li>
           <li><strong>Low Maintenance:</strong> Minimal upkeep required.</li>
         </ul>`,
-      applicationsHeading: `<h3>Ideal Applications Around the Home:</h3>`,
+      applicationsHeading: `<h3>Ideal Applications:</h3>`,
       houseApplications: [
         'Driveways',
         'Sidewalks',
@@ -95,7 +95,7 @@ export function createServicesData(): ServicesData[] {
           <li><strong>Durability:</strong> Withstands heavy traffic and weather conditions.</li>
           <li><strong>Low Maintenance:</strong> Easy to clean and long-lasting.</li>
         </ul>`,
-      applicationsHeading: ` <h3>Ideal Applications Around the Home:</h3>`,
+      applicationsHeading: ` <h3>Ideal Applications:</h3>`,
       houseApplications: [
         'Driveways',
         'Pool Decks',

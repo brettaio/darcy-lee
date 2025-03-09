@@ -16,117 +16,141 @@ import { CheckIcon } from '../../../../icon/src/lib/check/check.icon';
   template: `
     <section [id]="appDataStore.homeData().navigationLink1">
       <div class="overflow-hidden bg-white sm:py-12">
-        <div class="mx-auto max-w-7xl px-6 lg:px-8 ">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <ng-container *ngFor="let service of servicesData; let i = index">
+            <!-- OUTER RING (First Shadow Layer) -->
             <div
-              [id]="service.slug"
-              class="bg-slate-900/10 mx-auto grid max-w-2xl grid-cols-1 gap-x-8 my-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 ring-1 shadow-2xl ring-gray-900/10 rounded-[2rem] p-10"
+              class="m-10 grid grid-cols-1 rounded-[2rem] ring-1 shadow-[inset_0_0_2px_1px_#ffffff4d] ring-black/5 max-lg:mx-auto max-lg:w-full max-lg:max-w-md bg-slate-100"
             >
-              <!-- EVEN INDEX: Text left on desktop, image right on desktop -->
-              <ng-container *ngIf="i % 2 === 0; else oddLayout">
-                <!-- TEXT BLOCK: on mobile, text is order-1; on desktop, still order-1 -->
-                <div class="order-1 lg:order-1 lg:pt-4 lg:pr-8">
-                  <div class="lg:max-w-lg">
-                    <div
-                      class="mt-2 text-4xl text-center font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
-                      [innerHTML]="service.name"
-                    ></div>
-                    <div
-                      class="mt-6 text-lg/8 text-gray-600"
-                      [innerHTML]="service.shortDescription"
-                    ></div>
-                    <div
-                      class="mt-4"
-                      [innerHTML]="service.introductionParagraph"
-                    ></div>
-
-                    <!-- House Applications, if any -->
-                    <div *ngIf="service.houseApplications?.length" class="mt-4">
+              <!-- INNER PADDING + SECOND RING SHADOW -->
+              <div
+                class="grid grid-cols-1 rounded-[2rem] p-2 shadow-md shadow-black/5"
+              >
+                <!-- MAIN SERVICE CARD -->
+                <div
+                  class="rounded-3xl bg-slate-200/10 p-10 pb-9 ring-1 shadow-2xl ring-black/5"
+                >
+                  <div
+                    class="grid max-w-2xl grid-cols-1 gap-x-8 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 "
+                  >
+                    <!-- EVEN INDEX: Text left on desktop, image right -->
+                    <ng-container *ngIf="i % 2 === 0; else oddLayout">
+                      <!-- TEXT BLOCK -->
                       <div
-                        class="text-lg font-semibold text-gray-900 mb-2"
-                        [innerHTML]="service.applicationsHeading"
-                      ></div>
-                      <ul class="space-y-2">
-                        <li
-                          *ngFor="let app of service.houseApplications"
-                          class="relative pl-9"
-                        >
-                          <icon-check
-                            class="absolute top-1 left-1 size-5 text-indigo-600"
-                          ></icon-check>
-                          <span [innerHTML]="app"></span>
-                        </li>
-                      </ul>
-                    </div>
+                        class="order-1 lg:order-1 lg:pt-4 lg:pr-8  ring-4 shadow-2xl ring-white p-6 rounded-3xl"
+                      >
+                        <div class="lg:max-w-lg text-center lg:text-left">
+                          <div
+                            class="text-xl font-semibold tracking-tight text-slate-600 sm:text-4xl text-center"
+                            [innerHTML]="service.name"
+                          ></div>
+                          <div
+                            class="mt-6 text-slate-600 text-left text-md"
+                            [innerHTML]="service.shortDescription"
+                          ></div>
+                          <div
+                            class="mt-4 text-slate-600 text-justify text-lg"
+                            [innerHTML]="service.introductionParagraph"
+                          ></div>
+
+                          <!-- House Applications, if any -->
+                          <div
+                            *ngIf="service.houseApplications?.length"
+                            class="mt-4 text-slate-600"
+                          >
+                            <div
+                              class="text-sm font-semibold text-slate-600 mb-2 text-left"
+                              [innerHTML]="service.applicationsHeading"
+                            ></div>
+                            <ul class="space-y-2 text-left">
+                              <li
+                                *ngFor="let app of service.houseApplications"
+                                class="relative pl-9"
+                              >
+                                <icon-check
+                                  class="absolute top-1 left-1 size-5 text-slate-600"
+                                ></icon-check>
+                                <span [innerHTML]="app"></span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- IMAGE BLOCK -->
+                      <div
+                        class="order-2 lg:order-2 flex items-center justify-center"
+                      >
+                        <img
+                          [src]="service.featuredImage"
+                          [alt]="service.slug"
+                          class="w-full aspect-2/2 object-cover rounded-3xl shadow-2xl sm:mt-0 mt-10"
+                          width="512"
+                          height="512"
+                        />
+                      </div>
+                    </ng-container>
+
+                    <!-- ODD INDEX: Text right on desktop, image left -->
+                    <ng-template #oddLayout>
+                      <!-- TEXT BLOCK -->
+                      <div
+                        class="order-1 lg:order-1 lg:pt-4 lg:pr-8  ring-4 shadow-2xl ring-white p-6 rounded-3xl"
+                      >
+                        <div class="lg:max-w-lg text-center lg:text-left">
+                          <div
+                            class="text-xl font-semibold tracking-tight text-slate-600 sm:text-4xl text-center"
+                            [innerHTML]="service.name"
+                          ></div>
+                          <div
+                            class="mt-6 text-slate-600 text-left text-md"
+                            [innerHTML]="service.shortDescription"
+                          ></div>
+                          <div
+                            class="mt-4 text-slate-600 text-justify text-lg"
+                            [innerHTML]="service.introductionParagraph"
+                          ></div>
+
+                          <!-- House Applications, if any -->
+                          <div
+                            *ngIf="service.houseApplications?.length"
+                            class="mt-4 text-slate-600"
+                          >
+                            <div
+                              class="text-sm font-semibold text-slate-600 mb-2 text-left"
+                              [innerHTML]="service.applicationsHeading"
+                            ></div>
+                            <ul class="space-y-2 text-left">
+                              <li
+                                *ngFor="let app of service.houseApplications"
+                                class="relative pl-9"
+                              >
+                                <icon-check
+                                  class="absolute top-1 left-1 size-5 text-slate-600"
+                                ></icon-check>
+                                <span [innerHTML]="app"></span>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- IMAGE BLOCK -->
+                      <div
+                        class="order-2 lg:order-2 flex items-center justify-center"
+                      >
+                        <img
+                          [src]="service.featuredImage"
+                          [alt]="service.slug"
+                          class="w-full aspect-2/2 object-cover rounded-3xl shadow-2xl sm:mt-0 mt-10"
+                          width="512"
+                          height="512"
+                        />
+                      </div>
+                    </ng-template>
                   </div>
                 </div>
-
-                <!-- IMAGE BLOCK: on mobile, image is order-2; on desktop, still order-2 -->
-                <!-- "flex items-center" vertically centers the image if the row is taller than the image. -->
-                <div
-                  class="order-2 lg:order-2 flex items-center justify-center"
-                >
-                  <img
-                    [src]="service.featuredImage"
-                    [alt]="service.slug"
-                    class="w-full aspect-3/2 object-cover rounded-xl ring-1 shadow-xl ring-gray-400/10 mt-6"
-                    width="512"
-                    height="512"
-                  />
-                </div>
-              </ng-container>
-
-              <!-- ODD INDEX: Text right on desktop, image left on desktop -->
-              <ng-template #oddLayout>
-                <!-- TEXT BLOCK: on mobile, text is order-1; on desktop, text is order-2 -->
-                <div class="order-1 lg:order-2 lg:pt-4 lg:pl-4">
-                  <div class="lg:max-w-lg">
-                    <div
-                      class="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl"
-                      [innerHTML]="service.name"
-                    ></div>
-                    <div
-                      class="mt-6 text-lg/8 text-gray-600"
-                      [innerHTML]="service.shortDescription"
-                    ></div>
-                    <div
-                      class="mt-4"
-                      [innerHTML]="service.introductionParagraph"
-                    ></div>
-
-                    <div *ngIf="service.houseApplications?.length" class="mt-4">
-                      <div
-                        class="text-lg font-semibold text-gray-900 mb-2"
-                        [innerHTML]="service.applicationsHeading"
-                      ></div>
-                      <ul class="space-y-2">
-                        <li
-                          *ngFor="let app of service.houseApplications"
-                          class="relative pl-9"
-                        >
-                          <icon-check
-                            class="absolute top-1 left-1 size-5 text-indigo-600"
-                          ></icon-check>
-                          <span [innerHTML]="app"></span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- IMAGE BLOCK: on mobile, image is order-2; on desktop, image is order-1 -->
-                <div
-                  class="order-2 lg:order-1 flex items-center justify-center"
-                >
-                  <img
-                    [src]="service.featuredImage"
-                    [alt]="service.slug"
-                    class="w-full aspect-3/2 object-cover rounded-xl ring-1 shadow-xl ring-gray-400/10 mt-6"
-                    width="512"
-                    height="512"
-                  />
-                </div>
-              </ng-template>
+              </div>
             </div>
           </ng-container>
         </div>
