@@ -16,11 +16,11 @@ import { CheckIcon } from '../../../../icon/src/lib/check/check.icon';
   template: `
     <section [id]="appDataStore.homeData().navigationLink1">
       <div class="overflow-hidden bg-white sm:py-12">
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
+        <div class="mx-auto max-w-7xl px-6 lg:px-8 ">
           <ng-container *ngFor="let service of servicesData; let i = index">
             <div
               [id]="service.slug"
-              class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 my-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2"
+              class="bg-slate-900/10 mx-auto grid max-w-2xl grid-cols-1 gap-x-8 my-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 ring-1 shadow-2xl ring-gray-900/10 rounded-[2rem] p-10"
             >
               <!-- EVEN INDEX: Text left on desktop, image right on desktop -->
               <ng-container *ngIf="i % 2 === 0; else oddLayout">
