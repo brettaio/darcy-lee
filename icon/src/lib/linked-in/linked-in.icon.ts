@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/app-data.store';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'icon-linked-in',
@@ -8,7 +7,7 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 448 512"
-      [class]="appDataStore.brandData().footerIconSize"
+      [class]="size"
       fill="currentColor"
     >
       <path
@@ -19,5 +18,5 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
   styles: ``,
 })
 export class LinkedInIcon {
-  appDataStore = appDataStore;
+  @Input() size!: string;
 }

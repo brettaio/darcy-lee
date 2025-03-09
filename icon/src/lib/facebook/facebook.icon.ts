@@ -1,12 +1,11 @@
-import { Component } from '@angular/core';
-import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/app-data.store';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'icon-facebook',
   imports: [],
   template: `
     <svg
-      [class]="appDataStore.brandData().footerIconSize"
+      [class]="size"
       fill="currentColor"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"
@@ -19,5 +18,5 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
   styles: ``,
 })
 export class FacebookIcon {
-  appDataStore = appDataStore;
+  @Input() size!: string;
 }

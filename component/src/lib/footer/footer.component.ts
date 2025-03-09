@@ -45,15 +45,12 @@ import { YoutubeIcon } from '../../../../icon/src/lib/youtube/youtube.icon';
               [innerHTML]="appDataStore.homeData().navigationLink1"
             ></a>
           </li>
-
           <li>
             <a
               class="text-gray-800 transition hover:text-gray-800/50"
               [href]="'#' + appDataStore.homeData().navigationLink2"
               [innerHTML]="appDataStore.homeData().navigationLink2"
-            >
-              Careers
-            </a>
+            ></a>
           </li>
 
           <li>
@@ -61,9 +58,7 @@ import { YoutubeIcon } from '../../../../icon/src/lib/youtube/youtube.icon';
               class="text-gray-800 transition hover:text-gray-800/50"
               [href]="'#' + appDataStore.homeData().navigationLink3"
               [innerHTML]="appDataStore.homeData().navigationLink3"
-            >
-              History
-            </a>
+            ></a>
           </li>
 
           <li>
@@ -71,9 +66,7 @@ import { YoutubeIcon } from '../../../../icon/src/lib/youtube/youtube.icon';
               class="text-gray-800 transition hover:text-gray-800/50"
               [href]="'#' + appDataStore.homeData().navigationLink4"
               [innerHTML]="appDataStore.homeData().navigationLink4"
-            >
-              Services
-            </a>
+            ></a>
           </li>
         </ul>
 

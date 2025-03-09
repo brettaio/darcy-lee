@@ -16,6 +16,9 @@
       "logo": [
         "./dist/logo"
       ],
+      "overlay": [
+        "./dist/overlay"
+      ],
       "page": [
         "./dist/page"
       ],

@@ -20,3 +20,7 @@ export * from './lib/testimonial/testimonial.component';
 export * from './lib/value-proposition-one/value-proposition-one.component';
 export * from './lib/value-proposition-two/value-proposition-two.component';
 export * from './lib/value-proposition-three/value-proposition-three.component';
+
+export * from './lib/hero-brettaio/hero-brettaio.component';
+export * from './lib/problem-prop-brettaio/problem-prop-brettaio.component';
+export * from './lib/pricing-brettaio/pricing-brettaio.component';

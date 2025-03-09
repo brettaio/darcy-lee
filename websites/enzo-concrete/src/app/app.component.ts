@@ -21,7 +21,6 @@ export class AppComponent {
   showBanner = signal(true);
 
   handleDismiss() {
-    console.log('🛑 handleDismiss() called in AppComponent');
     this.showBanner.set(false);
   }
 }
