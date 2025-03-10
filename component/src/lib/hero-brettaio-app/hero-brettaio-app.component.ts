@@ -12,7 +12,7 @@ import { appDataStore } from '../../../../websites/brettaio/src/app/store/app-da
         <!-- Testimonial Row -->
         <div class="flex items-center space-x-4 mb-8">
           <!-- Avatar Group -->
-          <div class="flex -space-x-2">
+          <div class="flex -gap-2">
             <img
               src="/mugshot.svg"
               alt="User 1"
