@@ -3,6 +3,7 @@ export interface SiteData {
   navigationLinkTwo: string;
   navigationLinkThree: string;
   navigationLinkFour: string;
+
   heroPillQ: string;
   heroPillA: string;
   heroH1: string;

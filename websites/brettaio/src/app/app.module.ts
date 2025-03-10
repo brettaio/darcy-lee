@@ -12,11 +12,17 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeroBrettaioComponent } from '../../../../component/src/lib/hero-brettaio/hero-brettaio.component';
-import { HeaderBrettaioComponent } from '../../../../component/src/lib/header-brettaio/header-brettaio.component';
-import { FooterBrettaioComponent } from '../../../../component/src/lib/footer-brettaio/footer-brettaio.component';
-import { ProblemPropBrettaioComponent } from '../../../../component/src/lib/problem-prop-brettaio/problem-prop-brettaio.component';
-import { PricingBrettaioComponent } from '../../../../component/src/lib/pricing-brettaio/pricing-brettaio.component';
+import {
+  HeroBrettaioComponent,
+  HeaderBrettioAppComponent,
+  FooterBrettaioComponent,
+  ProblemPropBrettaioComponent,
+  PricingBrettaioComponent,
+  HeroBrettaioAppComponent,
+  TestimonialHeroComponent,
+} from '../../../../component/src/components';
+import { LogoMarqueeComponent } from '../../../../component/src/lib/logo-marquee/logo-marquee.component';
+import { UnderConstructionComponent } from '../../../../component/src/lib/under-construction/under-construction.component';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,10 +30,14 @@ import { PricingBrettaioComponent } from '../../../../component/src/lib/pricing-
     BrowserModule,
     AppRoutingModule,
     HeroBrettaioComponent,
-    HeaderBrettaioComponent,
+    HeaderBrettioAppComponent,
     FooterBrettaioComponent,
     ProblemPropBrettaioComponent,
     PricingBrettaioComponent,
+    TestimonialHeroComponent,
+    HeroBrettaioAppComponent,
+    LogoMarqueeComponent,
+    UnderConstructionComponent,
   ],
   providers: [
     provideExperimentalZonelessChangeDetection(),

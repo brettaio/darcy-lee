@@ -3,10 +3,10 @@ import { BrandData } from '../model/brand-data.model';
 
 export function createSiteData(brandData: BrandData): SiteData {
   return {
-    navigationLinkOne: `Solutions`,
-    navigationLinkTwo: `Pricing`,
-    navigationLinkThree: `Success Stories`,
-    navigationLinkFour: `Contact`,
+    navigationLinkOne: `How We Do It`,
+    navigationLinkTwo: `Case Studies`,
+    navigationLinkThree: `FAQ`,
+    navigationLinkFour: ``,
 
     heroPillQ: `Latest Builds`,
     heroPillA: `@angular 19.1.7`,

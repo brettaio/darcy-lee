@@ -19,4 +19,5 @@ export interface BrandData {
   youtubeDesktopLink: string;
   youtubeMobileLink: string;
   footerIconSize: string;
+  starIconSize: string;
 }

@@ -24,3 +24,8 @@ export * from './lib/value-proposition-three/value-proposition-three.component';
 export * from './lib/hero-brettaio/hero-brettaio.component';
 export * from './lib/problem-prop-brettaio/problem-prop-brettaio.component';
 export * from './lib/pricing-brettaio/pricing-brettaio.component';
+export * from './lib/header-brettio-app/header-brettio-app.component';
+export * from './lib/header-brettaio/header-brettaio.component';
+export * from './lib/footer-brettaio/footer-brettaio.component';
+export * from './lib/hero-brettaio-app/hero-brettaio-app.component';
+export * from './lib/testimonial-hero/testimonial-hero.component';

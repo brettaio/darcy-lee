@@ -4,6 +4,7 @@ workspace:
 websites/applications: 
 	ng generate application enzo-concrete --experimental-zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css 
 	ng generate application brettaio --experimental-zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css 
+	ng generate application ppdon --experimental-zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css 
 
 libs:	
 	ng generate library component --entry-file=components --project-root=component
@@ -22,9 +23,14 @@ component library:
 	ng generate component hero --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component hero-enzo --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component	
 	ng generate component hero-brettaio --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component hero-brettaio-app --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component cta --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	
 	ng generate component faq --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	
 	ng generate component testimonial --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component testimonial-hero --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	
 	ng generate component map --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component gallery --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component cta-button --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
@@ -42,6 +48,7 @@ component library:
 	ng generate component pricing-brettaio --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component faq-brettio --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component form-brettio --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component header-brettio-app --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	
 	
 page library:
@@ -80,6 +87,7 @@ icon library:
 	ng generate component chevron-left --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
 	ng generate component burger --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
 	ng generate component xmark --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
+	ng generate component star --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
 	
 logo library
 	ng generate component enzo-concrete --inline-style=true --inline-template=true --prefix=logo --project=logo --skip-tests=true --standalone=true --style=css --type=logo
@@ -89,6 +97,9 @@ animation library
 	ng generate component slide-in --inline-style=true --inline-template=true --prefix=animation --project=animation --skip-tests=true --standalone=true --style=css --type=animation
 	ng generate component slide-out --inline-style=true --inline-template=true --prefix=animation --project=animation --skip-tests=true --standalone=true --style=css --type=animation
 	ng generate component animate-on-scroll --inline-style=true --inline-template=true --prefix=animation --project=animation --skip-tests=true --standalone=true --style=css --type=animation
+	ng generate component scale-in --inline-style=true --inline-template=true --prefix=animation --project=animation --skip-tests=true --standalone=true --style=css --type=animation
+	ng generate component flip --inline-style=true --inline-template=true --prefix=animation --project=animation --skip-tests=true --standalone=true --style=css --type=animation
+	ng generate component pop-bounce --inline-style=true --inline-template=true --prefix=animation --project=animation --skip-tests=true --standalone=true --style=css --type=animation
 	
 overlay library
 	ng generate component grid --inline-style=true --inline-template=true --prefix=overlay --project=overlay --skip-tests=true --standalone=true --style=css --type=overlay

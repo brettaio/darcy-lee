@@ -24,6 +24,7 @@ export function createBrandData(): BrandData {
   const youtubeMobileLink = `x:somthing`;
 
   const footerIconSize = `size-8`;
+  const starIconSize = `size-4`;
 
   return {
     businessName,
@@ -47,5 +48,6 @@ export function createBrandData(): BrandData {
     youtubeDesktopLink,
     youtubeMobileLink,
     footerIconSize,
+    starIconSize,
   };
 }
