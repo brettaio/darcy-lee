@@ -12,7 +12,7 @@ import { CommonModule } from '@angular/common';
     <header class="fixed top-0 left-0 w-full bg-black p-4 z-50">
       <div class="flex items-center justify-between lg:justify-center lg:px-8">
         <!-- Logo & Title -->
-        <div class="flex items-center space-x-3">
+        <div class="flex items-center gap-6">
           <img
             [src]="appDataStore.brandData().logoSrc"
             alt="Bretta Etc Logo"

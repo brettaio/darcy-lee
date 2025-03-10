@@ -12,31 +12,31 @@ import { appDataStore } from '../../../../websites/brettaio/src/app/store/app-da
         <!-- Testimonial Row -->
         <div class="flex items-center space-x-4 mb-8">
           <!-- Avatar Group -->
-          <div class="flex -gap-2">
+          <div class="flex">
             <img
               src="/mugshot.svg"
               alt="User 1"
-              class="w-10 h-10 rounded-full border-2 border-black"
+              class="w-10 h-10 rounded-full"
             />
             <img
               src="/mugshot.svg"
               alt="User 2"
-              class="w-10 h-10 rounded-full border-2 border-black"
+              class="w-10 h-10 rounded-full -ml-4"
             />
             <img
               src="/mugshot.svg"
               alt="User 3"
-              class="w-10 h-10 rounded-full border-2 border-black"
+              class="w-10 h-10 rounded-full -ml-4"
             />
             <img
               src="/mugshot.svg"
               alt="User 4"
-              class="w-10 h-10 rounded-full border-2 border-black"
+              class="w-10 h-10 rounded-full -ml-4"
             />
             <img
               src="/mugshot.svg"
               alt="User 5"
-              class="w-10 h-10 rounded-full border-2 border-black"
+              class="w-10 h-10 rounded-full -ml-4"
             />
           </div>
 
