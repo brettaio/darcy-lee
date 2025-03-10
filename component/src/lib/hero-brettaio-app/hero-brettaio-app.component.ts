@@ -60,9 +60,7 @@ import { appDataStore } from '../../../../websites/brettaio/src/app/store/app-da
               ></icon-star>
             </div>
             <p class="text-white text-sm font-medium mt-1">
-              A handful of small business owners love
-              <br />
-              Bretta Etc
+              A handful of small business owners love Bretta Etc
             </p>
           </div>
         </div>
