@@ -8,4 +8,4 @@ Disallow: /cart/
 Disallow: /checkout/
 Allow: /
 
-Sitemap: https://www.enzoconcrete.com/sitemap.xml
+Sitemap: https://www.bretta.io/sitemap.xml
