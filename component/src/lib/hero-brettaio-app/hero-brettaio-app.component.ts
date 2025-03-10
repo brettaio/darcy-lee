@@ -111,7 +111,7 @@ import { appDataStore } from '../../../../websites/brettaio/src/app/store/app-da
           </div>
         </div>
 
-        <div class="mt-10 flex justify-center space-x-4 w-full">
+        <div class="mt-10 flex justify-center gap-10 w-full">
           <!-- First Link -->
           <a
             href="tel:+61423905238"
