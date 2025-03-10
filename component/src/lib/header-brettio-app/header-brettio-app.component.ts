@@ -27,11 +27,11 @@ import { CommonModule } from '@angular/common';
         <button class="lg:hidden text-white text-2xl" (click)="toggleMenu()">
           <ng-container *ngIf="isMenuOpen; else burgerIcon">
             <span class="sr-only">Close main menu</span>
-            <icon-xmark />
+            <icon-xmark aria-label="close main menu" />
           </ng-container>
           <ng-template #burgerIcon>
             <span class="sr-only">Open main menu</span>
-            <icon-burger />
+            <icon-burger aria-label="Open main menu" />
           </ng-template>
         </button>
       </div>
