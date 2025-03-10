@@ -26,9 +26,11 @@ import { CommonModule } from '@angular/common';
         <!-- Mobile Burger Icon -->
         <button class="lg:hidden text-white text-2xl" (click)="toggleMenu()">
           <ng-container *ngIf="isMenuOpen; else burgerIcon">
+            <span class="sr-only">Close main menu</span>
             <icon-xmark />
           </ng-container>
           <ng-template #burgerIcon>
+            <span class="sr-only">Open main menu</span>
             <icon-burger />
           </ng-template>
         </button>
