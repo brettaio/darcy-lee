@@ -18,9 +18,9 @@ import { RouterModule } from '@angular/router';
     RouterModule,
   ],
   template: `
-    <header class="bg-gray-900">
+    <header class="fixed top-0 left-0 w-full bg-gray-900 p-4 z-50">
       <nav
-        class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
+        class="mx-auto flex max-w-7xl items-center justify-between lg:px-8"
         aria-label="Global"
       >
         <div class="flex lg:flex-1">

@@ -1,12 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { appDataStore } from '../../../../websites/brettaio/src/app/store/app-data.store';
 import { GridOverlay } from '../../../../overlay/src/lib/grid/grid.overlay';
 import { GradientSmudgeOverlay } from '../../../../overlay/src/lib/gradient-smudge/gradient-smudge.overlay';
 import { ChevronRightIcon } from '../../../../icon/src/lib/chevron-right/chevron-right.icon';
-
+import {
+  flipAnimation,
+  popBounceAnimation,
+  scaleInAnimation,
+} from '../../../../animation/src/animation';
 @Component({
   selector: 'component-hero-brettaio',
   imports: [GridOverlay, GradientSmudgeOverlay, ChevronRightIcon],
+  animations: [scaleInAnimation, flipAnimation, popBounceAnimation],
   template: `
     <div class="relative isolate overflow-hidden bg-gray-900">
       <overlay-grid />
@@ -31,9 +36,13 @@ import { ChevronRightIcon } from '../../../../icon/src/lib/chevron-right/chevron
           </div>
           <div
             class="mt-10 text-5xl font-semibold tracking-tight text-pretty text-white sm:text-7xl"
+            #cardElement
+            [@flipState]="flipState"
             [innerHTML]="appDataStore.brandData().businessName"
           ></div>
           <p
+            #textElement
+            [@popBounce]="popState"
             class="mt-8 text-lg font-medium text-pretty text-gray-400 sm:text-xl/8"
             [innerHTML]="appDataStore.siteData().heroSubParagraph"
           ></p>
@@ -56,6 +65,8 @@ import { ChevronRightIcon } from '../../../../icon/src/lib/chevron-right/chevron
           <div class="max-w-3xl flex-none sm:max-w-5xl lg:max-w-none">
             <img
               src="/enzoconcrete-ss-hero.webp"
+              #imageElement
+              [@scaleIn]="scaleState"
               alt="App screenshot"
               width="2432"
               height="1442"
@@ -70,4 +81,40 @@ import { ChevronRightIcon } from '../../../../icon/src/lib/chevron-right/chevron
 })
 export class HeroBrettaioComponent {
   appDataStore = appDataStore;
+  @ViewChild('imageElement', { static: false }) imageElement!: ElementRef;
+  @ViewChild('cardElement', { static: false }) cardElement!: ElementRef;
+  @ViewChild('textElement', { static: false }) textElement!: ElementRef;
+
+  scaleState: 'default' | 'visible' = 'default';
+  flipState: 'default' | 'visible' = 'default';
+  popState: 'default' | 'visible' = 'default';
+
+  @HostListener('window:scroll', [])
+  onScroll() {
+    const windowHeight = window.innerHeight;
+
+    if (this.imageElement) {
+      const rect = this.imageElement.nativeElement.getBoundingClientRect();
+      this.scaleState =
+        rect.top < windowHeight * 0.75 && rect.bottom > 0
+          ? 'visible'
+          : 'default';
+    }
+
+    if (this.cardElement) {
+      const rect = this.cardElement.nativeElement.getBoundingClientRect();
+      this.flipState =
+        rect.top < windowHeight * 0.75 && rect.bottom > 0
+          ? 'visible'
+          : 'default';
+    }
+
+    if (this.textElement) {
+      const rect = this.textElement.nativeElement.getBoundingClientRect();
+      this.popState =
+        rect.top < windowHeight * 0.75 && rect.bottom > 0
+          ? 'visible'
+          : 'default';
+    }
+  }
 }

@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { appDataStore } from '../../../../websites/brettaio/src/app/store/app-data.store';
 import { GuageHighIcon } from '../../../../icon/src/lib/guage-high/guage-high.icon';
 import { MagnifyDollarSignIcon } from '../../../../icon/src/lib/magnify-dollar-sign/magnify-dollar-sign.icon';
 import { HeadsetIcon } from '../../../../icon/src/lib/headset/headset.icon';
+import { flipAnimation } from '../../../../animation/src/animation';
 
 @Component({
   selector: 'component-problem-prop-brettaio',
   standalone: true,
+  animations: [flipAnimation],
   template: `
     <div class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32">
       <!-- Background image (behind everything) -->
@@ -71,7 +73,9 @@ import { HeadsetIcon } from '../../../../icon/src/lib/headset/headset.icon';
                  sm:mt-20 lg:mx-0 lg:max-w-none lg:grid-cols-3 lg:gap-8"
         >
           <div
-            class="flex gap-x-4 rounded-xl bg-white/5 p-6 ring-1 ring-white/10 ring-inset"
+            #cardElement
+            [@flipState]="flipState"
+            class="flex gap-x-4 rounded-xl bg-white/5 p-6 ring-1 ring-white/10 ring-inset "
           >
             <icon-guage-high />
             <div class="text-base/7">
@@ -86,6 +90,8 @@ import { HeadsetIcon } from '../../../../icon/src/lib/headset/headset.icon';
             </div>
           </div>
           <div
+            #cardElement
+            [@flipState]="flipState"
             class="flex gap-x-4 rounded-xl bg-white/5 p-6 ring-1 ring-white/10 ring-inset"
           >
             <icon-magnify-dollar-sign />
@@ -101,6 +107,8 @@ import { HeadsetIcon } from '../../../../icon/src/lib/headset/headset.icon';
             </div>
           </div>
           <div
+            #cardElement
+            [@flipState]="flipState"
             class="flex gap-x-4 rounded-xl bg-white/5 p-6 ring-1 ring-white/10 ring-inset"
           >
             <icon-headset />
@@ -124,4 +132,22 @@ import { HeadsetIcon } from '../../../../icon/src/lib/headset/headset.icon';
 })
 export class ProblemPropBrettaioComponent {
   appDataStore = appDataStore;
+  @ViewChild('cardElement', { static: false }) cardElement!: ElementRef;
+  flipState: 'default' | 'visible' = 'default';
+
+  @HostListener('window:scroll', [])
+  onScroll() {
+    if (!this.cardElement) return;
+
+    const rect = this.cardElement.nativeElement.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if (rect.top < windowHeight * 0.75 && rect.bottom > 0) {
+      // Card is in view, trigger animation
+      this.flipState = 'visible';
+    } else {
+      // Card is out of view, reset animation
+      this.flipState = 'default';
+    }
+  }
 }

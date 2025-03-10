@@ -7,6 +7,8 @@ import {
   provideClientHydration,
   withEventReplay,
 } from '@angular/platform-browser';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -30,6 +32,8 @@ import { PricingBrettaioComponent } from '../../../../component/src/lib/pricing-
   providers: [
     provideExperimentalZonelessChangeDetection(),
     provideClientHydration(withEventReplay()),
+    provideAnimationsAsync(),
+    provideAnimations(),
   ],
   bootstrap: [AppComponent],
 })

@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { popBounceAnimation } from '../../../../animation/src/animation';
 
 @Component({
   selector: 'component-pricing-brettaio',
   imports: [],
+  animations: [popBounceAnimation],
   template: `
     <div class="isolate overflow-hidden bg-gray-900">
       <div
@@ -11,6 +13,8 @@ import { Component } from '@angular/core';
         <div class="mx-auto max-w-4xl">
           <h2 class="text-base/7 font-semibold text-indigo-400">Pricing</h2>
           <p
+            #textElement
+            [@popBounce]="popState"
             class="mt-2 text-5xl font-semibold tracking-tight text-balance text-white sm:text-6xl"
           >
             Choose the right plan for you
@@ -299,4 +303,21 @@ import { Component } from '@angular/core';
   `,
   styles: ``,
 })
-export class PricingBrettaioComponent {}
+export class PricingBrettaioComponent {
+  @ViewChild('textElement', { static: false }) textElement!: ElementRef;
+  popState: 'default' | 'visible' = 'default';
+
+  @HostListener('window:scroll', [])
+  onScroll() {
+    if (!this.textElement) return;
+
+    const rect = this.textElement.nativeElement.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
+
+    if (rect.top < windowHeight * 0.75 && rect.bottom > 0) {
+      this.popState = 'visible'; // Activate animation when in view
+    } else {
+      this.popState = 'default'; // Reset animation when out of view
+    }
+  }
+}
