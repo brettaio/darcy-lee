@@ -11,17 +11,9 @@ export function createBrandData(): BrandData {
   const email = 'info@enzoconcrete.com';
   const phoneNumber = '+1(519)630-1975';
 
-  const facebookDesktopLink = `https://facebook.com`;
-  const instagramDesktopLink = `https://instagram.com`;
-  const xDesktopLink = `https://x.com`;
-  const linkedInDesktopLink = `https://linkedin.com`;
-  const youtubeDesktopLink = `https://youtube.com`;
-
-  const facebookMobileLink = `facebook:something`;
-  const instagramMobileLink = `instagram:somthing`;
-  const xMobileLink = `x:somthing`;
-  const linkedInMobileLink = `linkedin:something`;
-  const youtubeMobileLink = `x:somthing`;
+  const googleDesktopLink = `https://g.co/kgs/BMcb3aq`;
+  const googleMobileLink = `https://g.co/kgs/BMcb3aq`;
+  const emailLink = `mailto:info@enzoconcrete.com?subject=Request%20Quote&body=Hi%20Enzo%20Concrete,%0A%0AI%20would%20like%20to%20get%20a%20quote,%20thanks.`;
 
   const ctaText = `Find Out More`;
   const ctaAltText = `Request A Quote`;
@@ -55,16 +47,9 @@ export function createBrandData(): BrandData {
     postcode,
     email,
     phoneNumber,
-    facebookDesktopLink,
-    facebookMobileLink,
-    instagramDesktopLink,
-    instagramMobileLink,
-    xDesktopLink,
-    xMobileLink,
-    linkedInDesktopLink,
-    linkedInMobileLink,
-    youtubeDesktopLink,
-    youtubeMobileLink,
+    googleDesktopLink,
+    googleMobileLink,
+    emailLink,
     testimonialStarSize,
     footerIconSize,
     postalAddress: `${address}, ${city}, ${province}, ${postcode}`,

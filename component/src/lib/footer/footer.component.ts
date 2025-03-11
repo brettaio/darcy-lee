@@ -1,22 +1,12 @@
 import { Component } from '@angular/core';
 import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/app-data.store';
 import { SqaureLogo } from '../../../../logo/src/logo';
-import { FacebookIcon } from '../../../../icon/src/lib/facebook/facebook.icon';
-import { InstagramIcon } from '../../../../icon/src/lib/instagram/instagram.icon';
-import { XIcon } from '../../../../icon/src/lib/x/x.icon';
-import { LinkedInIcon } from '../../../../icon/src/lib/linked-in/linked-in.icon';
-import { YoutubeIcon } from '../../../../icon/src/lib/youtube/youtube.icon';
+import { GoogleIcon } from '../../../../icon/src/lib/google/google.icon';
+import { EnvelopeIcon } from '../../../../icon/src/lib/envelope/envelope.icon';
 
 @Component({
   selector: 'component-footer',
-  imports: [
-    SqaureLogo,
-    FacebookIcon,
-    InstagramIcon,
-    XIcon,
-    LinkedInIcon,
-    YoutubeIcon,
-  ],
+  imports: [SqaureLogo, GoogleIcon, EnvelopeIcon],
   template: `
     <footer class="bg-slate-200">
       <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
@@ -74,120 +64,47 @@ import { YoutubeIcon } from '../../../../icon/src/lib/youtube/youtube.icon';
           <li>
             <!-- Mobile Link -->
             <a
-              [href]="appDataStore.brandData().facebookMobileLink"
+              [href]="appDataStore.brandData().googleMobileLink"
               rel="noreferrer"
               target="_blank"
               class="xs:block md:hidden text-gray-700 transition hover:text-gray-700/75"
             >
-              <span class="sr-only">Facebook Mobile Icon</span>
-              <icon-facebook />
+              <span class="sr-only">Google Link On Mobile</span>
+              <icon-google [size]="appDataStore.brandData().footerIconSize" />
             </a>
 
             <!-- Desktop Link -->
             <a
-              [href]="appDataStore.brandData().facebookDesktopLink"
+              [href]="appDataStore.brandData().googleDesktopLink"
               rel="noreferrer"
               target="_blank"
               class="hidden md:block text-gray-700 transition hover:text-gray-700/75"
             >
-              <span class="sr-only">Facebook Desktop Icon</span>
-              <icon-facebook />
+              <span class="sr-only">Google Link On Desktop</span>
+              <icon-google [size]="appDataStore.brandData().footerIconSize" />
             </a>
           </li>
 
           <li>
             <!-- Mobile Link -->
             <a
-              [href]="appDataStore.brandData().instagramMobileLink"
-              rel="noreferrer"
+              [href]="appDataStore.brandData().emailLink"
               target="_blank"
               class="xs:block md:hidden text-gray-700 transition hover:text-gray-700/75"
             >
-              <span class="sr-only">Instagram Mobile Icon</span>
-              <icon-instagram />
+              <span class="sr-only">Email Link On Mobile</span>
+              <icon-envelope [size]="appDataStore.brandData().footerIconSize" />
             </a>
 
             <!-- Desktop Link -->
             <a
-              [href]="appDataStore.brandData().instagramDesktopLink"
+              [href]="appDataStore.brandData().emailLink"
               rel="noreferrer"
               target="_blank"
               class="hidden md:block text-gray-700 transition hover:text-gray-700/75"
             >
-              <span class="sr-only">Instagram Desktop Icon</span>
-              <icon-instagram />
-            </a>
-          </li>
-
-          <li>
-            <!-- Mobile Link -->
-            <a
-              [href]="appDataStore.brandData().xMobileLink"
-              rel="noreferrer"
-              target="_blank"
-              class="xs:block md:hidden text-gray-700 transition hover:text-gray-700/75"
-            >
-              <span class="sr-only">X Mobile Icon</span>
-              <icon-x />
-            </a>
-
-            <!-- Desktop Link -->
-            <a
-              [href]="appDataStore.brandData().xDesktopLink"
-              rel="noreferrer"
-              target="_blank"
-              class="hidden md:block text-gray-700 transition hover:text-gray-700/75"
-            >
-              <span class="sr-only">X Desktop Icon</span>
-              <icon-x />
-            </a>
-          </li>
-
-          <li>
-            <!-- Mobile Link -->
-            <a
-              [href]="appDataStore.brandData().linkedInMobileLink"
-              rel="noreferrer"
-              target="_blank"
-              class="xs:block md:hidden text-gray-700 transition hover:text-gray-700/75"
-            >
-              <span class="sr-only">Linked In Mobile Icon</span>
-              <icon-linked-in />
-            </a>
-
-            <!-- Desktop Link -->
-            <a
-              [href]="appDataStore.brandData().linkedInDesktopLink"
-              rel="noreferrer"
-              target="_blank"
-              class="hidden md:block text-gray-700 transition hover:text-gray-700/75"
-            >
-              <span class="sr-only">Linked In Desktop Icon</span>
-              <icon-linked-in />
-            </a>
-          </li>
-
-          <li>
-            <!-- Mobile Link -->
-            <a
-              [href]="appDataStore.brandData().youtubeMobileLink"
-              rel="noreferrer"
-              target="_blank"
-              class="xs:block md:hidden text-gray-700 transition hover:text-gray-700/75"
-            >
-              <span class="sr-only">Youtube Mobile Icon</span>
-              <icon-youtube />
-            </a>
-
-            <!-- Desktop Link -->
-            <a
-              [href]="appDataStore.brandData().youtubeDesktopLink"
-              rel="noreferrer"
-              target="_blank"
-              class="hidden md:block text-gray-700 transition hover:text-gray-700/75"
-            >
-              <span class="sr-only">Youtube Desktop Icon</span>
-              <icon-youtube />
+              <span class="sr-only">Email Link On Desktop</span>
+              <icon-envelope [size]="appDataStore.brandData().footerIconSize" />
             </a>
           </li>
         </ul>

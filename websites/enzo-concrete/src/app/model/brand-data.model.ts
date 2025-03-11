@@ -8,16 +8,9 @@ export interface BrandData {
   email: string;
   phoneNumber: string;
 
-  facebookDesktopLink: string;
-  facebookMobileLink: string;
-  instagramDesktopLink: string;
-  instagramMobileLink: string;
-  xDesktopLink: string;
-  xMobileLink: string;
-  linkedInDesktopLink: string;
-  linkedInMobileLink: string;
-  youtubeDesktopLink: string;
-  youtubeMobileLink: string;
+  googleDesktopLink: string;
+  googleMobileLink: string;
+  emailLink: string;
 
   testimonialStarSize: string;
 

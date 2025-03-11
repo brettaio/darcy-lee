@@ -1,6 +1,8 @@
 /*
  * Public API Surface of component
  */
+
+export * from './lib/announcement-bar/announcement-bar.component';
 export * from './lib/cta/cta.component';
 export * from './lib/cta-button/cta-button.component';
 export * from './lib/cta-button-alt/cta-button-alt.component';
@@ -21,6 +23,7 @@ export * from './lib/value-proposition-one/value-proposition-one.component';
 export * from './lib/value-proposition-two/value-proposition-two.component';
 export * from './lib/value-proposition-three/value-proposition-three.component';
 
+//brettaio Components
 export * from './lib/hero-brettaio/hero-brettaio.component';
 export * from './lib/problem-prop-brettaio/problem-prop-brettaio.component';
 export * from './lib/pricing-brettaio/pricing-brettaio.component';
