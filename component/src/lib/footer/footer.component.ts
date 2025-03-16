@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/app-data.store';
 import { SqaureLogo } from '../../../../logo/src/logo';
 import { GoogleIcon } from '../../../../icon/src/lib/google/google.icon';
@@ -7,6 +7,7 @@ import { EnvelopeIcon } from '../../../../icon/src/lib/envelope/envelope.icon';
 @Component({
   selector: 'component-footer',
   imports: [SqaureLogo, GoogleIcon, EnvelopeIcon],
+  encapsulation: ViewEncapsulation.None,
   template: `
     <footer class="bg-slate-200">
       <div class="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
@@ -127,5 +128,38 @@ import { EnvelopeIcon } from '../../../../icon/src/lib/envelope/envelope.icon';
   styles: ``,
 })
 export class FooterComponent {
-  appDataStore = appDataStore;
+  appDataStore: any;
+
+  constructor() {
+    if (typeof appDataStore !== 'undefined') {
+      this.appDataStore = appDataStore;
+    } else {
+      console.warn('⚠️ appDataStore not found! Using fallback data.');
+      this.appDataStore = {
+        brandData: () => ({
+          logoSrc: '/enzo-logo-square-200.webp',
+          logoAlt: 'Default Logo',
+          footerIconSize: 'text-lg',
+          footerLogoSize: 'h-12',
+          footerLogoPadding: 'p-2',
+          footerLogoRounding: 'rounded-md',
+          footerTag: 'Default Tagline',
+          footerCopyright: '© 2024 Default Company',
+          emailLink: 'mailto:default@example.com',
+          googleMobileLink: 'https://google.com',
+          googleDesktopLink: 'https://google.com/maps',
+        }),
+        homeData: () => ({
+          navigationLink1: 'home',
+          navigationLink2: 'about',
+          navigationLink3: 'services',
+          navigationLink4: 'contact',
+        }),
+      };
+    }
+    console.log(
+      '🔍 FooterComponent Loaded with Data:',
+      this.appDataStore.brandData(),
+    );
+  }
 }

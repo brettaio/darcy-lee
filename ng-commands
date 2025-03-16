@@ -5,6 +5,7 @@ websites/applications:
 	ng generate application enzo-concrete --experimental-zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css 
 	ng generate application brettaio --experimental-zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css 
 	ng generate application ppdon --experimental-zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css 
+	ng generate application bretta-product-viewer --experimental-zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css
 
 libs:	
 	ng generate library component --entry-file=components --project-root=component
@@ -36,6 +37,10 @@ component library:
 	ng generate component value-proposition-one --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component value-proposition-two --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component value-proposition-three --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component announcement-bar --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	
+	bretta-product-viewer --
+	ng generate component resizeable-window --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component announcement-bar --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 
 	Enzo Concrete --

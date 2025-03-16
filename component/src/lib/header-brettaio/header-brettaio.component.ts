@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BrettaioSquareLogo } from '../../../../logo/src/lib/brettaio-square/brettaio-square.logo';
 import { appDataStore } from '../../../../websites/brettaio/src/app/store/app-data.store';
@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
   selector: 'component-header-brettaio',
   // If using standalone components, add CommonModule here
   standalone: true,
+  encapsulation: ViewEncapsulation.None,
   imports: [
     CommonModule,
     BrettaioSquareLogo,

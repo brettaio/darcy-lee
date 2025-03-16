@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CtaButtonComponent } from '../cta-button/cta-button.component';
 import { SqaureLogo } from '../../../../logo/src/logo';
@@ -85,6 +85,7 @@ import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/a
     </header>
   `,
   styles: [],
+  encapsulation: ViewEncapsulation.None,
 })
 export class HeaderComponent {
   appDataStore = appDataStore;

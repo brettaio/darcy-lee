@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
       <component-header-brettio-app />
       <component-hero-brettaio-app />
       <component-logo-marquee />
+      <component-three-js-hero-stars />
       <component-under-construction />
     </div>
   `,
