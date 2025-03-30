@@ -1,4 +1,10 @@
 [build]
-  command = "ng serve brettaio"
+  # This command runs during production deploys
+  command = "ng build brettaio --configuration production"
   publish = "dist/brettaio/browser"
   functions = "websites/brettaio/netlify/functions"
+
+[dev]
+  # This command runs when you use 'netlify dev'
+  command = "ng serve --project=brettaio"
+  targetPort = 4200
