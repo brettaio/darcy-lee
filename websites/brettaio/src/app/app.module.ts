@@ -23,7 +23,7 @@ import {
   LogoMarqueeComponent,
   UnderConstructionComponent,
 } from '../../../../component/src/components';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -45,7 +45,7 @@ import { provideHttpClient } from '@angular/common/http';
     provideClientHydration(withEventReplay()),
     provideAnimationsAsync(),
     provideAnimations(),
-    provideHttpClient(),
+    provideHttpClient(withFetch()),
   ],
   bootstrap: [AppComponent],
 })

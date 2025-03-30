@@ -77,14 +77,7 @@ import {
 export class LogoMarqueeComponent implements AfterViewInit {
   @ViewChild('scrollContent', { static: false }) scrollContent!: ElementRef;
 
-  logos = [
-    '/b-logo1.svg',
-    '/b-logo2.svg',
-    '/b-logo3.svg',
-    '/b-logo4.svg',
-    '/b-logo5.svg',
-    '/b-logo6.svg',
-  ];
+  logos = ['/tailwind.png', '/angular.png', '/netlify.png', '/stripe.png'];
 
   constructor(private ngZone: NgZone) {}
 

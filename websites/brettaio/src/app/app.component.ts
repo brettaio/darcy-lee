@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
       <component-hero-brettaio-app />
       <component-logo-marquee />
       <component-pricing-brettaio />
-      <component-under-construction />
+      <!-- <component-under-construction /> -->
     </div>
   `,
   standalone: false,
