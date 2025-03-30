@@ -1,9 +1,11 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { popBounceAnimation } from '../../../../animation/src/animation';
+import { HttpClient } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'component-pricing-brettaio',
-  imports: [],
+  imports: [CommonModule],
   animations: [popBounceAnimation],
   template: `
     <div class="isolate overflow-hidden bg-gray-900">
@@ -150,11 +152,16 @@ import { popBounceAnimation } from '../../../../animation/src/animation';
                 </div>
                 <a
                   href="#"
+                  (click)="pay($event)"
                   aria-describedby="tier-hobby"
                   class="mt-8 block rounded-md bg-indigo-600 px-3.5 py-2 text-center text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Get started today
                 </a>
+                <div *ngIf="paymentResponse">
+                  <h3>Payment Response:</h3>
+                  <pre>{{ paymentResponse | json }}</pre>
+                </div>
               </div>
               <div
                 class="flex flex-col justify-between rounded-3xl bg-white p-8 ring-1 shadow-xl ring-gray-900/10 sm:p-10"
@@ -319,5 +326,30 @@ export class PricingBrettaioComponent {
     } else {
       this.popState = 'default'; // Reset animation when out of view
     }
+  }
+
+  paymentResponse: any;
+
+  constructor(private http: HttpClient) {}
+
+  pay(event: Event) {
+    event.preventDefault();
+
+    const paymentData = {
+      amount: 10000,
+      currency: 'usd',
+      source: 'tok_visa',
+    };
+
+    this.http.post('/.netlify/functions/stripePayment', paymentData).subscribe({
+      next: (response) => {
+        console.log('Payment successful:', response);
+        this.paymentResponse = response;
+      },
+      error: (error) => {
+        console.error('Payment error:', error);
+        this.paymentResponse = error;
+      },
+    });
   }
 }

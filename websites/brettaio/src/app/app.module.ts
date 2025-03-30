@@ -20,9 +20,10 @@ import {
   PricingBrettaioComponent,
   HeroBrettaioAppComponent,
   TestimonialHeroComponent,
+  LogoMarqueeComponent,
+  UnderConstructionComponent,
 } from '../../../../component/src/components';
-import { LogoMarqueeComponent } from '../../../../component/src/lib/logo-marquee/logo-marquee.component';
-import { UnderConstructionComponent } from '../../../../component/src/lib/under-construction/under-construction.component';
+import { provideHttpClient } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent],
@@ -44,6 +45,7 @@ import { UnderConstructionComponent } from '../../../../component/src/lib/under-
     provideClientHydration(withEventReplay()),
     provideAnimationsAsync(),
     provideAnimations(),
+    provideHttpClient(),
   ],
   bootstrap: [AppComponent],
 })

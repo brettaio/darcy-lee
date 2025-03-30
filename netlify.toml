@@ -1,0 +1,4 @@
+[build]
+  command = "ng serve brettaio"
+  publish = "dist/brettaio/browser"
+  functions = "websites/brettaio/netlify/functions"
