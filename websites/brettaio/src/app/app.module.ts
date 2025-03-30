@@ -2,6 +2,7 @@ import {
   NgModule,
   provideExperimentalZonelessChangeDetection,
 } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import {
   BrowserModule,
   provideClientHydration,
@@ -21,7 +22,7 @@ import {
   HeroBrettaioAppComponent,
   TestimonialHeroComponent,
   LogoMarqueeComponent,
-  UnderConstructionComponent,
+  CustomerOnboardingBrettaioComponent,
 } from '../../../../component/src/components';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 
@@ -38,7 +39,8 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
     TestimonialHeroComponent,
     HeroBrettaioAppComponent,
     LogoMarqueeComponent,
-    UnderConstructionComponent,
+    CustomerOnboardingBrettaioComponent,
+    FormsModule,
   ],
   providers: [
     provideExperimentalZonelessChangeDetection(),

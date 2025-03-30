@@ -34,3 +34,4 @@ export * from './lib/hero-brettaio-app/hero-brettaio-app.component';
 export * from './lib/testimonial-hero/testimonial-hero.component';
 export * from './lib/logo-marquee/logo-marquee.component';
 export * from './lib/under-construction/under-construction.component';
+export * from './lib/customer-onboarding-brettaio/customer-onboarding-brettaio.component';
