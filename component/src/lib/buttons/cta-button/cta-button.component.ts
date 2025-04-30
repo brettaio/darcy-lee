@@ -1,7 +1,7 @@
 import { Component, computed, Input, signal } from '@angular/core';
-import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/app-data.store';
+import { appDataStore } from '../../../../../websites/enzo-concrete/src/app/store/app-data.store';
 import { CommonModule } from '@angular/common';
-import { PhoneCallIcon } from '../../../../icon/src/lib/phone-call/phone-call.icon';
+import { PhoneCallIcon } from '../../../../../icon/src/lib/phone-call/phone-call.icon';
 
 @Component({
   selector: 'component-cta-button',

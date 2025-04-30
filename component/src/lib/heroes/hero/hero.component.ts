@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.component';
-import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/app-data.store';
+import { CtaButtonAltComponent } from '../../buttons/cta-button-alt/cta-button-alt.component';
+import { appDataStore } from '../../../../../websites/enzo-concrete/src/app/store/app-data.store';
 
 @Component({
   selector: 'component-hero',

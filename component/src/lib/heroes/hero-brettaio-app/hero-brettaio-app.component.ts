@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { StarIcon } from '../../../../icon/src/lib/star/star.icon';
-import { appDataStore } from '../../../../websites/brettaio/src/app/store/app-data.store';
+import { StarIcon } from '../../../../../icon/src/lib/star/star.icon';
+import { appDataStore } from '../../../../../websites/brettaio/src/app/store/app-data.store';
 
 @Component({
   selector: 'component-hero-brettaio-app',

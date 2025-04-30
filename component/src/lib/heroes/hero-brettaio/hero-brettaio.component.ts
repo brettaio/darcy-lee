@@ -1,13 +1,13 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { appDataStore } from '../../../../websites/brettaio/src/app/store/app-data.store';
-import { GridOverlay } from '../../../../overlay/src/lib/grid/grid.overlay';
-import { GradientSmudgeOverlay } from '../../../../overlay/src/lib/gradient-smudge/gradient-smudge.overlay';
-import { ChevronRightIcon } from '../../../../icon/src/lib/chevron-right/chevron-right.icon';
+import { appDataStore } from '../../../../../websites/brettaio/src/app/store/app-data.store';
+import { GridOverlay } from '../../../../../overlay/src/lib/grid/grid.overlay';
+import { GradientSmudgeOverlay } from '../../../../../overlay/src/lib/gradient-smudge/gradient-smudge.overlay';
+import { ChevronRightIcon } from '../../../../../icon/src/lib/chevron-right/chevron-right.icon';
 import {
   flipAnimation,
   popBounceAnimation,
   scaleInAnimation,
-} from '../../../../animation/src/animation';
+} from '../../../../../animation/src/animation';
 @Component({
   selector: 'component-hero-brettaio',
   imports: [GridOverlay, GradientSmudgeOverlay, ChevronRightIcon],

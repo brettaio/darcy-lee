@@ -8,8 +8,8 @@ import {
 import { isPlatformBrowser } from '@angular/common';
 import { PLATFORM_ID } from '@angular/core';
 import { appDataStore } from '../../../../websites/enzo-concrete/src/app/store/app-data.store';
-import { CtaButtonComponent } from '../cta-button/cta-button.component';
-import { CtaButtonAltComponent } from '../cta-button-alt/cta-button-alt.component';
+import { CtaButtonComponent } from '../buttons/cta-button/cta-button.component';
+import { CtaButtonAltComponent } from '../buttons/cta-button-alt/cta-button-alt.component';
 
 @Component({
   selector: 'component-form',
