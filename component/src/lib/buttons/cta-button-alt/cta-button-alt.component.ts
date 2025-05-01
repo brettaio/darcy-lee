@@ -10,7 +10,7 @@ import { MessageIcon } from '../../../../../icon/src/lib/message/message.icon';
     <button
       type="button"
       [ngClass]="combinedClasses()"
-      (click)="navigateToLink(appDataStore.brandData().ctaLink)"
+      (click)="navigateToLink(appDataStore.brandData().ctaAltLink)"
     >
       <span>{{ appDataStore.brandData().ctaAltText }}</span>
       <icon-message />
