@@ -1,0 +1,8 @@
+[build]
+  command = "ng build enzo-concrete --configuration production"
+  publish = "../../dist/enzo-concrete/browser"
+  functions = "./netlify/functions"
+
+[dev]
+  command = "ng serve --project=enzo-concrete"
+  targetPort = 4200
