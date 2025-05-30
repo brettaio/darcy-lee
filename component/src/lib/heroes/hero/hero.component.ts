@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CtaButtonAltComponent } from '../../buttons/cta-button-alt/cta-button-alt.component';
+import { CtaButtonAltComponent } from '../../buttons/cta-button/cta-button-alt.component';
 import { appDataStore } from '../../../../../websites/enzo-concrete/src/app/store/app-data.store';
 
 @Component({

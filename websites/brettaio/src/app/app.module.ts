@@ -23,9 +23,13 @@ import {
   TestimonialHeroComponent,
   LogoMarqueeComponent,
   CustomerOnboardingBrettaioComponent,
+  CtaComponent,
 } from '../../../../component/src/components';
+import {
+  LandingPageOnePage,
+  LandingPageTwoPage,
+} from '../../../../page/src/pages';
 import { provideHttpClient, withFetch } from '@angular/common/http';
-
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -41,6 +45,9 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
     LogoMarqueeComponent,
     CustomerOnboardingBrettaioComponent,
     FormsModule,
+    CtaComponent,
+    LandingPageOnePage,
+    LandingPageTwoPage,
   ],
   providers: [
     provideExperimentalZonelessChangeDetection(),

@@ -6,6 +6,7 @@ websites/applications:
 	ng generate application brettaio --experimental-zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css 
 	ng generate application ppdon --experimental-zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css 
 	ng generate application bretta-product-viewer --experimental-zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css
+	ng generate application component-viewer --experimental-zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css
 
 libs:	
 	ng generate library component --entry-file=components --project-root=component
@@ -39,7 +40,8 @@ component library:
 	ng generate component value-proposition-three --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component announcement-bar --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component three-js-hero-stars --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
-	
+	ng generate component test-space --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+
 	bretta-product-viewer --
 	ng generate component resizeable-window --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component announcement-bar --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
@@ -76,6 +78,8 @@ page library:
 	ng generate component solutions-brettaio --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
 	ng generate component terms-conditions --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
 	ng generate component refund-cancellation --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
+ng generate component test --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
+
 
 icon library:
 	ng generate component facebook --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
@@ -120,22 +124,25 @@ overlay library
 	
 - - - - - - -
 	
-data model bretta:	
+data model brettaio:	
 	ng generate interface model/brand-data --type=model --project=brettaio
 	ng generate interface model/site-data --type=model --project=brettaio
 	ng generate interface model/pricing-data --type=model --project=brettaio
 	
-data store bretta:
+data store brettaio:
 	ng generate class store/app-data --project=brettaio --skip-tests=true --type=store
 	ng generate class store/brand-data --project=brettaio --skip-tests=true --type=store
 	ng generate class store/site-data --project=brettaio --skip-tests=true --type=store
 	ng generate class store/pricing-data --project=brettaio --skip-tests=true --type=store
 	
-data factory enzo:
+data factory brettaio:
 	ng generate class factory/app-data --project=brettaio --skip-tests=true --type=factory
 	ng generate class factory/brand-data --project=brettaio --skip-tests=true --type=factory
 	ng generate class factory/site-data --project=brettaio --skip-tests=true --type=factory
 	ng generate class factory/pricing-data --project=brettaio --skip-tests=true --type=factory
+
+data factory component-viewer	
+	
 	
 - - - - - - -	
 		
