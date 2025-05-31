@@ -1,6 +1,6 @@
 import {
   NgModule,
-  provideExperimentalZonelessChangeDetection,
+  provideZonelessChangeDetection,
   importProvidersFrom,
 } from '@angular/core';
 import {
@@ -36,7 +36,7 @@ import {
     CommonModule,
   ],
   providers: [
-    provideExperimentalZonelessChangeDetection(),
+    provideZonelessChangeDetection(),
     provideClientHydration(withEventReplay()),
   ],
   bootstrap: [AppComponent],

@@ -1,7 +1,4 @@
-import {
-  NgModule,
-  provideExperimentalZonelessChangeDetection,
-} from '@angular/core';
+import { NgModule, provideZonelessChangeDetection } from '@angular/core';
 import {
   BrowserModule,
   provideClientHydration,
@@ -27,7 +24,7 @@ import { AnnouncementBarComponent } from '../../../../component/src/lib/announce
     AnnouncementBarComponent,
   ],
   providers: [
-    provideExperimentalZonelessChangeDetection(),
+    provideZonelessChangeDetection(),
     provideClientHydration(withEventReplay()),
   ],
   bootstrap: [AppComponent],

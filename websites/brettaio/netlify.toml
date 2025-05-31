@@ -1,8 +1,8 @@
 [build]
-  command   = "ng build brettaio --configuration=production"
-  publish   = "dist/brettaio/browser"
-  functions = "netlify/functions"
+command   = "ng build brettaio --configuration=production"
+publish   = "dist/brettaio/browser"
+functions = "netlify/functions"
 
 [dev]
-  command    = "ng serve --project=brettaio"
-  targetPort = 4200
+command    = "ng serve --project=brettaio"
+targetPort = 4200
