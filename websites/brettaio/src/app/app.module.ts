@@ -1,7 +1,4 @@
-import {
-  NgModule,
-  provideExperimentalZonelessChangeDetection,
-} from '@angular/core';
+import { NgModule, provideZonelessChangeDetection } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import {
   BrowserModule,
@@ -50,7 +47,7 @@ import { provideHttpClient, withFetch } from '@angular/common/http';
     LandingPageTwoPage,
   ],
   providers: [
-    provideExperimentalZonelessChangeDetection(),
+    provideZonelessChangeDetection(),
     provideClientHydration(withEventReplay()),
     provideAnimationsAsync(),
     provideAnimations(),
