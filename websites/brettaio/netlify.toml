@@ -1,6 +1,5 @@
 [build]
-  base      = "websites/brettaio"
-  command   = "ng build brettaio --configuration production"
+  command   = "ng build brettaio --configuration=production"
   publish   = "dist/brettaio/browser"
   functions = "netlify/functions"
 
