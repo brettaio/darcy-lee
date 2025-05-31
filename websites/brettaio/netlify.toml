@@ -1,7 +1,7 @@
 [build]
   command = "ng build brettaio --configuration production"
   publish = "../../dist/brettaio/browser"
-  functions = "netlify/functions"
+  functions = "/netlify/functions"
 
 [dev]
   command = "ng serve --project=brettaio"
