@@ -46,5 +46,10 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "references": [
+    {
+      "path": "./websites/sponsorus/tsconfig.app.json"
+    }
+  ]
 }

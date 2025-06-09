@@ -1,12 +1,13 @@
 workspace: 
-	ng new darcy-lee --no-create-application --experimental-zoneless=true --inline-style=true --inline-template=true --minimal=true --new-project-root=websites --skip-test=true --ssr=true --standalone=false --style=css
+	ng new darcy-lee --no-create-application --zoneless=true --inline-style=true --inline-template=true --minimal=true --new-project-root=websites --skip-test=true --ssr=true --standalone=false --style=css
 
 websites/applications: 
-	ng generate application enzo-concrete --experimental-zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css 
-	ng generate application brettaio --experimental-zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css 
-	ng generate application ppdon --experimental-zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css 
-	ng generate application bretta-product-viewer --experimental-zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css
-	ng generate application component-viewer --experimental-zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css
+	ng generate application enzo-concrete --zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css 
+	ng generate application brettaio --zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css 
+	ng generate application ppdon --zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css 
+	ng generate application bretta-product-viewer --zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css
+	ng generate application component-viewer --zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css
+	ng generate application sponsorus--zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css
 
 libs:	
 	ng generate library component --entry-file=components --project-root=component
