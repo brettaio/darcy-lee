@@ -11,7 +11,8 @@
     "serve:ssr:ppdon": "node dist/ppdon/server/server.mjs",
     "serve:ssr:bretta-product-viewer": "node dist/bretta-product-viewer/server/server.mjs",
     "serve:ssr:component-viewer": "node dist/component-viewer/server/server.mjs",
-    "serve:ssr:sponsorus": "node dist/sponsorus/server/server.mjs"
+    "serve:ssr:sponsorus": "node dist/sponsorus/server/server.mjs",
+    "serve:ssr:bug-check": "node dist/bug-check/server/server.mjs"
   },
   "private": true,
   "dependencies": {

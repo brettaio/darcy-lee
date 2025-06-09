@@ -50,6 +50,9 @@
   "references": [
     {
       "path": "./websites/sponsorus/tsconfig.app.json"
+    },
+    {
+      "path": "./websites/bug-check/tsconfig.app.json"
     }
   ]
 }
