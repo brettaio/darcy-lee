@@ -1,7 +1,7 @@
 import { Component, HostListener } from '@angular/core';
-import { appDataStore } from '../../../../../websites/brettaio/src/app/store/app-data.store';
-import { BurgerIcon } from '../../../../../icon/src/lib/burger/burger.icon';
-import { XmarkIcon } from '../../../../../icon/src/lib/xmark/xmark.icon';
+import { appDataStore } from '../../../../websites/brettaio/src/app/store/app-data.store';
+import { BurgerIcon } from '../../../../icon/src/lib/burger/burger.icon';
+import { XmarkIcon } from '../../../../icon/src/lib/xmark/xmark.icon';
 import { CommonModule } from '@angular/common';
 
 @Component({

@@ -1,9 +1,9 @@
 import { Component, ViewEncapsulation } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BrettaioSquareLogo } from '../../../../../logo/src/lib/brettaio-square/brettaio-square.logo';
-import { appDataStore } from '../../../../../websites/brettaio/src/app/store/app-data.store';
-import { BurgerIcon } from '../../../../../icon/src/lib/burger/burger.icon';
-import { XmarkIcon } from '../../../../../icon/src/lib/xmark/xmark.icon';
+import { BrettaioSquareLogo } from '../../../../logo/src/lib/brettaio-square/brettaio-square.logo';
+import { appDataStore } from '../../../../websites/brettaio/src/app/store/app-data.store';
+import { BurgerIcon } from '../../../../icon/src/lib/burger/burger.icon';
+import { XmarkIcon } from '../../../../icon/src/lib/xmark/xmark.icon';
 import { RouterModule } from '@angular/router';
 
 @Component({

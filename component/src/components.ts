@@ -25,9 +25,10 @@ export * from './lib/forms/form.component';
 export * from './lib/gallery/gallery.component';
 
 //headers
-export * from './lib/headers/header/header.component';
-export * from './lib/headers/header-brettaio/header-brettaio.component';
-export * from './lib/headers/header-brettio-app/header-brettio-app.component';
+export * from './lib/headers/header.component';
+export * from './lib/headers/header-brettaio.component';
+export * from './lib/headers/header-brettio-app.component';
+export * from './lib/headers/header-enzo.component';
 
 //heroes
 export * from './lib/heroes/hero-brettaio-app/hero-brettaio-app.component';
@@ -58,7 +59,7 @@ export * from './lib/value-propositions/value-proposition-two.component';
 export * from './lib/value-propositions/value-proposition-three.component';
 
 // Enzo Concrete Components
-export * from './lib/headers/enzo-header/enzo-header.component';
+export * from './lib/headers/header-enzo.component';
 export * from './lib/buttons/cta-button/enzo-cta-button.component';
 
 //brettaio Components
