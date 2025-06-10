@@ -32,5 +32,13 @@
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
     "strictTemplates": true
-  }
+  },
+  "references": [
+    {
+      "path": "./websites/application-name/tsconfig.app.json"
+    },
+    {
+      "path": "./websites/application-name-node-rebuild/tsconfig.app.json"
+    }
+  ]
 }

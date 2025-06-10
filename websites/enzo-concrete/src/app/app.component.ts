@@ -4,7 +4,7 @@ import { appDataStore } from './store/app-data.store';
 @Component({
   selector: 'app-root',
   template: `
-    <component-header />
+    <component-header-enzo />
     <component-announcement-bar
       *ngIf="showBanner()"
       (dismiss)="handleDismiss()"

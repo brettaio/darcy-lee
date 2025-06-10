@@ -8,7 +8,7 @@ import {
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {
-  HeaderComponent,
+  EnzoHeaderComponent,
   FooterComponent,
 } from '../../../../component/src/components';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,7 +18,7 @@ import { AnnouncementBarComponent } from '../../../../component/src/lib/announce
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HeaderComponent,
+    EnzoHeaderComponent,
     FooterComponent,
     BrowserAnimationsModule,
     AnnouncementBarComponent,

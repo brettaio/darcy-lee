@@ -12,7 +12,9 @@
     "serve:ssr:bretta-product-viewer": "node dist/bretta-product-viewer/server/server.mjs",
     "serve:ssr:component-viewer": "node dist/component-viewer/server/server.mjs",
     "serve:ssr:sponsorus": "node dist/sponsorus/server/server.mjs",
-    "serve:ssr:bug-check": "node dist/bug-check/server/server.mjs"
+    "serve:ssr:bug-check": "node dist/bug-check/server/server.mjs",
+    "serve:ssr:application-name": "node dist/application-name/server/server.mjs",
+    "serve:ssr:application-name-node-rebuild": "node dist/application-name-node-rebuild/server/server.mjs"
   },
   "private": true,
   "dependencies": {
