@@ -157,9 +157,5 @@ export class FooterComponent {
         }),
       };
     }
-    console.log(
-      '🔍 FooterComponent Loaded with Data:',
-      this.appDataStore.brandData(),
-    );
   }
 }
