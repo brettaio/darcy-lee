@@ -4,10 +4,8 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
     <component-header />
-    <component-hero />
-    <h1>Welcome to {{ subltitle }}!</h1>
-
     <router-outlet />
+    <h1>Welcome to {{ subltitle }}!</h1>
   `,
   standalone: false,
   styles: [],

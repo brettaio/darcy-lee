@@ -9,14 +9,13 @@ import {
   withEventReplay,
 } from '@angular/platform-browser';
 import { HeaderComponent } from '../../../../component/src/components';
-import { HeroComponent } from '../../../../component/src/components';
 
 import { AppRoutingModule } from './app-routing.module';
 import { App } from './app';
 
 @NgModule({
   declarations: [App],
-  imports: [BrowserModule, AppRoutingModule, HeaderComponent, HeroComponent],
+  imports: [BrowserModule, AppRoutingModule, HeaderComponent],
   providers: [
     provideBrowserGlobalErrorListeners(),
     provideZonelessChangeDetection(),

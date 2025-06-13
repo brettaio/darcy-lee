@@ -81,6 +81,18 @@ page library:
 	ng generate component refund-cancellation --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
 ng generate component test --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
 
+sponus page library
+ng generate component sponus-home --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
+ng generate component sponus-player-home --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
+ng generate component sponus-player-login --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
+ng generate component sponus-player-signup --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
+ng generate component sponus-player-dashboard --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
+ng generate component sponus-user-sponsor-capture --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
+ng generate component sponus-corporate-sponsor-capture --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
+
+
+
+
 
 icon library:
 	ng generate component facebook --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
