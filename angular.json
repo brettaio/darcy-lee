@@ -3,18 +3,39 @@
   "version": 1,
   "newProjectRoot": "websites",
   "projects": {
-     "enzo-concrete": {
+    "enzo-concrete": {
       "projectType": "application",
       "schematics": {
-    "@schematics/angular:component": { "type": "component" },
-    "@schematics/angular:directive": { "type": "directive" },
-    "@schematics/angular:service": { "type": "service" },
-    "@schematics/angular:guard": { "typeSeparator": "." },
-    "@schematics/angular:interceptor": { "typeSeparator": "." },
-    "@schematics/angular:module": { "typeSeparator": "." },
-    "@schematics/angular:pipe": { "typeSeparator": "." },
-    "@schematics/angular:resolver": { "typeSeparator": "." }
-  },
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
       "root": "websites/enzo-concrete",
       "sourceRoot": "websites/enzo-concrete/src",
       "prefix": "app",
@@ -28,7 +49,10 @@
             "polyfills": [],
             "tsConfig": "websites/enzo-concrete/tsconfig.app.json",
             "assets": [
-              { "glob": "**/*", "input": "websites/enzo-concrete/public" }
+              {
+                "glob": "**/*",
+                "input": "websites/enzo-concrete/public"
+              }
             ],
             "styles": ["websites/enzo-concrete/src/styles.css"],
             "scripts": [],
@@ -40,11 +64,19 @@
           },
           "configurations": {
             "production": {
-              "budgets":[
-                { "type":"initial","maximumWarning":"500kB","maximumError":"1MB" },
-                { "type":"anyComponentStyle","maximumWarning":"4kB","maximumError":"8kB" }
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
               ],
-              "outputHashing":"all"
+              "outputHashing": "all"
             },
             "development": {
               "optimization": false,
@@ -57,8 +89,12 @@
         "serve": {
           "builder": "@angular/build:dev-server",
           "configurations": {
-            "production": { "buildTarget": "enzo-concrete:build:production" },
-            "development": { "buildTarget": "enzo-concrete:build:development" }
+            "production": {
+              "buildTarget": "enzo-concrete:build:production"
+            },
+            "development": {
+              "buildTarget": "enzo-concrete:build:development"
+            }
           },
           "defaultConfiguration": "development"
         },
@@ -67,19 +103,219 @@
         }
       }
     },
-
+    "component": {
+      "projectType": "library",
+      "root": "component",
+      "sourceRoot": "component/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "options": {
+            "project": "component/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "component/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "component/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "component/tsconfig.spec.json",
+            "polyfills": ["zone.js", "zone.js/testing"]
+          }
+        }
+      }
+    },
+    "page": {
+      "projectType": "library",
+      "root": "page",
+      "sourceRoot": "page/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "options": {
+            "project": "page/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "page/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "page/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "page/tsconfig.spec.json",
+            "polyfills": ["zone.js", "zone.js/testing"]
+          }
+        }
+      }
+    },
+    "icon": {
+      "projectType": "library",
+      "root": "icon",
+      "sourceRoot": "icon/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "options": {
+            "project": "icon/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "icon/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "icon/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "icon/tsconfig.spec.json",
+            "polyfills": ["zone.js", "zone.js/testing"]
+          }
+        }
+      }
+    },
+    "logo": {
+      "projectType": "library",
+      "root": "logo",
+      "sourceRoot": "logo/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "options": {
+            "project": "logo/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "logo/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "logo/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "logo/tsconfig.spec.json",
+            "polyfills": ["zone.js", "zone.js/testing"]
+          }
+        }
+      }
+    },
+    "animation": {
+      "projectType": "library",
+      "root": "animation",
+      "sourceRoot": "animation/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "options": {
+            "project": "animation/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "animation/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "animation/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "animation/tsconfig.spec.json",
+            "polyfills": ["zone.js", "zone.js/testing"]
+          }
+        }
+      }
+    },
+    "service": {
+      "projectType": "library",
+      "root": "service",
+      "sourceRoot": "service/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "options": {
+            "project": "service/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "service/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "service/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "service/tsconfig.spec.json",
+            "polyfills": ["zone.js", "zone.js/testing"]
+          }
+        }
+      }
+    },
     "brettaio": {
       "projectType": "application",
       "schematics": {
-    "@schematics/angular:component": { "type": "component" },
-    "@schematics/angular:directive": { "type": "directive" },
-    "@schematics/angular:service": { "type": "service" },
-    "@schematics/angular:guard": { "typeSeparator": "." },
-    "@schematics/angular:interceptor": { "typeSeparator": "." },
-    "@schematics/angular:module": { "typeSeparator": "." },
-    "@schematics/angular:pipe": { "typeSeparator": "." },
-    "@schematics/angular:resolver": { "typeSeparator": "." }
-  },
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
       "root": "websites/brettaio",
       "sourceRoot": "websites/brettaio/src",
       "prefix": "app",
@@ -93,7 +329,10 @@
             "polyfills": [],
             "tsConfig": "websites/brettaio/tsconfig.app.json",
             "assets": [
-              { "glob": "**/*", "input": "websites/brettaio/public" }
+              {
+                "glob": "**/*",
+                "input": "websites/brettaio/public"
+              }
             ],
             "styles": ["websites/brettaio/src/styles.css"],
             "scripts": [],
@@ -105,11 +344,19 @@
           },
           "configurations": {
             "production": {
-              "budgets":[
-                { "type":"initial","maximumWarning":"500kB","maximumError":"1MB" },
-                { "type":"anyComponentStyle","maximumWarning":"4kB","maximumError":"8kB" }
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
               ],
-              "outputHashing":"all"
+              "outputHashing": "all"
             },
             "development": {
               "optimization": false,
@@ -122,8 +369,12 @@
         "serve": {
           "builder": "@angular/build:dev-server",
           "configurations": {
-            "production": { "buildTarget": "brettaio:build:production" },
-            "development": { "buildTarget": "brettaio:build:development" }
+            "production": {
+              "buildTarget": "brettaio:build:production"
+            },
+            "development": {
+              "buildTarget": "brettaio:build:development"
+            }
           },
           "defaultConfiguration": "development"
         },
@@ -132,49 +383,110 @@
         }
       }
     },
-
-    "todo-test": {
+    "overlay": {
+      "projectType": "library",
+      "root": "overlay",
+      "sourceRoot": "overlay/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "options": {
+            "project": "overlay/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "overlay/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "overlay/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "overlay/tsconfig.spec.json",
+            "polyfills": ["zone.js", "zone.js/testing"]
+          }
+        }
+      }
+    },
+    "ppdon": {
       "projectType": "application",
       "schematics": {
-    "@schematics/angular:component": { "type": "component" },
-    "@schematics/angular:directive": { "type": "directive" },
-    "@schematics/angular:service": { "type": "service" },
-    "@schematics/angular:guard": { "typeSeparator": "." },
-    "@schematics/angular:interceptor": { "typeSeparator": "." },
-    "@schematics/angular:module": { "typeSeparator": "." },
-    "@schematics/angular:pipe": { "typeSeparator": "." },
-    "@schematics/angular:resolver": { "typeSeparator": "." }
-  },
-      "root": "websites/todo-test",
-      "sourceRoot": "websites/todo-test/src",
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "websites/ppdon",
+      "sourceRoot": "websites/ppdon/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": "dist/todo-test",
-            "index": "websites/todo-test/src/index.html",
-            "browser": "websites/todo-test/src/main.ts",
+            "outputPath": "dist/ppdon",
+            "index": "websites/ppdon/src/index.html",
+            "browser": "websites/ppdon/src/main.ts",
             "polyfills": [],
-            "tsConfig": "websites/todo-test/tsconfig.app.json",
+            "tsConfig": "websites/ppdon/tsconfig.app.json",
             "assets": [
-              { "glob": "**/*", "input": "websites/todo-test/public" }
+              {
+                "glob": "**/*",
+                "input": "websites/ppdon/public"
+              }
             ],
-            "styles": ["websites/todo-test/src/styles.css"],
+            "styles": ["websites/ppdon/src/styles.css"],
             "scripts": [],
-            "server": "websites/todo-test/src/main.server.ts",
+            "server": "websites/ppdon/src/main.server.ts",
             "prerender": true,
             "ssr": {
-              "entry": "websites/todo-test/src/server.ts"
+              "entry": "websites/ppdon/src/server.ts"
             }
           },
           "configurations": {
             "production": {
-              "budgets":[
-                { "type":"initial","maximumWarning":"500kB","maximumError":"1MB" },
-                { "type":"anyComponentStyle","maximumWarning":"4kB","maximumError":"8kB" }
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
               ],
-              "outputHashing":"all"
+              "outputHashing": "all"
             },
             "development": {
               "optimization": false,
@@ -187,8 +499,405 @@
         "serve": {
           "builder": "@angular/build:dev-server",
           "configurations": {
-            "production": { "buildTarget": "todo-test:build:production" },
-            "development": { "buildTarget": "todo-test:build:development" }
+            "production": {
+              "buildTarget": "ppdon:build:production"
+            },
+            "development": {
+              "buildTarget": "ppdon:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n"
+        }
+      }
+    },
+    "bretta-product-viewer": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "websites/bretta-product-viewer",
+      "sourceRoot": "websites/bretta-product-viewer/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "outputPath": "dist/bretta-product-viewer",
+            "index": "websites/bretta-product-viewer/src/index.html",
+            "browser": "websites/bretta-product-viewer/src/main.ts",
+            "polyfills": [],
+            "tsConfig": "websites/bretta-product-viewer/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "websites/bretta-product-viewer/public"
+              }
+            ],
+            "styles": ["websites/bretta-product-viewer/src/styles.css"],
+            "scripts": [],
+            "server": "websites/bretta-product-viewer/src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "websites/bretta-product-viewer/src/server.ts"
+            }
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "bretta-product-viewer:build:production"
+            },
+            "development": {
+              "buildTarget": "bretta-product-viewer:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n"
+        }
+      }
+    },
+    "component-viewer": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "websites/component-viewer",
+      "sourceRoot": "websites/component-viewer/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "outputPath": "dist/component-viewer",
+            "index": "websites/component-viewer/src/index.html",
+            "browser": "websites/component-viewer/src/main.ts",
+            "polyfills": [],
+            "tsConfig": "websites/component-viewer/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "websites/component-viewer/public"
+              }
+            ],
+            "styles": ["websites/component-viewer/src/styles.css"],
+            "scripts": [],
+            "server": "websites/component-viewer/src/main.server.ts",
+            "prerender": true,
+            "ssr": {
+              "entry": "websites/component-viewer/src/server.ts"
+            }
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "component-viewer:build:production"
+            },
+            "development": {
+              "buildTarget": "component-viewer:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n"
+        }
+      }
+    },
+    "sponsorus": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "websites/sponsorus",
+      "sourceRoot": "websites/sponsorus/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "websites/sponsorus/src/main.ts",
+            "tsConfig": "websites/sponsorus/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "websites/sponsorus/public"
+              }
+            ],
+            "styles": ["websites/sponsorus/src/styles.css"],
+            "server": "websites/sponsorus/src/main.server.ts",
+            "outputMode": "server",
+            "ssr": {
+              "entry": "websites/sponsorus/src/server.ts"
+            }
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "sponsorus:build:production"
+            },
+            "development": {
+              "buildTarget": "sponsorus:build:development",
+              "proxyConfig": "websites/sponsorus/proxy.conf.json"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n"
+        }
+      }
+    },
+    "todo-test": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "websites/todo-test",
+      "sourceRoot": "websites/todo-test/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "websites/todo-test/src/main.ts",
+            "tsConfig": "websites/todo-test/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "websites/todo-test/public"
+              }
+            ],
+            "styles": ["websites/todo-test/src/styles.css"],
+            "server": "websites/todo-test/src/main.server.ts",
+            "outputMode": "server",
+            "ssr": {
+              "entry": "websites/todo-test/src/server.ts"
+            }
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "todo-test:build:production"
+            },
+            "development": {
+              "buildTarget": "todo-test:build:development"
+            }
           },
           "defaultConfiguration": "development"
         },
@@ -197,7 +906,31 @@
         }
       }
     }
+  },
+  "schematics": {
+    "@schematics/angular:component": {
+      "type": "component"
+    },
+    "@schematics/angular:directive": {
+      "type": "directive"
+    },
+    "@schematics/angular:service": {
+      "type": "service"
+    },
+    "@schematics/angular:guard": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:interceptor": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:module": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:pipe": {
+      "typeSeparator": "."
+    },
+    "@schematics/angular:resolver": {
+      "typeSeparator": "."
+    }
   }
-},
-  
 }
