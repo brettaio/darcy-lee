@@ -2,15 +2,13 @@
   command = """
     cd ../.. &&
     npm ci &&
-    ng run todo-test:build:production &&
-    ng run todo-test:server:production &&
+    ng run brettaio:build:production &&
+    ng run brettaio:server:production &&
     mkdir -p netlify/functions &&
-    cp -a dist/todo-test/server/. netlify/functions
+    cp -a dist/brettaio/server/. netlify/functions &&
+    cp -a netlify/functions/*.js netlify/functions
   """
-  # publish the static files
-  publish = "dist/todo-test/browser"
+  publish = "dist/brettaio/browser"
 
-# point Netlify at your SSR + any custom functions in
-# websites/todo-test/netlify/functions
 [functions]
   directory = "netlify/functions"
