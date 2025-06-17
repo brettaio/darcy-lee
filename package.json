@@ -30,7 +30,6 @@
     "@angular/platform-server": "^20.0.3",
     "@angular/router": "^20.0.3",
     "@angular/ssr": "^20.0.2",
-    "@netlify/angular-runtime": "^2.2.2",
     "@tailwindcss/cli": "^4.0.14",
     "@tailwindcss/postcss": "^4.0.7",
     "express": "^5.1.0",
