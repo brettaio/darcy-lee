@@ -12,7 +12,10 @@
     "serve:ssr:bretta-product-viewer": "node dist/bretta-product-viewer/server/server.mjs",
     "serve:ssr:component-viewer": "node dist/component-viewer/server/server.mjs",
     "serve:ssr:sponsorus": "node dist/sponsorus/server/server.mjs",
-    "serve:ssr:todo-test": "node dist/todo-test/server/server.mjs"
+    "serve:ssr:todo-test": "node dist/todo-test/server/server.mjs",
+    "build:brettaio": "ng run brettaio:prerender",
+    "build:enzo": "ng run enzo-concrete:prerender",
+    "build:todo": "ng run todo-test:prerender"
   },
   "private": true,
   "dependencies": {

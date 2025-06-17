@@ -1,14 +1,8 @@
 [build]
-  command = """
-    cd ../.. &&
-    npm install &&
-    ng run brettaio:build:production &&
-    ng run brettaio:server:production &&
-    mkdir -p netlify/functions &&
-    cp -a dist/brettaio/server/. netlify/functions &&
-    cp -a netlify/functions/*.js netlify/functions
-  """
+  command = "npm run build:brettaio"
   publish = "dist/brettaio/browser"
 
-[functions]
-  directory = "netlify/functions"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

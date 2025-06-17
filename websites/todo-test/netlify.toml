@@ -1,14 +1,8 @@
 [build]
-  command = """
-    cd ../.. &&
-    npm install &&
-    ng run todo-test:build:production &&
-    ng run todo-test:server:production &&
-    mkdir -p netlify/functions &&
-    cp -a dist/todo-test/server/. netlify/functions &&
-    cp -a netlify/functions/*.js netlify/functions
-  """
+  command = "npm run build:todo-test"
   publish = "dist/todo-test/browser"
 
-[functions]
-  directory = "netlify/functions"
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
