@@ -1,7 +1,16 @@
-publish = "dist/todo-test/browser"
+[build]
+  command = """
+    cd ../.. &&
+    npm ci &&
+    ng run todo-test:build:production &&
+    ng run todo-test:server:production &&
+    mkdir -p netlify/functions &&
+    cp -a dist/todo-test/server/. netlify/functions
+  """
+  # publish the static files
+  publish = "dist/todo-test/browser"
 
-[[plugins]]
-  package = "@netlify/angular-runtime"
-  [plugins.inputs]
-    project   = "todo-test"
-    functions = "dist/todo-test/server"
+# point Netlify at your SSR + any custom functions in
+# websites/todo-test/netlify/functions
+[functions]
+  directory = "netlify/functions"

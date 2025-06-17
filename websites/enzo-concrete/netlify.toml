@@ -1,8 +1,16 @@
-publish = "dist/enzo-concrete/browser"
+[build]
+  command = """
+    cd ../.. &&
+    npm ci &&
+    ng run enzo-concrete:build:production &&
+    ng run enzo-concrete:server:production &&
+    mkdir -p netlify/functions &&
+    cp -a dist/enzo-concrete/server/. netlify/functions
+  """
+  # publish the static files
+  publish = "dist/enzo-concrete/browser"
 
-[build.environment]
-  # Tell the plugin which project to build
-  ANGULAR_PROJECT = "enzo-concrete"
-
-[[plugins]]
-  package = "@netlify/angular-runtime"
+# point Netlify at your SSR + any custom functions in
+# websites/enzo-concrete/netlify/functions
+[functions]
+  directory = "netlify/functions"
