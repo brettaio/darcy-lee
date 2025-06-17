@@ -81,7 +81,7 @@ import { filter } from 'rxjs';
             routerLink="/player/login"
             class="text-sm/6 font-semibold text-gray-900"
           >
-            Log in
+            Player Login
             <span aria-hidden="true">&rarr;</span>
           </a>
           <a
@@ -89,7 +89,7 @@ import { filter } from 'rxjs';
             (click)="onLogout()"
             class="text-sm/6 font-semibold text-gray-900"
           >
-            Logout
+            Player Logout
           </a>
         </div>
       </nav>

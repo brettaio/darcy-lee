@@ -1,0 +1,50 @@
+// This is your Prisma schema file.
+// Learn more at: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum Role {
+  PLAYER
+  SPONSOR_USER
+  SPONSOR_CORPORATE
+  ADMIN
+}
+
+model User {
+  id        Int     @id @default(autoincrement())
+  email     String  @unique
+  password  String
+  role      Role    @default(PLAYER)
+  firstName String
+  lastName  String
+  phone     String?
+
+  // Main address
+  addressNumber String? // e.g. 123
+  streetName    String? // e.g. Main
+  streetType    String? // e.g. Rd, Ave, Blvd
+  city          String?
+  regionOrState String? // e.g. NSW, California
+  postalCode    String?
+  country       String?
+
+  // Optional billing-specific override
+  billingAddressNumber String?
+  billingStreetName    String?
+  billingStreetType    String?
+  billingCity          String?
+  billingRegionOrState String?
+  billingPostalCode    String?
+  billingCountry       String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

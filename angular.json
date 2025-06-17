@@ -761,9 +761,7 @@
                 "input": "websites/sponsorus/public"
               }
             ],
-            "styles": [
-              "websites/sponsorus/src/styles.css"
-            ],
+            "styles": ["websites/sponsorus/src/styles.css"],
             "server": "websites/sponsorus/src/main.server.ts",
             "outputMode": "server",
             "ssr": {
@@ -801,7 +799,8 @@
               "buildTarget": "sponsorus:build:production"
             },
             "development": {
-              "buildTarget": "sponsorus:build:development"
+              "buildTarget": "sponsorus:build:development",
+              "proxyConfig": "websites/sponsorus/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
@@ -811,7 +810,7 @@
         }
       }
     },
-    "application-name": {
+    "todo-test": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -844,28 +843,28 @@
           "skipTests": true
         }
       },
-      "root": "websites/application-name",
-      "sourceRoot": "websites/application-name/src",
+      "root": "websites/todo-test",
+      "sourceRoot": "websites/todo-test/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "browser": "websites/application-name/src/main.ts",
-            "tsConfig": "websites/application-name/tsconfig.app.json",
+            "browser": "websites/todo-test/src/main.ts",
+            "tsConfig": "websites/todo-test/tsconfig.app.json",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "websites/application-name/public"
+                "input": "websites/todo-test/public"
               }
             ],
             "styles": [
-              "websites/application-name/src/styles.css"
+              "websites/todo-test/src/styles.css"
             ],
-            "server": "websites/application-name/src/main.server.ts",
+            "server": "websites/todo-test/src/main.server.ts",
             "outputMode": "server",
             "ssr": {
-              "entry": "websites/application-name/src/server.ts"
+              "entry": "websites/todo-test/src/server.ts"
             }
           },
           "configurations": {
@@ -896,108 +895,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "application-name:build:production"
+              "buildTarget": "todo-test:build:production"
             },
             "development": {
-              "buildTarget": "application-name:build:development"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular/build:extract-i18n"
-        }
-      }
-    },
-    "application-name-node-rebuild": {
-      "projectType": "application",
-      "schematics": {
-        "@schematics/angular:component": {
-          "inlineTemplate": true,
-          "inlineStyle": true,
-          "skipTests": true,
-          "standalone": false
-        },
-        "@schematics/angular:class": {
-          "skipTests": true
-        },
-        "@schematics/angular:directive": {
-          "skipTests": true,
-          "standalone": false
-        },
-        "@schematics/angular:guard": {
-          "skipTests": true
-        },
-        "@schematics/angular:interceptor": {
-          "skipTests": true
-        },
-        "@schematics/angular:pipe": {
-          "skipTests": true,
-          "standalone": false
-        },
-        "@schematics/angular:resolver": {
-          "skipTests": true
-        },
-        "@schematics/angular:service": {
-          "skipTests": true
-        }
-      },
-      "root": "websites/application-name-node-rebuild",
-      "sourceRoot": "websites/application-name-node-rebuild/src",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular/build:application",
-          "options": {
-            "browser": "websites/application-name-node-rebuild/src/main.ts",
-            "tsConfig": "websites/application-name-node-rebuild/tsconfig.app.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "websites/application-name-node-rebuild/public"
-              }
-            ],
-            "styles": [
-              "websites/application-name-node-rebuild/src/styles.css"
-            ],
-            "server": "websites/application-name-node-rebuild/src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "websites/application-name-node-rebuild/src/server.ts"
-            }
-          },
-          "configurations": {
-            "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "4kB",
-                  "maximumError": "8kB"
-                }
-              ],
-              "outputHashing": "all"
-            },
-            "development": {
-              "optimization": false,
-              "extractLicenses": false,
-              "sourceMap": true
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve": {
-          "builder": "@angular/build:dev-server",
-          "configurations": {
-            "production": {
-              "buildTarget": "application-name-node-rebuild:build:production"
-            },
-            "development": {
-              "buildTarget": "application-name-node-rebuild:build:development"
+              "buildTarget": "todo-test:build:development"
             }
           },
           "defaultConfiguration": "development"

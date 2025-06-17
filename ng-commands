@@ -8,6 +8,7 @@ websites/applications:
 	ng generate application bretta-product-viewer --zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css
 	ng generate application component-viewer --zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css
 	ng generate application sponsorus--zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css
+	ng generate application todo-test --zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css
 
 libs:	
 	ng generate library component --entry-file=components --project-root=component
