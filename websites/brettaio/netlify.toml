@@ -1,9 +1,15 @@
+# websites/brettaio/netlify.toml
+
+# Where to publish your client (browser) build
 publish = "dist/brettaio/browser"
+
+# Tell the plugin which Angular project to build
+[build.environment]
+  ANGULAR_PROJECT = "brettaio"
+
+# Point Netlify at your combined SSR + custom functions
+[functions]
+  directory = "netlify/functions"
 
 [[plugins]]
   package = "@netlify/angular-runtime"
-  [plugins.inputs]
-    # Tells the plugin which Angular project in angular.json to build
-    project   = "brettaio"
-    # Where the plugin should look for the SSR lambda bundle
-    functions = "dist/brettaio/server"

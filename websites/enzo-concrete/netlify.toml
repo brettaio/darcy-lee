@@ -1,7 +1,12 @@
 publish = "dist/enzo-concrete/browser"
 
+[build.environment]
+  # Tell the plugin which project to build
+  ANGULAR_PROJECT = "enzo-concrete"
+
+[functions]
+  # Where your SSR lambda code lives
+  directory = "dist/enzo-concrete/server"
+
 [[plugins]]
   package = "@netlify/angular-runtime"
-  [plugins.inputs]
-    project   = "enzo-concrete"
-    functions = "dist/enzo-concrete/server"
