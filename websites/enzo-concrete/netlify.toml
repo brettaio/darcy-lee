@@ -1,16 +1,14 @@
 [build]
   command = """
     cd ../.. &&
-    npm ci &&
+    npm install &&
     ng run enzo-concrete:build:production &&
     ng run enzo-concrete:server:production &&
     mkdir -p netlify/functions &&
-    cp -a dist/enzo-concrete/server/. netlify/functions
+    cp -a dist/enzo-concrete/server/. netlify/functions &&
+    cp -a netlify/functions/*.js netlify/functions
   """
-  # publish the static files
   publish = "dist/enzo-concrete/browser"
 
-# point Netlify at your SSR + any custom functions in
-# websites/enzo-concrete/netlify/functions
 [functions]
   directory = "netlify/functions"
