@@ -1,0 +1,7 @@
+[build]
+  command   = "npm install && ng run enzo-concrete:build:production && ng run enzo-concrete:server:production"
+  publish   = "dist/enzo-concrete/browser"
+  functions = "dist/enzo-concrete/server"
+
+[[plugins]]
+  package = "@netlify/angular-runtime"

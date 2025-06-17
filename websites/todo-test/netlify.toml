@@ -1,0 +1,7 @@
+[build]
+  command   = "npm install && ng run todo-test:build:production && ng run todo-test:server:production"
+  publish   = "dist/todo-test/browser"
+  functions = "dist/todo-test/server"
+
+[[plugins]]
+  package = "@netlify/angular-runtime"

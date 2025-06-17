@@ -1,0 +1,12 @@
+  command   = """
+    npm install &&
+    ng run brettaio:build:production &&
+    ng run brettaio:server:production &&
+    mkdir -p netlify/functions &&
+    cp -a dist/brettaio/server/. netlify/functions
+  """
+  publish   = "dist/brettaio/browser"
+  functions = "netlify/functions"
+
+[[plugins]]
+  package = "@netlify/angular-runtime"
