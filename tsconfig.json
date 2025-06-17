@@ -36,6 +36,9 @@
   "references": [
     {
       "path": "./websites/todo-test/tsconfig.app.json"
+    },
+    {
+      "path": "./websites/todo-test/tsconfig.app.json"
     }
   ]
 }
