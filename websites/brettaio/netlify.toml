@@ -1,15 +1,16 @@
-# websites/brettaio/netlify.toml
+[build]
+  command = """
+    cd ../.. &&
+    npm ci &&
+    ng run brettaio:build:production &&
+    ng run brettaio:server:production &&
+    mkdir -p netlify/functions &&
+    cp -a dist/brettaio/server/. netlify/functions
+  """
+  # publish the static files
+  publish = "dist/brettaio/browser"
 
-# Where to publish your client (browser) build
-publish = "dist/brettaio/browser"
-
-# Tell the plugin which Angular project to build
-[build.environment]
-  ANGULAR_PROJECT = "brettaio"
-
-# Point Netlify at your combined SSR + custom functions
+# point Netlify at your SSR + any custom functions in
+# websites/brettaio/netlify/functions
 [functions]
   directory = "netlify/functions"
-
-[[plugins]]
-  package = "@netlify/angular-runtime"
