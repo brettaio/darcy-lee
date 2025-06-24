@@ -43,3 +43,6 @@ Thumbs.db
 .env
 # Local Netlify folder
 .netlify
+
+#laravel backends with personal info seeding
+/backends/sponus-laravel

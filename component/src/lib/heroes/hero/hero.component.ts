@@ -26,7 +26,7 @@ import { appDataStore } from '../../../../../websites/enzo-concrete/src/app/stor
                     <div
                       class="relative rounded-full px-3 py-1 text-sm/6 text-gray-500 ring-1 ring-gray-900/10 hover:ring-gray-900/20"
                     >
-                      Sponsorus by bretta.io MVP Launches to rave reviews.
+                      Sponus by bretta.io MVP Launches to rave reviews.
                       <a
                         href="#"
                         class="font-semibold whitespace-nowrap text-indigo-600"
@@ -43,17 +43,16 @@ import { appDataStore } from '../../../../../websites/enzo-concrete/src/app/stor
                   <h1
                     class="text-5xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-7xl"
                   >
-                    Get Bretta with Sponsorus
+                    Get Bretta with Sponus
                   </h1>
                   <p
                     class="mt-8 text-lg font-medium text-pretty text-gray-500 sm:text-xl/8"
                   >
-                    Sponsorus by bretta.io is the crowdfunding approach to sport
+                    Sponus by bretta.io is the crowdfunding approach to sport
                     sponsorship. Engage network and community in achieving
                     sponsorship requirments for grassroots beginnings to
                     professional level. Get better access and exposure to
-                    levitate your game and leave the fundraising to us.
-                    Sponsorus.
+                    levitate your game and leave the fundraising to us. Sponus.
                   </p>
                   <div class="mt-10 flex items-center gap-x-6">
                     <a

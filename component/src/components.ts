@@ -71,3 +71,6 @@ export * from './lib/footers/footer-brettaio.component';
 export * from './lib/testimonials/testimonial-hero.component';
 export * from './lib/under-construction/under-construction.component';
 export * from './lib/customer-onboarding-brettaio/customer-onboarding-brettaio.component';
+
+//sponus Components
+export * from './lib/sponus-user/user-list/user-list.component';

@@ -15,7 +15,8 @@ export class UserService implements OnModuleInit {
     if (!existing) {
       await this.prisma.user.create({
         data: {
-          email,
+          id: 'a0a0a0',
+          email: 'etc@bretta.io',
           password: 'hashed-dummy',
           firstName: 'Brett',
           lastName: 'Connell',
