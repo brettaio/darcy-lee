@@ -7,8 +7,9 @@ websites/applications:
 	ng generate application ppdon --zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css 
 	ng generate application bretta-product-viewer --zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css
 	ng generate application component-viewer --zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css
-	ng generate application sponus--zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css
+	ng generate application sponus --zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css
 	ng generate application todo-test --zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css
+	ng generate application booking-app --zoneless=true --inline-style=true --inline-template=true --minimal=true --ssr=true --standalone=false --strict=true --style=css
 
 libs:	
 	ng generate library component --entry-file=components --project-root=component
@@ -18,6 +19,10 @@ libs:
 	ng generate library animation --entry-file=animations --project-root=animation
 	ng generate library service --entry-file=services --project-root=service
 	ng generate library overlay --entry-file=overlays --project-root=overlay
+	ng generate library store --entry-file=stores --project-root=store
+	ng generate library model --entry-file=models --project-root=model
+	ng generate library interceptor --entry-file=interceptors --project-root=interceptor
+	ng generate library guard --entry-file=guards --project-root=guard
 
 component library:
 	General -- 
@@ -43,8 +48,13 @@ component library:
 	ng generate component announcement-bar --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component three-js-hero-stars --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component test-space --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component forms/signup --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component calendar/booking-app --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component application-shell/stacked-layout-one --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+
 
 	ng generate component sponus-user/user-list --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component donation-form --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 
 	bretta-product-viewer --
 	ng generate component resizeable-window --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
@@ -82,7 +92,8 @@ page library:
 	ng generate component solutions-brettaio --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
 	ng generate component terms-conditions --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
 	ng generate component refund-cancellation --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
-ng generate component test --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
+	ng generate component test --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
+	ng generate component booking-app --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
 
 sponus page library
 ng generate component sponus-home --inline-style=true --inline-template=true --prefix=page --project=page --skip-tests=true --standalone=true --style=css --type=page
@@ -120,6 +131,9 @@ icon library:
 	ng generate component star --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
 	ng generate component envelope --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
 	ng generate component google --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
+	ng generate component eye --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon 
+	ng generate component eye-slash --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=icon
+	ng generate component user-plus --inline-style=true --inline-template=true --prefix=icon --project=icon --skip-tests=true --standalone=true --style=css --type=
 	
 logo library
 	ng generate component enzo-concrete --inline-style=true --inline-template=true --prefix=logo --project=logo --skip-tests=true --standalone=true --style=css --type=logo
@@ -137,6 +151,19 @@ overlay library
 	ng generate component grid --inline-style=true --inline-template=true --prefix=overlay --project=overlay --skip-tests=true --standalone=true --style=css --type=overlay
 	ng generate component gradient-smudge --inline-style=true --inline-template=true --prefix=overlay --project=overlay --skip-tests=true --standalone=true --style=css --type=overlay
 	ng generate component gradient-smudge-alt --inline-style=true --inline-template=true --prefix=overlay --project=overlay --skip-tests=true --standalone=true --style=css --type=overlay
+
+model/interface library:
+	ng generate interface player/player --project=model --type=model
+
+interceptor library:
+	ng generate interceptor sponOS/credentials --project=interceptor --skip-tests=true --type-separator=.
+
+guard library:
+	ng generate guard sponOS/auth --project=guard --flat=false --functional=true  --skip-tests=true --implements CanActivate --type-separator=.
+
+service library
+	ng generate service analytics --project=service --skip-tests=true
+	ng generate service sponOS/login-modal --project=service --skip-tests=true
 	
 - - - - - - -
 	
@@ -190,18 +217,4 @@ data factory enzo
 	ng generate class factory/review-data --project=enzo-concrete --skip-tests=true --type=factory
 	ng generate class factory/app-data --project=enzo-concrete --skip-tests=true --type=factory
 	ng generate class factory/problem-prop-data --project=enzo-concrete --skip-tests=true --type=factory
-	
-(experimental)	
-service library
-	ng generate service analytics --project=service --skip-tests=true
-
-	
-	DEATH TO LOREM IPSUM
-	
-	
-	
-Enzo Structure - 
-Header 
-Hero
-Problem Section
 

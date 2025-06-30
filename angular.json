@@ -513,7 +513,7 @@
         }
       }
     },
-    "sponus": {
+    "sponOS": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -546,26 +546,26 @@
           "skipTests": true
         }
       },
-      "root": "websites/sponus",
-      "sourceRoot": "websites/sponus/src",
+      "root": "websites/sponOS",
+      "sourceRoot": "websites/sponOS/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "browser": "websites/sponus/src/main.ts",
-            "tsConfig": "websites/sponus/tsconfig.app.json",
+            "browser": "websites/sponOS/src/main.ts",
+            "tsConfig": "websites/sponOS/tsconfig.app.json",
             "assets": [
               {
                 "glob": "**/*",
-                "input": "websites/sponus/public"
+                "input": "websites/sponOS/public"
               }
             ],
-            "styles": ["websites/sponus/src/styles.css"],
-            "server": "websites/sponus/src/main.server.ts",
+            "styles": ["websites/sponOS/src/styles.css"],
+            "server": "websites/sponOS/src/main.server.ts",
             "outputMode": "server",
             "ssr": {
-              "entry": "websites/sponus/src/server.ts"
+              "entry": "websites/sponOS/src/server.ts"
             }
           },
           "configurations": {
@@ -596,11 +596,11 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "sponus:build:production"
+              "buildTarget": "sponOS:build:production"
             },
             "development": {
-              "buildTarget": "sponus:build:development",
-              "proxyConfig": "websites/sponus/proxy.conf.json"
+              "buildTarget": "sponOS:build:development",
+              "proxyConfig": "websites/sponOS/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
@@ -705,7 +705,226 @@
           "builder": "@angular/build:extract-i18n"
         }
       }
+    },
+    "store": {
+      "projectType": "library",
+      "root": "store",
+      "sourceRoot": "store/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "store/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "store/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "store/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "model": {
+      "projectType": "library",
+      "root": "model",
+      "sourceRoot": "model/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "model/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "model/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "model/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "interceptor": {
+      "projectType": "library",
+      "root": "interceptor",
+      "sourceRoot": "interceptor/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "interceptor/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "interceptor/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "interceptor/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "guard": {
+      "projectType": "library",
+      "root": "guard",
+      "sourceRoot": "guard/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:ng-packagr",
+          "configurations": {
+            "production": {
+              "tsConfig": "guard/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "guard/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular/build:karma",
+          "options": {
+            "tsConfig": "guard/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
+          }
+        }
+      }
+    },
+    "booking-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true,
+          "standalone": false
+        },
+        "@schematics/angular:resolver": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "websites/booking-app",
+      "sourceRoot": "websites/booking-app/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular/build:application",
+          "options": {
+            "browser": "websites/booking-app/src/main.ts",
+            "tsConfig": "websites/booking-app/tsconfig.app.json",
+            "assets": [
+              {
+                "glob": "**/*",
+                "input": "websites/booking-app/public"
+              }
+            ],
+            "styles": [
+              "websites/booking-app/src/styles.css"
+            ],
+            "server": "websites/booking-app/src/main.server.ts",
+            "outputMode": "server",
+            "ssr": {
+              "entry": "websites/booking-app/src/server.ts"
+            }
+          },
+          "configurations": {
+            "production": {
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "500kB",
+                  "maximumError": "1MB"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "4kB",
+                  "maximumError": "8kB"
+                }
+              ],
+              "outputHashing": "all"
+            },
+            "development": {
+              "optimization": false,
+              "extractLicenses": false,
+              "sourceMap": true
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "serve": {
+          "builder": "@angular/build:dev-server",
+          "configurations": {
+            "production": {
+              "buildTarget": "booking-app:build:production"
+            },
+            "development": {
+              "buildTarget": "booking-app:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
+        },
+        "extract-i18n": {
+          "builder": "@angular/build:extract-i18n"
+        }
+      }
     }
+
   },
   "schematics": {
     "@schematics/angular:component": {

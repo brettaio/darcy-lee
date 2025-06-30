@@ -7,11 +7,28 @@
   "semi": true,
   "proseWrap": "always",
   "htmlWhitespaceSensitivity": "ignore",
+
+  "plugins": ["@prettier/plugin-php"],
+
+  "phpVersion": "8.3",
+
   "overrides": [
     {
       "files": "*.ts",
       "options": {
         "embeddedLanguageFormatting": "auto"
+      }
+    },
+    {
+      "files": "backends/sponus-laravel/**/*.php",
+      "options": {
+        "parser": "php"
+      }
+    },
+    {
+      "files": "backends/sponus-laravel/resources/views/**/*.blade.php",
+      "options": {
+        "parser": "blade"
       }
     }
   ]

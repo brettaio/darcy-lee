@@ -5,12 +5,33 @@
   "compilerOptions": {
     "paths": {
       "animation": ["./dist/animation"],
-      "component": ["./dist/component"],
-      "icon": ["./dist/icon"],
-      "logo": ["./dist/logo"],
+      "component": [
+        "./dist/component"
+      ],
+      "guard": [
+        "./dist/guard"
+      ],
+      "icon": [
+        "./dist/icon"
+      ],
+      "interceptor": [
+        "./dist/interceptor"
+      ],
+      "logo": [
+        "./dist/logo"
+      ],
+      "model": [
+        "./dist/model",
+        "./dist/model"
+      ],
       "overlay": ["./dist/overlay"],
       "page": ["./dist/page"],
-      "service": ["./dist/service"]
+      "service": [
+        "./dist/service"
+      ],
+      "store": [
+        "./dist/store"
+      ]
     },
     "outDir": "./dist/out-tsc",
     "strict": true,
@@ -35,10 +56,37 @@
   },
   "references": [
     {
-      "path": "./websites/todo-test/tsconfig.app.json"
+      "path": "./store/tsconfig.lib.json"
     },
     {
-      "path": "./websites/todo-test/tsconfig.app.json"
+      "path": "./store/tsconfig.spec.json"
+    },
+    {
+      "path": "./model/tsconfig.lib.json"
+    },
+    {
+      "path": "./model/tsconfig.spec.json"
+    },
+    {
+      "path": "./model/tsconfig.lib.json"
+    },
+    {
+      "path": "./model/tsconfig.spec.json"
+    },
+    {
+      "path": "./interceptor/tsconfig.lib.json"
+    },
+    {
+      "path": "./interceptor/tsconfig.spec.json"
+    },
+    {
+      "path": "./guard/tsconfig.lib.json"
+    },
+    {
+      "path": "./guard/tsconfig.spec.json"
+    },
+    {
+      "path": "./websites/booking-app/tsconfig.app.json"
     }
   ]
 }

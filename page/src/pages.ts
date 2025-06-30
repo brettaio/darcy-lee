@@ -7,6 +7,9 @@ export * from './lib/about/about.page';
 //blog page
 export * from './lib/blog/blog.page';
 
+//booking app page
+export * from './lib/booking-app/booking-app.page';
+
 //contact page
 export * from './lib/contact/contact.page';
 export * from './lib/contact/contact-brettaio.page';
@@ -45,3 +48,5 @@ export * from './lib/test/test.page';
 
 //terms and conditions page
 export * from './lib/terms-conditions/terms-conditions.page';
+
+
