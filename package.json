@@ -28,7 +28,7 @@
     "@angular/platform-browser-dynamic": "^20.0.5",
     "@angular/platform-server": "^20.0.5",
     "@angular/router": "^20.0.5",
-    "@angular/ssr": "^20.0.3",
+    "@angular/ssr": "^20.0.4",
     "@stripe/stripe-js": "^7.4.0",
     "@tailwindcss/cli": "^4.0.14",
     "@tailwindcss/postcss": "^4.0.7",
@@ -41,8 +41,8 @@
     "zone.js": "~0.15.0"
   },
   "devDependencies": {
-    "@angular/build": "^20.0.3",
-    "@angular/cli": "^20.0.3",
+    "@angular/build": "^20.0.4",
+    "@angular/cli": "^20.0.4",
     "@angular/compiler-cli": "^20.0.5",
     "@ngrx/schematics": "^19.2.1",
     "@prettier/plugin-php": "^0.22.4",
