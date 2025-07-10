@@ -1,16 +1,20 @@
 import { inject } from '@angular/core';
 import { CanActivateFn, Router, UrlTree } from '@angular/router';
-import { take, map } from 'rxjs/operators';
-import { AuthService } from '../../../../../service/src/services';
+import { map, filter, first } from 'rxjs/operators';
+import { SponOSAuthService } from '../../../../../service/src/services';
 
-export const authGuard: CanActivateFn = (route, state) => {
-  const auth = inject(AuthService);
+export const sponOSAuthGuard: CanActivateFn = (route, state) => {
+  const auth = inject(SponOSAuthService);
   const router = inject(Router);
 
-  return auth.currentPlayer$.pipe(
-    take(1),
-    map(player => 
-      player ? true : router.createUrlTree(['/login'])
-    )
+   return auth.currentPlayer$.pipe(
+    // skip the “haven’t checked yet” state — make your BehaviorSubject start as undefined
+    filter(userOrNull => userOrNull !== undefined),
+    first(),  // take that first real value (either Player or null)
+    map(user => {
+      return user
+        ? true
+        : (router.parseUrl('/login') as UrlTree);
+    })
   );
 };

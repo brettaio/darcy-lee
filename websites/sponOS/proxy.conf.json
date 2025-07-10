@@ -1,12 +1,16 @@
 {
-  "/sanctum/*": {
-    "target": "http://127.0.0.1:8000",
+  "/api": {
+    "target": "http://laravel:8000",
     "secure": false,
-    "changeOrigin": true
+    "changeOrigin": true,
+    "withCredentials": true,
+    "logLevel": "debug"
   },
-  "/api/*": {
-    "target": "http://127.0.0.1:8000",
+  "/sanctum": {
+    "target": "http://laravel:8000",
     "secure": false,
-    "changeOrigin": true
+    "changeOrigin": true,
+    "withCredentials": true,
+    "logLevel": "debug"
   }
 }

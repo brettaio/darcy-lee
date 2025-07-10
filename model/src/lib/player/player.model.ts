@@ -1,22 +1,33 @@
+export interface Accolade {
+  team: string;
+  year: number;
+  award: string;
+}
+
+export interface Perk {
+  item: string;
+  description: string;    
+}
+
 export interface Player {
   id: string;
-  title?: string;
+  title: string;
   first_name: string;
-  middle_name?: string;
+  middle_name?: string|null;
   last_name: string;
-  suffix?: string;
-  preferred_name?: string;
+  suffix?: string|null;
+  preferred_name?: string|null;
   email: string;
   date_of_birth?: string;
   sport?: string;
-  sponsorship_goal?: number;
-  sponsorship_currency?: string;
   position?: string;
   club?: string;
-  division?: string;
-  league?: string;
-  player_accolades?: any[];    // or a typed array
-  sponsorship_perks?: any[];
-  primary_address_id?: string;
-  billing_address_id?: string;
+  sponsorship_currency?: string;
+  sponsorship_goal?: number;
+  total_sponsorships?: number;
+  sponsorship_target?: number;
+  is_goal_met?: boolean;
+
+  player_accolades?: { team:string; year: number; award: string }[];
+  sponsorship_perks?: { item:string; description: string } [];
 }

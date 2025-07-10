@@ -13,7 +13,7 @@ import {
   AbstractControl,
 } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AuthService } from '../../../../../../service/src/services';
+import { SponOSAuthService } from '../../../../../../service/src/services';
 import {
   EyeIcon,
   EyeSlashIcon,
@@ -168,7 +168,7 @@ export class LoginComponent {
 
   constructor(
     private fb: FormBuilder,
-    private auth: AuthService,
+    private auth: SponOSAuthService,
     private router: Router
   ) {
     this.form = this.fb.group({

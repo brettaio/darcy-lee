@@ -561,12 +561,7 @@
                 "input": "websites/sponOS/public"
               }
             ],
-            "styles": ["websites/sponOS/src/styles.css"],
-            "server": "websites/sponOS/src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "websites/sponOS/src/server.ts"
-            }
+            "styles": ["websites/sponOS/src/styles.css"]
           },
           "configurations": {
             "production": {
@@ -914,7 +909,8 @@
               "buildTarget": "booking-app:build:production"
             },
             "development": {
-              "buildTarget": "booking-app:build:development"
+              "buildTarget": "booking-app:build:development",
+               "proxyConfig": "websites/booking-app/proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

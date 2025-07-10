@@ -54,7 +54,6 @@ private clearAuth() {
     
   }
 
-
   /**
    * 
    * Login flow: 

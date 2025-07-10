@@ -1,0 +1,41 @@
+services:
+  db:
+    image: mysql:8.0
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass
+      MYSQL_DATABASE: sponos
+      MYSQL_USER: sponos
+      MYSQL_PASSWORD: secretpass
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  laravel:
+    build:
+      context: ..
+      dockerfile: docker/backend.Dockerfile
+    depends_on:
+      - db
+    ports:
+      - "8000:8000"
+    environment:
+      DB_CONNECTION: mysql
+      DB_HOST: db
+      DB_PORT: 3306
+      DB_DATABASE: sponos
+      DB_USERNAME: sponos
+      DB_PASSWORD: secretpass
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: docker/frontend.Dockerfile
+    depends_on:
+      - laravel
+    ports:
+      - "80:80"
+
+volumes:
+  db_data:

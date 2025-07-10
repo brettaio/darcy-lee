@@ -48,9 +48,10 @@ component library:
 	ng generate component announcement-bar --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component three-js-hero-stars --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component test-space --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
-	ng generate component forms/signup --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component forms/login --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component calendar/booking-app --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 	ng generate component application-shell/stacked-layout-one --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
+	ng generate component forms/booking-app/login --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
 
 
 	ng generate component sponus-user/user-list --inline-style=true --inline-template=true --prefix=component --project=component --skip-tests=true --standalone=true --style=css --type=component
@@ -154,16 +155,22 @@ overlay library
 
 model/interface library:
 	ng generate interface player/player --project=model --type=model
+	ng generate interface booking-app/user --project=model --type=model
+	ng generate interface booking-app/scheduled-aircraft --project=model --type=model
 
 interceptor library:
 	ng generate interceptor sponOS/credentials --project=interceptor --skip-tests=true --type-separator=.
 
 guard library:
 	ng generate guard sponOS/auth --project=guard --flat=false --functional=true  --skip-tests=true --implements CanActivate --type-separator=.
+	ng generate guard booking-app/auth --project=guard --flat=false --functional=true  --skip-tests=true --implements CanActivate --type-separator=.
 
 service library
 	ng generate service analytics --project=service --skip-tests=true
 	ng generate service sponOS/login-modal --project=service --skip-tests=true
+	ng generate service calendar/calendar-event --project=service --skip-tests=true
+	ng generate service sponOS/auth --project=service --skip-tests=true
+	ng generate service booking-app/auth --project=service --skip-tests=true
 	
 - - - - - - -
 	

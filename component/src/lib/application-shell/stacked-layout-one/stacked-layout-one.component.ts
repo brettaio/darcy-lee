@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
+import { BookingAppAuthService } from '../../../../../service/src/services';
 import { BookingAppCalendarComponent } from '../../calendar/booking-app/booking-app-calendar.component';
 
 @Component({
@@ -24,46 +26,13 @@ import { BookingAppCalendarComponent } from '../../calendar/booking-app/booking-
               <div class="hidden sm:-my-px sm:ml-6 sm:flex sm:space-x-8">
                 <a href="#"
                    class="inline-flex items-center border-b-2 border-indigo-500 px-1 pt-1 text-sm font-medium text-gray-900">
-                  Dashboard
-                </a>
-                <a href="#"
-                   class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
-                  Team
-                </a>
-                <a href="#"
-                   class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
-                  Projects
-                </a>
-                <a href="#"
-                   class="inline-flex items-center border-b-2 border-transparent px-1 pt-1 text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700">
-                  Calendar
+                  Scheduled Flights
                 </a>
               </div>
             </div>
 
             <!-- right: notifications + profile -->
             <div class="hidden sm:ml-6 sm:flex sm:items-center">
-              <button type="button"
-                      class="relative rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">
-                <span class="sr-only">View notifications</span>
-                <!-- bell icon -->
-                  <svg
-    class="h-6 w-6"
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-  >
-    <path
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      stroke-width="1.5"
-      d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14V11a6 6 0 
-         10-12 0v3c0 .386-.146.735-.405 1.005L4 17h5m2 
-         0v1a3 3 0 006 0v-1m-6 0h6"
-    />
-  </svg>
-              </button>
 
               <!-- profile dropdown trigger -->
               <div class="relative ml-3">
@@ -83,7 +52,7 @@ import { BookingAppCalendarComponent } from '../../calendar/booking-app/booking-
                      role="menu">
                   <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem">Your Profile</a>
                   <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem">Settings</a>
-                  <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem">Sign out</a>
+                  <a href="#" (click)="onLogout()" class="block px-4 py-2 text-sm text-gray-700" role="menuitem">Sign out</a>
                 </div>
               </div>
             </div>
@@ -112,10 +81,7 @@ import { BookingAppCalendarComponent } from '../../calendar/booking-app/booking-
         <!-- mobile menu panel -->
         <div *ngIf="isMobileOpen" id="mobile-menu" class="sm:hidden">
           <div class="space-y-1 px-2 pt-2 pb-3">
-            <a href="#" class="block px-3 py-2 text-base font-medium text-indigo-700 bg-indigo-50">Dashboard</a>
-            <a href="#" class="block px-3 py-2 text-base font-medium text-gray-600 hover:bg-gray-50">Team</a>
-            <a href="#" class="block px-3 py-2 text-base font-medium text-gray-600 hover:bg-gray-50">Projects</a>
-            <a href="#" class="block px-3 py-2 text-base font-medium text-gray-600 hover:bg-gray-50">Calendar</a>
+            <a href="#" class="block px-3 py-2 text-base font-medium text-indigo-700 bg-indigo-50">Scheduled Flights</a>
           </div>
         </div>
       </nav>
@@ -124,7 +90,7 @@ import { BookingAppCalendarComponent } from '../../calendar/booking-app/booking-
       <div class="py-10">
         <header>
           <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <h1 class="text-3xl font-bold tracking-tight text-gray-900">Dashboard</h1>
+            <h1 class="text-3xl font-bold tracking-tight text-gray-900">Scheduled Flights</h1>
           </div>
         </header>
         <main>
@@ -141,11 +107,24 @@ export class StackedLayoutOneComponent {
   isProfileOpen = false;
   isMobileOpen  = false;
 
+  constructor(
+    private auth: BookingAppAuthService,
+    private router: Router
+  ) {}
+
   toggleProfile() {
     this.isProfileOpen = !this.isProfileOpen;
   }
 
   toggleMobile() {
     this.isMobileOpen = !this.isMobileOpen;
+  }
+
+  onLogout(): void {
+    //Call your AuthService.logout(), then navigate to /login
+    this.auth.logout().subscribe({
+      next: () => this.router.navigate(['/login']),
+      error: err => console.error('Logout failed', err)
+    })
   }
 }

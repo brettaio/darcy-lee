@@ -26,6 +26,7 @@ export * from './lib/footers/footer.component';
 //forms
 export * from './lib/forms/form.component';
 export * from './lib/forms/sponOS/login/login.component';
+export * from './lib/forms/booking-app/login/login.component';
 
 //gallery
 export * from './lib/gallery/gallery.component';

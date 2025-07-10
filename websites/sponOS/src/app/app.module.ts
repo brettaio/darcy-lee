@@ -11,7 +11,6 @@ import {
 import { HeaderComponent, LoginComponent } from '../../../../component/src/components';
 import {
   provideHttpClient,
-  withFetch,
   withInterceptorsFromDi,
   withXsrfConfiguration, 
   HTTP_INTERCEPTORS
@@ -31,7 +30,6 @@ import { CredentialsInterceptor } from '../../../../interceptor/src/interceptor'
     provideZonelessChangeDetection(),
     provideClientHydration(withEventReplay()),
     provideHttpClient(
-      withFetch(), 
       withInterceptorsFromDi(), 
       withXsrfConfiguration({
         cookieName: 'XSRF-TOKEN',

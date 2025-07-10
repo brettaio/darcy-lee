@@ -11,8 +11,6 @@ Route::post('login', [AuthController::class, 'login'])->name('login');
 require __DIR__.'/auth.php';
 
 // 3. Your protected player endpoint
-Route::middleware('auth:sanctum')->get('/player', function (Request $request) {
-    return $request->user();
-});
+Route::middleware('auth:sanctum')->get('/player', [AuthController::class, 'me']);
 
 Route::put('player', [AuthController::class, 'update']);

@@ -21,7 +21,6 @@
         "./dist/logo"
       ],
       "model": [
-        "./dist/model",
         "./dist/model"
       ],
       "overlay": ["./dist/overlay"],
